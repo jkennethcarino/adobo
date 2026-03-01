@@ -8,11 +8,24 @@ import app.morphe.patcher.util.proxy.mutableTypes.MutableClass
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
 import com.android.tools.smali.dexlib2.analysis.reflection.util.ReflectionUtils
 import com.android.tools.smali.dexlib2.iface.ClassDef
+import com.android.tools.smali.dexlib2.iface.Field
 import com.android.tools.smali.dexlib2.iface.Method
 import com.android.tools.smali.dexlib2.iface.instruction.Instruction
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
 import com.android.tools.smali.dexlib2.iface.reference.Reference
+import com.android.tools.smali.dexlib2.iface.value.EncodedValue
 import com.android.tools.smali.dexlib2.util.MethodUtil
+
+/**
+ * Finds and returns the first matching field in the class that matches the given [field].
+ *
+ * @receiver MutableClass The class to search for the field.
+ * @param field The field to match.
+ * @return The first matching mutable field.
+ */
+fun MutableClass.findMutableFieldOf(field: Field) = this.fields.first {
+    it.name == field.name && it.type == field.type
+}
 
 /**
  * Finds and returns the first matching method in the class hierarchy that
@@ -35,6 +48,15 @@ fun MutableClass.findMutableMethodOf(method: Method) = this.methods.first {
  */
 inline fun <reified T : Reference> Instruction.getReference() =
     (this as? ReferenceInstruction)?.reference as? T
+
+/**
+ * Returns the [Field]'s initial value as [T] or null if the initial value is not of type [T].
+ *
+ * @receiver Field The field to extract the encoded value from.
+ * @return The encoded value as type [T], or null if not applicable.
+ */
+inline fun <reified T : EncodedValue> Field.getEncodedValue() =
+    this.initialValue as? T
 
 /**
  * Traverses the class hierarchy starting from the given root [targetClass].
