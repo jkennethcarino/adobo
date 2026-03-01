@@ -1,8 +1,9 @@
 [versions]
-morphe-patcher = "1.1.1"
-#noinspection GradleDependency
-smali = "b6365a84f4"
 gson = "2.13.2"
+hidden-api-bypass = "6.1"
+morphe-patcher = "1.1.1"
+smali = "b6365a84f4"
 
 [libraries]
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+lsposed-hiddenApiBypass = { module = "org.lsposed.hiddenapibypass:hiddenapibypass", version.ref = "hidden-api-bypass" }
