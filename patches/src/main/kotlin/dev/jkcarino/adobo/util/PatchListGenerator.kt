@@ -1,13 +1,12 @@
 /*
  * Copyright 2025 Morphe.
- * https://github.com/MorpheApp/morphe-patches
+ * https://github.com/morpheapp/morphe-patches
  *
- * File-Specific License Notice (GPLv3 Section 7 Terms)
+ * File-Specific License Notice (GPLv3 Section 7 Additional Permission).
  *
  * This file is part of the Morphe patches project and is licensed under
  * the GNU General Public License version 3 (GPLv3), with the Additional
- * Terms under Section 7 described in the Morphe patches
- * LICENSE file: https://github.com/MorpheApp/morphe-patches/blob/main/NOTICE
+ * Terms under Section 7 described in the Morphe patches LICENSE file.
  *
  * https://www.gnu.org/licenses/gpl-3.0.html
  *
@@ -28,10 +27,10 @@
  *
  * All other terms of the Morphe Patches LICENSE, including Section 7c
  * (Project Name Restriction) and the GPLv3 itself, remain fully
- * applicable to this file.
+  * applicable to this file.
  */
 
-package app.morphe.util
+package dev.jkcarino.adobo.util
 
 import app.morphe.patcher.patch.Patch
 import app.morphe.patcher.patch.loadPatchesFromJar
@@ -126,4 +125,3 @@ private class JsonPatch(
         val values: Map<String, Any?>?,
     )
 }
-
