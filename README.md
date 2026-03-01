@@ -1,65 +1,41 @@
-# 👋🧩 Morphe Patches template
+# Adobo
 
-Template repository for Morphe Patches.
+This repository contains a collection of patches for [Morphe](https://morphe.software/), an
+open-source Android patching tool for modifying apps like YouTube and Reddit to block ads and add
+new features.
 
-&nbsp;
-## ❓ About
+## Features
 
-This is a template to create a new Morphe Patches repository.  
-The repository can have multiple patches, and patches from other repositories can be used together.
+Some of the features included in Adobong Morphe patches are:
 
-For an example repository, see [Morphe Patches](https://github.com/MorpheApp/morphe-patches).
+- **Block ads, trackers, and analytics**: Enjoy a distraction-free experience by removing unwanted
+  ads and data collection in your favorite apps and games.
+- **Remove internet permission**: Remove unnecessary internet permission from apps that work fully
+  offline.
+- **Disable WebView metrics collection**: Prevent the collection of diagnostic data or usage
+  statistics that are sent to Google.
+- **Spoof signature verification**: Bypass signature checks in apps that require them, allowing you
+  to use modified versions without issues.
+- **Always-incognito mode for Gboard**: Make Gboard always open in incognito mode to disable typing
+  history collection and personalization.
+- Everything
+  in [Privacy ReVanced patches](https://github.com/jkennethcarino/privacy-revanced-patches),
+  and much more!
 
-Morphe Patches template is based off the prior work of [ReVanced](https://github.com/ReVanced/revanced-patches-template).
-All modifications made by Morphe, along with their dates, can be found in the Git history.
+## Building
 
+To build Adobong Morphe patches, you can follow
+the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
 
-## 🚀 Get started
+## Disclaimer
 
-To start using this template, follow these steps:
+These patches are provided as-is for personal use.
 
-1. [Create a new repository using this template](https://github.com/new?template_name=morphe-patches-template&template_owner=MorpheApp)
-2. Set up the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the [group of the project](patches/build.gradle.kts#L1),
-and the [About](patches/build.gradle.kts#L5-L11))
-3. Set up the [README.md](README.md) file[^1] (e.g, title, description, license, summary of the patches
-that are included in the repository), the [issue templates](.github/ISSUE_TEMPLATE)[^2]  and the [contribution guidelines](CONTRIBUTING.md)[^3]
-4. Choose a name for your patches project. Keep in mind you must use a unique name that does not imply or suggest authorship by the Morphe open source project.
-   See the [NOTICE](NOTICE) for details.
+Use them at your own risk. The author is not responsible for any potential issues, including app
+instability, crashes, or violations of terms of service that can lead to account bans or other
+consequences.
 
-🎉 You are now ready to start creating patches!
+## License
 
-## 🧑‍💻 Usage
-
-To develop and release Morphe Patches using this template, some things need to be considered:
-
-- Development starts in feature branches. Once a feature branch is ready, it is squashed and merged into the `dev` branch
-- The `dev` branch is merged into the `main` branch once it is ready for release
-- Semantic versioning is used to version Morphe Patches. Morphe Patches have a public API for other patches to use
-- Semantic commit messages are used for commits
-- Commits on the `dev` branch and `main` branch are automatically released
-via the [release.yml](.github/workflows/release.yml) workflow, which is also responsible for generating the changelog
-and updating the version of Morphe Patches. It is triggered by pushing to the `dev` or `main` branch.
-The workflow uses the `publish` task to publish the release of Morphe Patches
-- The `buildAndroid` task is used to build Morphe Patches so that it can be used on Android.
-The `publish` task depends on the `buildAndroid` task, so it will be run automatically when publishing a release.
-
-## 📚 Everything else
-
-### 📙 Contributing
-
-Thank you for considering contributing to Morphe Patches template.  
-You can find the contribution guidelines [here](CONTRIBUTING.md).
-
-### 🛠️ Building
-
-To build Morphe Patches template,
-you can follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
-
-## 📜 License
-
-Morphe Patches are licensed under the [GNU General Public License v3.0](LICENSE), with additional conditions under GPLv3 Section 7:
-
-- **Name Restriction (7c):** The name **"Morphe"** may not be used for derivative works.  
-  Derivatives must adopt a distinct identity unrelated to "Morphe."
-
-See the [LICENSE](LICENSE) file for the full GPLv3 terms and the [NOTICE](NOTICE) file for full conditions of GPLv3 Section 7
+Adobo is licensed under the [GNU General Public License v3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl.html).
+See the [LICENSE](LICENSE) file for more details.
