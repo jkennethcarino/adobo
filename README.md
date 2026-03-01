@@ -37,5 +37,5 @@ consequences.
 
 ## License
 
-Adobo is licensed under the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](LICENSE)
-file for more details.
+Adobo is licensed under the [GNU General Public License v3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl.html).
+See the [LICENSE](LICENSE) file for more details.
