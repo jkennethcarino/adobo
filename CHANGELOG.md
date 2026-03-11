@@ -1,3 +1,12 @@
+# [1.1.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.0.0...v1.1.0-dev.1) (2026-03-11)
+
+
+### Features
+
+* **Reddit:** Add `Hide Ask button from search bar` patch ([b8008fa](https://github.com/jkennethcarino/adobo/commit/b8008faa62388cb29a01fa999ef21c94c5beee44))
+* **Reddit:** Add `Hide post view counts` patch ([fc89952](https://github.com/jkennethcarino/adobo/commit/fc899521af359893d77bb47525b3f6491aca6e28))
+* **Reddit:** Add `Hide prominent search bar` patch ([4adf2c3](https://github.com/jkennethcarino/adobo/commit/4adf2c3009adcfe3e38130c69370b1be72601259))
+
 # 1.0.0 (2026-03-01)
 
 

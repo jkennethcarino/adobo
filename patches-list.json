@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0-dev.1",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -284,8 +284,44 @@
       "options": []
     },
     {
+      "name": "Hide Ask button from search bar",
+      "description": "Hides the Ask button (Reddit Answers) from the search bar.",
+      "use": false,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
       "name": "Hide community highlights",
       "description": "Hides the community highlights section.",
+      "use": false,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide post view counts",
+      "description": "Removes the \"views\" indicator from the post metadata.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide prominent search bar",
+      "description": "Hides the new prominent search bar on the main screen.",
       "use": false,
       "dependencies": [
         "BytecodePatch"
