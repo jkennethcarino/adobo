@@ -132,7 +132,7 @@ fun MutableMethod.returnEarly() =
         "F" -> returnEarly(0f)
         "J" -> returnEarly(0L)
         "D" -> returnEarly(0.0)
-        else -> addInstruction(0, objectReturn("0x0"))
+        else -> addInstructions(0, objectReturn("0x0"))
     }
 
 /**
