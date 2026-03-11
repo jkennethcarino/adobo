@@ -2,7 +2,7 @@
 agp = "8.12.3"
 gson = "2.13.2"
 hidden-api-bypass = "6.1"
-morphe-patcher = "1.1.1"
+morphe-patcher = "1.2.0"
 smali = "b6365a84f4"
 
 [libraries]

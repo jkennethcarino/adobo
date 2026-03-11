@@ -8,8 +8,12 @@ pluginManagement {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/MorpheApp/registry")
             credentials {
-                username = providers.gradleProperty("gpr.user").getOrElse(System.getenv("GITHUB_ACTOR"))
-                password = providers.gradleProperty("gpr.key").getOrElse(System.getenv("GITHUB_TOKEN"))
+                username = providers
+                    .gradleProperty("gpr.user")
+                    .getOrElse(System.getenv("GITHUB_ACTOR"))
+                password = providers
+                    .gradleProperty("gpr.key")
+                    .getOrElse(System.getenv("GITHUB_TOKEN"))
             }
         }
         maven("https://jitpack.io")
@@ -17,7 +21,7 @@ pluginManagement {
 }
 
 plugins {
-    id("app.morphe.patches") version "1.1.1"
+    id("app.morphe.patches") version "1.2.0"
 }
 
 settings {
