@@ -16,6 +16,6 @@ val hideSearchAskButtonPatch = bytecodePatch(
     dependsOn(spoofCertificateHashPatch)
 
     execute {
-        IsSearchBarAskButtonHoldoutEnabledFingerprint.method.returnEarly()
+        TrailingAskButtonFingerprint.method.returnEarly()
     }
 }
