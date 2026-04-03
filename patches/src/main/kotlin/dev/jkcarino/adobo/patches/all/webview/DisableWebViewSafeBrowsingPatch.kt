@@ -9,7 +9,7 @@ val disableWebViewSafeBrowsingPatch = resourcePatch(
     name = "Disable Google Safe Browsing in WebView",
     description = "Disables the Google Safe Browsing checks in WebView. " +
         "This doesn't apply to WebView within the SDK Runtime.",
-    use = false
+    default = false
 ) {
     execute {
         androidManifest {

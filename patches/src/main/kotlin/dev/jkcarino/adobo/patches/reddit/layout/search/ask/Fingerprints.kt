@@ -7,7 +7,7 @@ import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 
-internal object StaticConstructorFingerprint : Fingerprint(
+private object StaticConstructorFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.STATIC, AccessFlags.CONSTRUCTOR),
     filters = listOf(
         string("isSearchBarAskButtonHoldoutEnabled"),
@@ -16,6 +16,7 @@ internal object StaticConstructorFingerprint : Fingerprint(
 )
 
 internal object IsSearchBarAskButtonHoldoutEnabledFingerprint : Fingerprint(
+    classFingerprint = StaticConstructorFingerprint,
     returnType = "Z",
     parameters = emptyList(),
     filters = OpcodesFilter.opcodesToFilters(

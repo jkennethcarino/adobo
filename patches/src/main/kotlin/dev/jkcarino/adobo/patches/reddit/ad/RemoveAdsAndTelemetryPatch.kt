@@ -6,6 +6,7 @@ import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
+import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 private const val EXTENSION_CLASS_DESCRIPTOR =
     "Ldev/jkcarino/extension/reddit/frontpage/AdBlockInterceptor;"
@@ -13,10 +14,9 @@ private const val EXTENSION_CLASS_DESCRIPTOR =
 @Suppress("unused")
 val removeAdsAndTelemetryPatch = bytecodePatch(
     name = "Remove ads and telemetry",
-    description = "Removes ads and telemetry everywhere.",
-    use = true
+    description = "Removes ads and telemetry everywhere."
 ) {
-    compatibleWith("com.reddit.frontpage")
+    compatibleWith(COMPATIBILITY_REDDIT)
 
     extendWith("extensions/reddit/frontpage.mpe")
 

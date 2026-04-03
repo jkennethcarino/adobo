@@ -9,7 +9,7 @@ val deactivateFirebasePerfPatch = resourcePatch(
     name = "Deactivate Firebase Performance Monitoring",
     description = "Deactivates the collection of performance data on app start up time, " +
         "network requests, and other related metrics.",
-    use = false
+    default = false
 ) {
     execute {
         androidManifest {

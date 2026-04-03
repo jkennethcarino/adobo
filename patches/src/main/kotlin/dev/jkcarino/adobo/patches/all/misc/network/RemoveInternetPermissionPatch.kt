@@ -9,7 +9,7 @@ val removeInternetPermissionPatch = resourcePatch(
     name = "Remove internet permission",
     description = "Removes unnecessary internet permission from apps that " +
         "can still work without internet access.",
-    use = false
+    default = false
 ) {
     execute {
         androidManifest {

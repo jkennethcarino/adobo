@@ -5,6 +5,7 @@ import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
 import app.morphe.patcher.opcode
 import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.Opcode
+import dev.jkcarino.adobo.patches.reddit.shared.LinkToStringFingerprint
 
 internal object ActionCelFragmentToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
@@ -18,6 +19,7 @@ internal object ActionCelFragmentToStringFingerprint : Fingerprint(
 )
 
 internal object GetViewCountFingerprint : Fingerprint(
+    classFingerprint = LinkToStringFingerprint,
     name = "getViewCount",
     returnType = "Ljava/lang/Long;",
     parameters = listOf()

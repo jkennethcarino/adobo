@@ -7,7 +7,7 @@ import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
-import dev.jkcarino.adobo.patches.reddit.shared.LinkToStringFingerprint
+import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.patches.reddit.shared.util.updateClassField
 import dev.jkcarino.adobo.util.filterMethods
 import dev.jkcarino.adobo.util.findMutableMethodOf
@@ -19,9 +19,9 @@ import java.util.logging.Logger
 val hideScoresPatch = bytecodePatch(
     name = "Hide upvote scores",
     description = "Hides the scores on Reddit posts and comments.",
-    use = false
+    default = false
 ) {
-    compatibleWith("com.reddit.frontpage")
+    compatibleWith(COMPATIBILITY_REDDIT)
 
     dependsOn(spoofCertificateHashPatch)
 
@@ -60,16 +60,8 @@ val hideScoresPatch = bytecodePatch(
 
         if (hidePostScores!!) {
             ActionCellFragmentToStringFingerprint.updateScoreClassField(value = true)
-
-            GetScoreFingerprint
-                .match(LinkToStringFingerprint.classDef)
-                .method
-                .returnEarly(0)
-
-            GetHideScoreFingerprint
-                .match(LinkToStringFingerprint.classDef)
-                .method
-                .returnEarly(true)
+            GetScoreFingerprint.method.returnEarly(0)
+            GetHideScoreFingerprint.method.returnEarly(true)
 
             searchPostScoreToStringFingerprints.forEach { fingerprint ->
                 fingerprint.updateScoreClassField(value = null)

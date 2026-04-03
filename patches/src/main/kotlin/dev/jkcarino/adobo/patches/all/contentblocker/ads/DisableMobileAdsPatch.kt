@@ -29,7 +29,7 @@ import java.util.logging.Logger
 val disableMobileAdsPatch = bytecodePatch(
     name = "Disable mobile ads",
     description = "Disables banner, interstitial, and other ad formats.",
-    use = false
+    default = false
 ) {
     val logger = Logger.getLogger(this::class.java.name)
 

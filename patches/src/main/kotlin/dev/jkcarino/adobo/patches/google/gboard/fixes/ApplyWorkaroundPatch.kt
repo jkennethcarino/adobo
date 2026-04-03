@@ -1,13 +1,14 @@
 package dev.jkcarino.adobo.patches.google.gboard.fixes
 
 import app.morphe.patcher.patch.resourcePatch
+import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 import dev.jkcarino.adobo.util.get
 
 val applyWorkaroundPatch = resourcePatch(
     description = "Applies workaround for patcher to fix missing or unsupported resources. " +
         "This only applies to versions 14.1.x.x and later."
 ) {
-    compatibleWith("com.google.android.inputmethod.latin")
+    compatibleWith(COMPATIBILITY_GBOARD)
 
     execute {
         document("res/xml/method.xml").use { document ->

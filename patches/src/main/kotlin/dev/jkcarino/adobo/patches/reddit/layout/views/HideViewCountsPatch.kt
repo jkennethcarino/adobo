@@ -5,7 +5,7 @@ import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
-import dev.jkcarino.adobo.patches.reddit.shared.LinkToStringFingerprint
+import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.patches.reddit.shared.util.updateClassField
 import dev.jkcarino.adobo.util.getReference
 import dev.jkcarino.adobo.util.returnEarly
@@ -13,10 +13,9 @@ import dev.jkcarino.adobo.util.returnEarly
 @Suppress("unused")
 val hideViewCountsPatch = bytecodePatch(
     name = "Hide post view counts",
-    description = "Removes the \"views\" indicator from the post metadata.",
-    use = true
+    description = "Removes the \"views\" indicator from the post metadata."
 ) {
-    compatibleWith("com.reddit.frontpage")
+    compatibleWith(COMPATIBILITY_REDDIT)
 
     dependsOn(spoofCertificateHashPatch)
 
@@ -34,9 +33,6 @@ val hideViewCountsPatch = bytecodePatch(
             )
         }
 
-        GetViewCountFingerprint
-            .match(LinkToStringFingerprint.classDef)
-            .method
-            .returnEarly()
+        GetViewCountFingerprint.method.returnEarly()
     }
 }

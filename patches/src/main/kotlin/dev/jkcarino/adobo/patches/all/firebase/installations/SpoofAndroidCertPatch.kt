@@ -9,7 +9,7 @@ val spoofAndroidCertPatch = bytecodePatch(
     description = "Spoofs the app's package certificate hash used by Firebase Installations " +
         "so that push notifications, remote config, and other Firebase services continue to " +
         "work as expected.",
-    use = false
+    default = false
 ) {
     val certificateHash by stringOption(
         key = "certificateHash",

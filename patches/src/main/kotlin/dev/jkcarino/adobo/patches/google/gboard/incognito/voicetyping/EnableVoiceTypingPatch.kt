@@ -5,14 +5,15 @@ import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
+import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 
 @Suppress("unused")
 val enableVoiceTypingPatch = bytecodePatch(
     name = "Enable voice typing in incognito",
     description = "Enables voice typing in incognito mode.",
-    use = false
+    default = false
 ) {
-    compatibleWith("com.google.android.inputmethod.latin")
+    compatibleWith(COMPATIBILITY_GBOARD)
 
     dependsOn(bypassSignaturePatch)
 

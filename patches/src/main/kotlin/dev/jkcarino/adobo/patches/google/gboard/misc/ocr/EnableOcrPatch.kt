@@ -3,14 +3,14 @@ package dev.jkcarino.adobo.patches.google.gboard.misc.ocr
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
+import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 
 @Suppress("unused")
 val enableOcrPatch = bytecodePatch(
     name = "Enable OCR feature",
-    description = "Enables OCR feature to extract text from images and insert it into text fields.",
-    use = true
+    description = "Enables OCR feature to extract text from images and insert it into text fields."
 ) {
-    compatibleWith("com.google.android.inputmethod.latin")
+    compatibleWith(COMPATIBILITY_GBOARD)
 
     dependsOn(bypassSignaturePatch)
 

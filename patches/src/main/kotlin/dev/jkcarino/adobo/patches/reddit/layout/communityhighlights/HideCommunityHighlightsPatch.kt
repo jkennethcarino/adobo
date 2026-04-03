@@ -10,6 +10,7 @@ import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.TypeReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
+import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.patches.reddit.shared.util.updateClassField
 import dev.jkcarino.adobo.util.getReference
 
@@ -17,9 +18,9 @@ import dev.jkcarino.adobo.util.getReference
 val hideCommunityHighlightsPatch = bytecodePatch(
     name = "Hide community highlights",
     description = "Hides the community highlights section.",
-    use = false
+    default = false
 ) {
-    compatibleWith("com.reddit.frontpage")
+    compatibleWith(COMPATIBILITY_REDDIT)
 
     dependsOn(spoofCertificateHashPatch)
 
@@ -45,10 +46,9 @@ val hideCommunityHighlightsPatch = bytecodePatch(
                         && instruction.getReference<TypeReference>()?.type == uiStateInterface
                 }
 
-            val unitFingerprint = UnitFingerprint.match(UnitToStringFingerprint.classDef)
-            val unitIndex = unitFingerprint.instructionMatches.last().index
+            val unitIndex = UnitFingerprint.instructionMatches.last().index
             val unitInstruction =
-                unitFingerprint.method.getInstruction<OneRegisterInstruction>(unitIndex)
+                UnitFingerprint.method.getInstruction<OneRegisterInstruction>(unitIndex)
             val unitFieldReference = unitInstruction.getReference<FieldReference>()!!
 
             val unitDefiningClass = unitFieldReference.definingClass

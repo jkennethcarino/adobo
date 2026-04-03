@@ -9,7 +9,7 @@ val disableWebViewMetricsPatch = resourcePatch(
     name = "Disable metrics collection in WebView",
     description = "Disables the collection of diagnostic data or usage statistics " +
         "that are sent to Google.",
-    use = false
+    default = false
 ) {
     execute {
         androidManifest {

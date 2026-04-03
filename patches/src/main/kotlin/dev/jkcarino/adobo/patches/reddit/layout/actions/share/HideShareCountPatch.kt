@@ -5,7 +5,7 @@ import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
-import dev.jkcarino.adobo.patches.reddit.shared.LinkToStringFingerprint
+import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.patches.reddit.shared.util.updateClassField
 import dev.jkcarino.adobo.util.getReference
 import dev.jkcarino.adobo.util.returnEarly
@@ -14,9 +14,9 @@ import dev.jkcarino.adobo.util.returnEarly
 val hideShareCountPatch = bytecodePatch(
     name = "Hide share count",
     description = "Hides the share count on Reddit posts.",
-    use = false
+    default = false
 ) {
-    compatibleWith("com.reddit.frontpage")
+    compatibleWith(COMPATIBILITY_REDDIT)
 
     dependsOn(spoofCertificateHashPatch)
 
@@ -36,9 +36,6 @@ val hideShareCountPatch = bytecodePatch(
             value = null
         )
 
-        GetShareCountFingerprint
-            .match(LinkToStringFingerprint.classDef)
-            .method
-            .returnEarly()
+        GetShareCountFingerprint.method.returnEarly()
     }
 }

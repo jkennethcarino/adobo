@@ -13,7 +13,7 @@ import dev.jkcarino.adobo.util.getReference
 val spoofAdvertisingIdPatch = bytecodePatch(
     name = "Spoof Advertising ID",
     description = "Spoofs the device's advertising ID with a string of zeros.",
-    use = false
+    default = false
 ) {
     execute {
         GetInfoInternalFingerprint.method.apply {

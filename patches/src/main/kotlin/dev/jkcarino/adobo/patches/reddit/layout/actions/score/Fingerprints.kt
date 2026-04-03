@@ -1,6 +1,7 @@
 package dev.jkcarino.adobo.patches.reddit.layout.actions.score
 
 import app.morphe.patcher.Fingerprint
+import dev.jkcarino.adobo.patches.reddit.shared.LinkToStringFingerprint
 
 internal val searchPostScoreToStringFingerprints =
     setOf(
@@ -24,12 +25,14 @@ internal object ActionCellFragmentToStringFingerprint : Fingerprint(
 )
 
 internal object GetScoreFingerprint : Fingerprint(
+    classFingerprint = LinkToStringFingerprint,
     name = "getScore",
     returnType = "I",
     parameters = listOf()
 )
 
 internal object GetHideScoreFingerprint : Fingerprint(
+    classFingerprint = LinkToStringFingerprint,
     name = "getHideScore",
     returnType = "Z",
     parameters = listOf()
