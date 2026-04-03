@@ -1,3 +1,10 @@
+# [1.1.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2026-04-03)
+
+
+### Features
+
+* **Gboard:** Add `Enable voice typing in incognito` patch ([9e1fcd8](https://github.com/jkennethcarino/adobo/commit/9e1fcd88fb477c34345c90a33a41f8e5370a9b22))
+
 # [1.1.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.0.0...v1.1.0-dev.1) (2026-03-11)
 
 

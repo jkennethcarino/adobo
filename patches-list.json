@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0-dev.1",
+  "version": "1.1.0-dev.2",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -275,6 +275,18 @@
       "name": "Enable clipboard in incognito",
       "description": "Enables clipboard support in incognito mode.",
       "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.google.android.inputmethod.latin": null
+      },
+      "options": []
+    },
+    {
+      "name": "Enable voice typing in incognito",
+      "description": "Enables voice typing in incognito mode.",
+      "use": false,
       "dependencies": [
         "BytecodePatch"
       ],
