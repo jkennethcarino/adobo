@@ -1,3 +1,10 @@
+# [1.1.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2026-04-03)
+
+
+### Bug Fixes
+
+* **Reddit - Hide Ask button from search bar:** Support the latest version ([622f099](https://github.com/jkennethcarino/adobo/commit/622f099176f4fe71fd2bf3537de0f7437c20ff27))
+
 # [1.1.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2026-04-03)
 
 
