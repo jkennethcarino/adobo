@@ -101,6 +101,21 @@ class HostsBlocker private constructor(
         }
 
         /**
+         * Creates an [HostsBlocker] instance by parsing a blocklist from the
+         * given multiline [input] string.
+         *
+         * @param input The multiline string containing the blocklist.
+         * @return An instance of [HostsBlocker] initialized with the blocklist from the
+         *   input string.
+         */
+        fun fromString(input: String): HostsBlocker {
+            val blocklist = hashSetOf<String>()
+            val lines = input.lineSequence()
+            parseLines(lines, blocklist)
+            return HostsBlocker(blocklist)
+        }
+
+        /**
          * Extracts the host from a given [input] string, which may be a URL or a hostname.
          *
          * @param input The input string.
