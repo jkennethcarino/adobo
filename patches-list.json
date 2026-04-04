@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0-dev.3",
+  "version": "1.1.0-dev.4",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -17,7 +17,9 @@
       "name": "Block ads, trackers, and analytics",
       "description": "Blocks ads, trackers, analytics, and unwanted content in apps and games using a hosts file.",
       "use": false,
-      "dependencies": [],
+      "dependencies": [
+        "BytecodePatch"
+      ],
       "compatiblePackages": null,
       "options": [
         {
@@ -395,6 +397,18 @@
       ],
       "compatiblePackages": {
         "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
+      "name": "Remove IMDb's ads, trackers, and analytics",
+      "description": "Removes ads, trackers, and analytics in the IMDb app.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.imdb.mobile": null
       },
       "options": []
     },

@@ -1,3 +1,10 @@
+# [1.1.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2026-04-04)
+
+
+### Features
+
+* **IMDb:** Add `Remove IMDb's ads, trackers, and analytics` patch ([f968a78](https://github.com/jkennethcarino/adobo/commit/f968a7898e76febf232e787e68b5b040362e3141))
+
 # [1.1.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2026-04-03)
 
 
