@@ -1,3 +1,10 @@
+# [1.1.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2026-04-04)
+
+
+### Features
+
+* **Gboard:** Add `Enable key shape selection` patch ([57fee34](https://github.com/jkennethcarino/adobo/commit/57fee34ed47eb5998216a9b871d82019683f7952))
+
 # [1.1.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2026-04-04)
 
 
