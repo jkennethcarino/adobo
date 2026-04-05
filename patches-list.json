@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0-dev.5",
+  "version": "1.1.0-dev.6",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -25,7 +25,7 @@
         {
           "key": "hosts",
           "title": "Hosts file",
-          "description": "The hosts file containing hosts or domains you want to block.",
+          "description": "The hosts file containing hosts or domains you want to block. Select a file or paste the full file path.",
           "required": true,
           "type": "kotlin.String",
           "default": null,
@@ -42,6 +42,15 @@
             "Default": "0.0.0.0",
             "localhost": "127.0.0.1"
           }
+        },
+        {
+          "key": "isWildcard",
+          "title": "Wildcard blocking",
+          "description": "When enabled, entries like \"example.com\" also block subdomains like \"www.example.com\" and \"sub.www.example.com\".",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
         }
       ]
     },

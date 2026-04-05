@@ -1,3 +1,10 @@
+# [1.1.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.5...v1.1.0-dev.6) (2026-04-05)
+
+
+### Features
+
+* **Content Blocker - Hosts:** Add wildcard blocking option ([90ff190](https://github.com/jkennethcarino/adobo/commit/90ff1906abb06a511f333dca74ccc9b7e8368019))
+
 # [1.1.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2026-04-04)
 
 
