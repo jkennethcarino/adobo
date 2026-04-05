@@ -18,6 +18,7 @@ const val DEFAULT_REDIRECTION_IP = "0.0.0.0"
 data class HostsBlockerConfig(
     val hostsBlocker: HostsBlocker,
     val redirectionIp: String = DEFAULT_REDIRECTION_IP,
+    val wildcard: Boolean = true,
 )
 
 fun baseHostsBlockerPatch(
@@ -26,7 +27,7 @@ fun baseHostsBlockerPatch(
     val logger = Logger.getLogger(this::class.java.name)
 
     execute {
-        val (hostsBlocker, redirectionIp) = configProvider()
+        val (hostsBlocker, redirectionIp, wildcard) = configProvider()
         val blockedHosts = mutableSetOf<String>()
 
         transformationPatch(
@@ -36,7 +37,7 @@ fun baseHostsBlockerPatch(
                     ?: return@fieldFilter false
                 val fieldValue = encodedValue.value
 
-                hostsBlocker.isBlocked(fieldValue)
+                hostsBlocker.isBlocked(fieldValue, wildcard)
             },
             fieldTransform = fieldTransform@{ mutableField, _ ->
                 val fieldValue = mutableField
@@ -63,7 +64,7 @@ fun baseHostsBlockerPatch(
                     ?: return@filter null
                 val string = reference.string
 
-                if (!hostsBlocker.isBlocked(string)) {
+                if (!hostsBlocker.isBlocked(string, wildcard)) {
                     return@filter null
                 }
 

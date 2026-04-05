@@ -1,5 +1,6 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.hosts
 
+import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.stringOption
 import java.io.File
@@ -15,7 +16,8 @@ val hostsBlockerPatch = bytecodePatch(
         key = "hosts",
         default = null,
         title = "Hosts file",
-        description = "The hosts file containing hosts or domains you want to block.",
+        description = "The hosts file containing hosts or domains you want to block. " +
+            "Select a file or paste the full file path.",
         required = true
     ) { filePath ->
         !filePath.isNullOrEmpty() && File(filePath.trim()).isFile
@@ -23,12 +25,12 @@ val hostsBlockerPatch = bytecodePatch(
 
     val redirectionIpOption by stringOption(
         key = "redirectionIp",
-        title = "Redirection IP",
         default = DEFAULT_REDIRECTION_IP,
         values = mapOf(
             "Default" to DEFAULT_REDIRECTION_IP,
             "localhost" to "127.0.0.1"
         ),
+        title = "Redirection IP",
         description = "The IP address to redirect blocked domains to. " +
             "This will be used with your hosts list to block content.",
         required = true
@@ -38,6 +40,14 @@ val hostsBlockerPatch = bytecodePatch(
         !ipAddress.isNullOrEmpty() && ipAddress.matches(ipAddressPattern)
     }
 
+    val isWildcardOption by booleanOption(
+        key = "isWildcard",
+        default = true,
+        title = "Wildcard blocking",
+        description = "When enabled, entries like \"example.com\" also block subdomains like " +
+            "\"www.example.com\" and \"sub.www.example.com\"."
+    )
+
     dependsOn(
         baseHostsBlockerPatch {
             val hostsFile = File(hostsOption!!.trim())
@@ -45,7 +55,8 @@ val hostsBlockerPatch = bytecodePatch(
 
             HostsBlockerConfig(
                 hostsBlocker = hostsBlocker,
-                redirectionIp = redirectionIpOption!!
+                redirectionIp = redirectionIpOption!!,
+                wildcard = isWildcardOption!!
             )
         }
     )
