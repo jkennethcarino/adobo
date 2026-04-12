@@ -7,6 +7,7 @@ import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.stringsOption
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
+import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 import dev.jkcarino.adobo.util.toHexString
 import java.util.logging.Logger
 
@@ -15,9 +16,9 @@ val toggleFeatureFlagsPatch = bytecodePatch(
     name = "Toggle feature flags",
     description = "Toggles Gboard feature flags to enable or disable " +
         "experimental or hidden features.",
-    use = false
+    default = false
 ) {
-    compatibleWith("com.google.android.inputmethod.latin")
+    compatibleWith(COMPATIBILITY_GBOARD)
 
     dependsOn(bypassSignaturePatch)
 

@@ -1,34 +1,23 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.hosts
 
-import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
-import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
+import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.stringOption
-import app.morphe.patcher.util.proxy.mutableTypes.encodedValue.MutableStringEncodedValue
-import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
-import com.android.tools.smali.dexlib2.iface.reference.StringReference
-import com.android.tools.smali.dexlib2.iface.value.StringEncodedValue
-import com.android.tools.smali.dexlib2.immutable.value.ImmutableStringEncodedValue
-import dev.jkcarino.adobo.util.getEncodedValue
-import dev.jkcarino.adobo.util.getReference
-import dev.jkcarino.adobo.util.transformation.transformationPatch
 import java.io.File
-import java.util.logging.Logger
 
 @Suppress("unused")
 val hostsBlockerPatch = bytecodePatch(
     name = "Block ads, trackers, and analytics",
     description = "Blocks ads, trackers, analytics, and unwanted content in apps and games " +
         "using a hosts file.",
-    use = false
+    default = false
 ) {
-    val logger = Logger.getLogger(this::class.java.name)
-
     val hostsOption by stringOption(
         key = "hosts",
         default = null,
         title = "Hosts file",
-        description = "The hosts file containing hosts or domains you want to block.",
+        description = "The hosts file containing hosts or domains you want to block. " +
+            "Select a file or paste the full file path.",
         required = true
     ) { filePath ->
         !filePath.isNullOrEmpty() && File(filePath.trim()).isFile
@@ -36,12 +25,12 @@ val hostsBlockerPatch = bytecodePatch(
 
     val redirectionIpOption by stringOption(
         key = "redirectionIp",
-        title = "Redirection IP",
-        default = "0.0.0.0",
+        default = DEFAULT_REDIRECTION_IP,
         values = mapOf(
-            "Default" to "0.0.0.0",
+            "Default" to DEFAULT_REDIRECTION_IP,
             "localhost" to "127.0.0.1"
         ),
+        title = "Redirection IP",
         description = "The IP address to redirect blocked domains to. " +
             "This will be used with your hosts list to block content.",
         required = true
@@ -51,82 +40,24 @@ val hostsBlockerPatch = bytecodePatch(
         !ipAddress.isNullOrEmpty() && ipAddress.matches(ipAddressPattern)
     }
 
-    execute {
-        val hostsFile = File(hostsOption!!.trim())
-        val redirectionIp = redirectionIpOption!!
-        val blockedHosts = mutableSetOf<String>()
-        val hostsBlocker = HostsBlocker.fromFile(hostsFile)
+    val isWildcardOption by booleanOption(
+        key = "isWildcard",
+        default = true,
+        title = "Wildcard blocking",
+        description = "When enabled, entries like \"example.com\" also block subdomains like " +
+            "\"www.example.com\" and \"sub.www.example.com\"."
+    )
 
-        transformationPatch(
-            fieldFilter = fieldFilter@{ _, field ->
-                val encodedValue = field
-                    .getEncodedValue<StringEncodedValue>()
-                    ?: return@fieldFilter false
-                val fieldValue = encodedValue.value
+    dependsOn(
+        baseHostsBlockerPatch {
+            val hostsFile = File(hostsOption!!.trim())
+            val hostsBlocker = HostsBlocker.fromFile(hostsFile)
 
-                hostsBlocker.isBlocked(fieldValue)
-            },
-            fieldTransform = fieldTransform@{ mutableField, _ ->
-                val fieldValue = mutableField
-                    .getEncodedValue<StringEncodedValue>()!!
-                    .value
-
-                val blockedHost = HostsBlocker
-                    .extractHost(fieldValue)!!
-                    .also(blockedHosts::add)
-
-                val updatedHost = fieldValue.replace(
-                    oldValue = blockedHost,
-                    newValue = redirectionIp,
-                    ignoreCase = true
-                )
-
-                mutableField.initialValue = MutableStringEncodedValue(
-                    ImmutableStringEncodedValue(updatedHost)
-                )
-            },
-            methodFilter = filter@{ _, _, instruction, instructionIndex ->
-                val reference = instruction
-                    .getReference<StringReference>()
-                    ?: return@filter null
-                val string = reference.string
-
-                if (!hostsBlocker.isBlocked(string)) {
-                    return@filter null
-                }
-
-                instructionIndex to string
-            },
-            methodTransform = { mutableMethod, entry ->
-                val (index, string) = entry
-                val register = mutableMethod
-                    .getInstruction<OneRegisterInstruction>(index)
-                    .registerA
-
-                val blockedHost = HostsBlocker
-                    .extractHost(string)!!
-                    .also(blockedHosts::add)
-
-                val updatedHost = string.replace(
-                    oldValue = blockedHost,
-                    newValue = redirectionIp,
-                    ignoreCase = true
-                )
-
-                mutableMethod.replaceInstruction(
-                    index = index,
-                    smaliInstruction = """
-                        const-string v$register, "$updatedHost"
-                    """
-                )
-            }
-        )
-
-        blockedHosts.forEach { host ->
-            logger.info("[Found] $host blocked.")
+            HostsBlockerConfig(
+                hostsBlocker = hostsBlocker,
+                redirectionIp = redirectionIpOption!!,
+                wildcard = isWildcardOption!!
+            )
         }
-
-        hostsBlocker.close()
-        blockedHosts.clear()
-    }
+    )
 }

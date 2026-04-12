@@ -16,7 +16,7 @@ val changePackageNamePatch = resourcePatch(
     name = "Change package name",
     description = "Appends \".adobo\" to the package name by default. " +
         "Changing the package name of the app can lead to unexpected issues.",
-    use = false,
+    default = false
 ) {
     val packageNameOption =
         stringOption(

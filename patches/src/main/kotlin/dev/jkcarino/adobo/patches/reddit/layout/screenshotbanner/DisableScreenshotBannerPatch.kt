@@ -5,15 +5,15 @@ import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
+import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.util.returnEarly
 
 @Suppress("unused")
 val disableScreenshotBannerPatch = bytecodePatch(
     name = "Disable screenshot banner",
-    description = "Disables the banner that shows up after taking a screenshot.",
-    use = true
+    description = "Disables the banner that shows up after taking a screenshot."
 ) {
-    compatibleWith("com.reddit.frontpage")
+    compatibleWith(COMPATIBILITY_REDDIT)
 
     dependsOn(spoofCertificateHashPatch)
 

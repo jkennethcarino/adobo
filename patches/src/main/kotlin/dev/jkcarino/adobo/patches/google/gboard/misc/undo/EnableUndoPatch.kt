@@ -3,14 +3,14 @@ package dev.jkcarino.adobo.patches.google.gboard.misc.undo
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
+import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 
 @Suppress("unused")
 val enableUndoPatch = bytecodePatch(
     name = "Enable Undo feature",
-    description = "Enables undo feature to quickly undo or correct typing mistakes.",
-    use = true
+    description = "Enables undo feature to quickly undo or correct typing mistakes."
 ) {
-    compatibleWith("com.google.android.inputmethod.latin")
+    compatibleWith(COMPATIBILITY_GBOARD)
 
     dependsOn(bypassSignaturePatch)
 

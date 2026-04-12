@@ -2,11 +2,12 @@ package dev.jkcarino.adobo.patches.reddit.misc.firebase
 
 import app.morphe.patcher.patch.bytecodePatch
 import dev.jkcarino.adobo.patches.all.firebase.installations.baseSpoofAndroidCertPatch
+import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 val spoofCertificateHashPatch = bytecodePatch(
     description = "Spoofs the app's Firebase certificate hash to allow push notifications."
 ) {
-    compatibleWith("com.reddit.frontpage")
+    compatibleWith(COMPATIBILITY_REDDIT)
 
     dependsOn(
         baseSpoofAndroidCertPatch(

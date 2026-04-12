@@ -1,3 +1,61 @@
+# [1.1.0-dev.8](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.7...v1.1.0-dev.8) (2026-04-12)
+
+
+### Features
+
+* **Reddit:** Add `Hide awards` patch ([4fe92ad](https://github.com/jkennethcarino/adobo/commit/4fe92ad7ea143b977f52031ab4acd283ec0ac7cc))
+
+# [1.1.0-dev.7](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.6...v1.1.0-dev.7) (2026-04-12)
+
+
+### Bug Fixes
+
+* **Reddit - Hide post view counts:** Resolve issue with view counts displaying intermittently ([bf9c0ec](https://github.com/jkennethcarino/adobo/commit/bf9c0ec2a159700f7fa3981f63fd0ad0d6ae1396))
+
+# [1.1.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.5...v1.1.0-dev.6) (2026-04-05)
+
+
+### Features
+
+* **Content Blocker - Hosts:** Add wildcard blocking option ([90ff190](https://github.com/jkennethcarino/adobo/commit/90ff1906abb06a511f333dca74ccc9b7e8368019))
+
+# [1.1.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2026-04-04)
+
+
+### Features
+
+* **Gboard:** Add `Enable key shape selection` patch ([57fee34](https://github.com/jkennethcarino/adobo/commit/57fee34ed47eb5998216a9b871d82019683f7952))
+
+# [1.1.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2026-04-04)
+
+
+### Features
+
+* **IMDb:** Add `Remove IMDb's ads, trackers, and analytics` patch ([f968a78](https://github.com/jkennethcarino/adobo/commit/f968a7898e76febf232e787e68b5b040362e3141))
+
+# [1.1.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2026-04-03)
+
+
+### Bug Fixes
+
+* **Reddit - Hide Ask button from search bar:** Support the latest version ([622f099](https://github.com/jkennethcarino/adobo/commit/622f099176f4fe71fd2bf3537de0f7437c20ff27))
+
+# [1.1.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2026-04-03)
+
+
+### Features
+
+* **Gboard:** Add `Enable voice typing in incognito` patch ([9e1fcd8](https://github.com/jkennethcarino/adobo/commit/9e1fcd88fb477c34345c90a33a41f8e5370a9b22))
+
+# [1.1.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.0.0...v1.1.0-dev.1) (2026-03-11)
+
+
+### Features
+
+* **Reddit:** Add `Hide Ask button from search bar` patch ([b8008fa](https://github.com/jkennethcarino/adobo/commit/b8008faa62388cb29a01fa999ef21c94c5beee44))
+* **Reddit:** Add `Hide post view counts` patch ([fc89952](https://github.com/jkennethcarino/adobo/commit/fc899521af359893d77bb47525b3f6491aca6e28))
+* **Reddit:** Add `Hide prominent search bar` patch ([4adf2c3](https://github.com/jkennethcarino/adobo/commit/4adf2c3009adcfe3e38130c69370b1be72601259))
+
 # 1.0.0 (2026-03-01)
 
 

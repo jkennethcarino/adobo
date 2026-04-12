@@ -10,7 +10,7 @@ val spoofSignatureVerificationPatch = bytecodePatch(
     name = "Spoof signature verification",
     description = "Spoofs the signature verification when the app starts up. " +
         "It is recommended to use the unmodified app to work properly.",
-    use = false
+    default = false
 ) {
     extendWith("extensions/all/detection/signature/pms.mpe")
 

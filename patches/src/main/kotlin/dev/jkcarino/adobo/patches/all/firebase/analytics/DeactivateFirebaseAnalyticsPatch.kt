@@ -9,7 +9,7 @@ val deactivateFirebaseAnalyticsPatch = resourcePatch(
     name = "Deactivate Firebase Analytics",
     description = "Deactivates Firebase Analytics and removes its associated " +
         "broadcast receivers and services.",
-    use = false
+    default = false
 ) {
     dependsOn(
         removeAdsServicesPatch,

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0-dev.8",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -17,13 +17,15 @@
       "name": "Block ads, trackers, and analytics",
       "description": "Blocks ads, trackers, analytics, and unwanted content in apps and games using a hosts file.",
       "use": false,
-      "dependencies": [],
+      "dependencies": [
+        "BytecodePatch"
+      ],
       "compatiblePackages": null,
       "options": [
         {
           "key": "hosts",
           "title": "Hosts file",
-          "description": "The hosts file containing hosts or domains you want to block.",
+          "description": "The hosts file containing hosts or domains you want to block. Select a file or paste the full file path.",
           "required": true,
           "type": "kotlin.String",
           "default": null,
@@ -40,6 +42,15 @@
             "Default": "0.0.0.0",
             "localhost": "127.0.0.1"
           }
+        },
+        {
+          "key": "isWildcard",
+          "title": "Wildcard blocking",
+          "description": "When enabled, entries like \"example.com\" also block subdomains like \"www.example.com\" and \"sub.www.example.com\".",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
         }
       ]
     },
@@ -284,8 +295,80 @@
       "options": []
     },
     {
+      "name": "Enable key shape selection",
+      "description": "Enables an option to select a key shape from the theme.",
+      "use": false,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.google.android.inputmethod.latin": null
+      },
+      "options": []
+    },
+    {
+      "name": "Enable voice typing in incognito",
+      "description": "Enables voice typing in incognito mode.",
+      "use": false,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.google.android.inputmethod.latin": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide Ask button from search bar",
+      "description": "Hides the Ask button (Reddit Answers) from the search bar.",
+      "use": false,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide awards",
+      "description": "Hides the awards on Reddit posts and comments.",
+      "use": false,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
       "name": "Hide community highlights",
       "description": "Hides the community highlights section.",
+      "use": false,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide post view counts",
+      "description": "Removes the \"views\" indicator from the post metadata.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide prominent search bar",
+      "description": "Hides the new prominent search bar on the main screen.",
       "use": false,
       "dependencies": [
         "BytecodePatch"
@@ -347,6 +430,18 @@
       ],
       "compatiblePackages": {
         "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
+      "name": "Remove IMDb's ads, trackers, and analytics",
+      "description": "Removes ads, trackers, and analytics in the IMDb app.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.imdb.mobile": null
       },
       "options": []
     },

@@ -8,14 +8,21 @@ class HostsBlocker private constructor(
     private val blocklist: HashSet<String>,
 ) {
     /**
-     * Checks if the given [host] is blocked based on the blocklist. It performs exact matching and
-     * subdomain matching. For example, if "example.com" is in the blocklist, then "example.com",
-     * "www.example.com", and "sub.www.example.com" would all be considered blocked.
+     * Checks if the given [host] is blocked based on the blocklist.
+     *
+     * When [wildcard] is true (default), subdomain matching is performed. For example, if
+     * "example.com" is in the blocklist, then "example.com", "www.example.com", and
+     * "sub.www.example.com" would all be considered blocked. When [wildcard] is false,
+     * only exact host matches will be considered blocked.
      *
      * @param host The host to check.
+     * @param wildcard Whether to enable subdomain (wildcard) matching. Defaults to true.
      * @return true if the host is blocked, false otherwise.
      */
-    fun isBlocked(host: String): Boolean {
+    fun isBlocked(
+        host: String,
+        wildcard: Boolean = true,
+    ): Boolean {
         if (host.isBlank()) return false
 
         var normalizedHost = normalizeDomain(host)
@@ -26,6 +33,7 @@ class HostsBlocker private constructor(
         if (blocklist.contains(normalizedHost)) {
             return true
         }
+        if (!wildcard) return false
 
         while (normalizedHost.contains(DOT_CHAR)) {
             normalizedHost = normalizedHost.substringAfter(DOT_CHAR)
@@ -97,6 +105,21 @@ class HostsBlocker private constructor(
             file.useLines { lines ->
                 parseLines(lines, blocklist)
             }
+            return HostsBlocker(blocklist)
+        }
+
+        /**
+         * Creates an [HostsBlocker] instance by parsing a blocklist from the
+         * given multiline [input] string.
+         *
+         * @param input The multiline string containing the blocklist.
+         * @return An instance of [HostsBlocker] initialized with the blocklist from the
+         *   input string.
+         */
+        fun fromString(input: String): HostsBlocker {
+            val blocklist = hashSetOf<String>()
+            val lines = input.lineSequence()
+            parseLines(lines, blocklist)
             return HostsBlocker(blocklist)
         }
 
