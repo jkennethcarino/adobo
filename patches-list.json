@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0-dev.7",
+  "version": "1.1.0-dev.8",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -321,6 +321,18 @@
     {
       "name": "Hide Ask button from search bar",
       "description": "Hides the Ask button (Reddit Answers) from the search bar.",
+      "use": false,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.reddit.frontpage": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide awards",
+      "description": "Hides the awards on Reddit posts and comments.",
       "use": false,
       "dependencies": [
         "BytecodePatch"

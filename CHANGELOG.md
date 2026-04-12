@@ -1,3 +1,10 @@
+# [1.1.0-dev.8](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.7...v1.1.0-dev.8) (2026-04-12)
+
+
+### Features
+
+* **Reddit:** Add `Hide awards` patch ([4fe92ad](https://github.com/jkennethcarino/adobo/commit/4fe92ad7ea143b977f52031ab4acd283ec0ac7cc))
+
 # [1.1.0-dev.7](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.6...v1.1.0-dev.7) (2026-04-12)
 
 
