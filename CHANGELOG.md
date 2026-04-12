@@ -1,3 +1,10 @@
+# [1.1.0-dev.7](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.6...v1.1.0-dev.7) (2026-04-12)
+
+
+### Bug Fixes
+
+* **Reddit - Hide post view counts:** Resolve issue with view counts displaying intermittently ([bf9c0ec](https://github.com/jkennethcarino/adobo/commit/bf9c0ec2a159700f7fa3981f63fd0ad0d6ae1396))
+
 # [1.1.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.1.0-dev.5...v1.1.0-dev.6) (2026-04-05)
 
 
