@@ -20,7 +20,7 @@ val hideViewCountsPatch = bytecodePatch(
     dependsOn(spoofCertificateHashPatch)
 
     execute {
-        ActionCelFragmentToStringFingerprint.let { fingerprint ->
+        toStringFingerprints.forEach { fingerprint ->
             val viewCountIndex = fingerprint.instructionMatches.last().index
             val viewCountInstruction =
                 fingerprint.method.getInstruction<TwoRegisterInstruction>(viewCountIndex)
