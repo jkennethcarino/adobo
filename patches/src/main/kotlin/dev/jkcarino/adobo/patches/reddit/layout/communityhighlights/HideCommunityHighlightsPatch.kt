@@ -25,18 +25,19 @@ val hideCommunityHighlightsPatch = bytecodePatch(
     dependsOn(spoofCertificateHashPatch)
 
     execute {
-        val toStringFingerprint = SubredditInfoByIdToStringFingerprint
-        val highlightedPostsIndex = toStringFingerprint.stringMatches.last().index + 2
-        val highlightedPostsInstruction =
-            toStringFingerprint.method.getInstruction<TwoRegisterInstruction>(highlightedPostsIndex)
-        val highlightedPostsFieldReference =
-            highlightedPostsInstruction.getReference<FieldReference>()!!
+        SubredditInfoByIdToStringFingerprint.apply {
+            val highlightedPostsIndex = instructionMatches.last().index + 2
+            val highlightedPostsInstruction =
+                method.getInstruction<TwoRegisterInstruction>(highlightedPostsIndex)
+            val highlightedPostsFieldReference =
+                highlightedPostsInstruction.getReference<FieldReference>()!!
 
-        updateClassField(
-            classDef = toStringFingerprint.classDef,
-            fieldReference = highlightedPostsFieldReference,
-            value = null
-        )
+            updateClassField(
+                classDef = classDef,
+                fieldReference = highlightedPostsFieldReference,
+                value = null
+            )
+        }
 
         InvokeFingerprint.method.apply {
             val uiStateInterface = LoadedToStringFingerprint.classDef.interfaces.first()

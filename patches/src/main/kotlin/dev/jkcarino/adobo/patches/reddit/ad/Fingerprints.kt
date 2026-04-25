@@ -1,8 +1,11 @@
 package dev.jkcarino.adobo.patches.reddit.ad
 
 import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
 import app.morphe.patcher.OpcodesFilter
+import app.morphe.patcher.anyInstruction
 import app.morphe.patcher.opcode
+import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.ClassDef
@@ -40,37 +43,38 @@ internal object OkHttpConstructorFingerprint : Fingerprint(
     definingClass = "Lokhttp3/OkHttpClient;",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
     parameters = listOf("Lokhttp3/OkHttpClient\$Builder;"),
-    filters = OpcodesFilter.opcodesToFilters(
-        Opcode.CONST_STRING,
-        Opcode.INVOKE_STATIC,
-        null,
-        null,
-        Opcode.MOVE_RESULT_OBJECT,
-        Opcode.IPUT_OBJECT,
-        null,
-        Opcode.MOVE_RESULT_OBJECT,
+    filters = listOf(
+        opcode(Opcode.MOVE_RESULT_OBJECT),
+        opcode(Opcode.IPUT_OBJECT, MatchAfterImmediately()),
+        anyInstruction(
+            opcode(Opcode.INVOKE_VIRTUAL),
+            opcode(Opcode.INVOKE_VIRTUAL_RANGE),
+            location = MatchAfterImmediately()
+        ),
+        opcode(Opcode.MOVE_RESULT_OBJECT, MatchAfterImmediately())
     )
 )
 
 internal object RealBufferedSourceCommonIndexOfFingerprint : Fingerprint(
     returnType = "J",
     parameters = listOf("B", "J", "J"),
-    strings = listOf(
-        "fromIndex=0 toIndex=",
-        "closed",
+    filters = listOf(
+        string("fromIndex=0 toIndex="),
+        string("closed")
     )
 )
 
 internal object BufferCommonReadAndWriteUnsafeFingerprint : Fingerprint(
     returnType = "L",
     parameters = listOf("L"),
-    strings = listOf("already attached to a buffer")
+    filters = listOf(
+        string("already attached to a buffer")
+    )
 )
 
 internal object BufferReadStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
-    parameters = listOf("Ljava/nio/charset/Charset;"),
-    strings = listOf("charset")
+    parameters = listOf("Ljava/nio/charset/Charset;")
 )
 
 internal object BufferCloneFingerprint : Fingerprint(

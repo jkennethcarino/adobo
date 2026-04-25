@@ -33,22 +33,24 @@ internal object UnitFingerprint : Fingerprint(
 internal object SubredditInfoByIdToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),
-    strings = listOf(
-        "SubredditInfoById(__typename=",
-        ", highlightedPostsModeratorsInfoFragment=",
+    filters = listOf(
+        string("SubredditInfoById(__typename="),
+        string(", highlightedPostsModeratorsInfoFragment=")
     )
 )
 
 internal object InvokeFingerprint : Fingerprint(
     name = "invoke",
-    strings = listOf(
-        "\$this\$AnimatedContent",
-        "collapse_expand_highlight",
+    filters = listOf(
+        string("collapse_expand_highlight"),
+        string("content caret")
     )
 )
 
 internal object LoadedToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),
-    strings = listOf("Loaded(highlightedItems=")
+    filters = listOf(
+        string("Loaded(highlightedItems=")
+    )
 )

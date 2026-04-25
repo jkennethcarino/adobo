@@ -21,7 +21,7 @@ val hideShareCountPatch = bytecodePatch(
     dependsOn(spoofCertificateHashPatch)
 
     execute {
-        val shareCountMatch = ActionCellFragmentToStringFingerprint.stringMatches.last()
+        val shareCountMatch = ActionCellFragmentToStringFingerprint.instructionMatches.last()
         val shareCountIndex = shareCountMatch.index + 2
         val shareCountInstruction = ActionCellFragmentToStringFingerprint
             .method

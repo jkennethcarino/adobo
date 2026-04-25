@@ -41,7 +41,7 @@ val hideScoresPatch = bytecodePatch(
 
     execute {
         fun Fingerprint.updateScoreClassField(value: Any?, offset: Int = 2) {
-            val scoreIndex = this.stringMatches.last().index + offset
+            val scoreIndex = this.instructionMatches.last().index + offset
             val scoreInstruction = this.method.getInstruction<TwoRegisterInstruction>(scoreIndex)
             val scoreFieldReference = scoreInstruction.getReference<FieldReference>()!!
 
