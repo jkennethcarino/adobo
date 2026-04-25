@@ -1,3 +1,10 @@
+## [1.1.1-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.1.0...v1.1.1-dev.1) (2026-04-25)
+
+
+### Bug Fixes
+
+* **Reddit:** Support the latest version ([8a8fe7d](https://github.com/jkennethcarino/adobo/commit/8a8fe7d3c9911192388db5dd93598b5a5453920b))
+
 # [1.1.0](https://github.com/jkennethcarino/adobo/compare/v1.0.0...v1.1.0) (2026-04-12)
 
 
