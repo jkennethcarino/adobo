@@ -16,7 +16,8 @@ private object AccountToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),
     filters = listOf(
-        string("Account(id=")
+        string("Account(id="),
+        string(", outboundClickTracking=")
     )
 )
 
