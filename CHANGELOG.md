@@ -1,3 +1,10 @@
+## [1.1.1-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.1.1-dev.1...v1.1.1-dev.2) (2026-04-25)
+
+
+### Bug Fixes
+
+* **Reddit - Open external links directly:** Fix fingerprint conflicts ([f77c92a](https://github.com/jkennethcarino/adobo/commit/f77c92aba9b2fee883cd869807ed17ab55f74349))
+
 ## [1.1.1-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.1.0...v1.1.1-dev.1) (2026-04-25)
 
 
