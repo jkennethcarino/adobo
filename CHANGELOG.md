@@ -1,3 +1,11 @@
+# [1.2.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.1.1-dev.2...v1.2.0-dev.1) (2026-05-02)
+
+
+### Features
+
+* **Reddit:** Add `Hide user community badges` patch ([5e20e27](https://github.com/jkennethcarino/adobo/commit/5e20e273bec1892d99eda3b224662c8bd06ce3d6))
+* **Reddit:** Add `Hide user flairs` patch ([a7a52e9](https://github.com/jkennethcarino/adobo/commit/a7a52e9a99d1ec97bedb74a9382fc5e0d5261861))
+
 ## [1.1.1-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.1.1-dev.1...v1.1.1-dev.2) (2026-04-25)
 
 
