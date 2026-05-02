@@ -10,7 +10,11 @@ import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.ClassDef
 
+internal const val EXTENSION_CLASS_DESCRIPTOR =
+    "Ldev/jkcarino/extension/reddit/frontpage/AdBlockInterceptor;"
+
 internal object InterceptFingerprint : Fingerprint(
+    definingClass = EXTENSION_CLASS_DESCRIPTOR,
     returnType = "Lokhttp3/Response;",
     parameters = listOf("Lokhttp3/Interceptor\$Chain;"),
     filters = OpcodesFilter.opcodesToFilters(
@@ -73,22 +77,28 @@ internal object BufferCommonReadAndWriteUnsafeFingerprint : Fingerprint(
 )
 
 internal object BufferReadStringFingerprint : Fingerprint(
+    classFingerprint = BufferCommonReadAndWriteUnsafeFingerprint,
     returnType = "Ljava/lang/String;",
     parameters = listOf("Ljava/nio/charset/Charset;")
 )
 
 internal object BufferCloneFingerprint : Fingerprint(
+    classFingerprint = BufferCommonReadAndWriteUnsafeFingerprint,
     name = "clone",
     accessFlags = listOf(
         AccessFlags.PUBLIC,
         AccessFlags.FINAL,
         AccessFlags.BRIDGE,
         AccessFlags.SYNTHETIC
+    ),
+    filters = listOf(
+        opcode(Opcode.INVOKE_VIRTUAL)
     )
 )
 
 internal val bufferedSourceGetBufferFingerprint = { classDef: ClassDef ->
     Fingerprint(
+        classFingerprint = RealBufferedSourceCommonIndexOfFingerprint,
         returnType = classDef.type,
         parameters = listOf(),
         filters = listOf(
