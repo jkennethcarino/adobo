@@ -1,3 +1,10 @@
+# [1.2.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.1...v1.2.0-dev.2) (2026-05-03)
+
+
+### Features
+
+* List available patches in README.md ([5c5165d](https://github.com/jkennethcarino/adobo/commit/5c5165d11d3c769bf4c0102b0ed66a839f8fbd6c))
+
 # [1.2.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.1.1-dev.2...v1.2.0-dev.1) (2026-05-02)
 
 
