@@ -1,8 +1,15 @@
 # Adobo
 
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/jkennethcarino/adobo/release.yml)][gh-actions]
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)][gpl-3.0]
+![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white)
+![Total Downloads](https://img.shields.io/github/downloads/jkennethcarino/adobo/total?style=social)
+
 This repository contains a collection of patches for [Morphe](https://morphe.software/), an
 open-source Android patching tool for modifying apps like YouTube and Reddit to block ads and add
 new features.
+
+[![Import](https://img.shields.io/badge/Add%20Patch%20Source-blue?style=for-the-badge&label=Morphe%20Manager)][import-adobo]
 
 ## Features
 
@@ -21,6 +28,12 @@ Some of the features included in Adobong Morphe patches are:
 - Everything in
   the [Privacy ReVanced patches](https://github.com/jkennethcarino/privacy-revanced-patches),
   and much more!
+
+## Patches
+
+<!-- PATCHES_START -->
+
+<!-- PATCHES_END -->
 
 ## Getting Started
 
@@ -64,14 +77,20 @@ the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
 
 ## Disclaimer
 
-These patches are provided as-is for personal use.
-
-Use them at your own risk. The author is not responsible for any potential issues, including app
+> [!WARNING]  
+> These patches are provided as-is for personal use.
+>
+> Use them at your own risk. The author is not responsible for any potential issues, including app
 instability, crashes, or violations of terms of service that can lead to account bans or other
 consequences.
 
 ## License
 
 Adobo is licensed under
-the [GNU General Public License v3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl.html).
+the [GNU General Public License v3.0 (GPL-3.0)][gpl-3.0].
 See the [LICENSE](LICENSE) file for more details.
+
+[import-adobo]: https://morphe.software/add-source?github=jkennethcarino/adobo
+[gh-actions]: https://github.com/jkennethcarino/adobo/actions
+[releases]: https://github.com/jkennethcarino/adobo/releases
+[gpl-3.0]: https://www.gnu.org/licenses/gpl-3.0.html
