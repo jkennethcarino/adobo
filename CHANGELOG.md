@@ -1,3 +1,16 @@
+# [1.2.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.2...v1.2.0-dev.3) (2026-06-06)
+
+
+### Bug Fixes
+
+* **Reddit:** Support the latest version ([c205f22](https://github.com/jkennethcarino/adobo/commit/c205f2253049545e3df0366739be7d8909d31e97))
+
+
+### Features
+
+* **Reddit:** Add `Disable home feed swipe` patch ([e6a8614](https://github.com/jkennethcarino/adobo/commit/e6a861457ed5f23970b5ad77c59bfb9cda01e328))
+* **Reddit:** Add `Disable post detail swipe` patch ([ae5ff33](https://github.com/jkennethcarino/adobo/commit/ae5ff3379d87381d698ab6287ff336cb7352527d))
+
 # [1.2.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.1...v1.2.0-dev.2) (2026-05-03)
 
 
