@@ -26,7 +26,7 @@ val hideCommunityHighlightsPatch = bytecodePatch(
 
     execute {
         SubredditInfoByIdToStringFingerprint.apply {
-            val highlightedPostsIndex = instructionMatches.last().index + 2
+            val highlightedPostsIndex = instructionMatches.last().index
             val highlightedPostsInstruction =
                 method.getInstruction<TwoRegisterInstruction>(highlightedPostsIndex)
             val highlightedPostsFieldReference =

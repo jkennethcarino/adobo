@@ -15,6 +15,5 @@ internal object TrailingAskButtonFingerprint : Fingerprint(
         string("trailing_ask_button"),
         string("search_ask_icon"),
         string("search_ask_label"),
-        string("Ask")
     )
 )

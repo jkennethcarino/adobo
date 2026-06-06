@@ -21,20 +21,20 @@ val hideShareCountPatch = bytecodePatch(
     dependsOn(spoofCertificateHashPatch)
 
     execute {
-        val shareCountMatch = ActionCellFragmentToStringFingerprint.instructionMatches.last()
-        val shareCountIndex = shareCountMatch.index + 2
-        val shareCountInstruction = ActionCellFragmentToStringFingerprint
-            .method
-            .getInstruction<TwoRegisterInstruction>(shareCountIndex)
+        toStringFingerprints.forEach { fingerprint ->
+            val shareCountIndex = fingerprint.instructionMatches.last().index
+            val shareCountInstruction =
+                fingerprint.method.getInstruction<TwoRegisterInstruction>(shareCountIndex)
 
-        val actionCellFragmentClassDef = ActionCellFragmentToStringFingerprint.classDef
-        val shareCountFieldReference = shareCountInstruction.getReference<FieldReference>()!!
+            val actionCellFragmentClassDef = fingerprint.classDef
+            val shareCountFieldReference = shareCountInstruction.getReference<FieldReference>()!!
 
-        updateClassField(
-            classDef = actionCellFragmentClassDef,
-            fieldReference = shareCountFieldReference,
-            value = null
-        )
+            updateClassField(
+                classDef = actionCellFragmentClassDef,
+                fieldReference = shareCountFieldReference,
+                value = null
+            )
+        }
 
         GetShareCountFingerprint.method.returnEarly()
     }

@@ -4,6 +4,7 @@ import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
 import app.morphe.patcher.InstructionLocation.MatchFirst
 import app.morphe.patcher.OpcodesFilter
+import app.morphe.patcher.fieldAccess
 import app.morphe.patcher.opcode
 import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
@@ -35,7 +36,8 @@ internal object SubredditInfoByIdToStringFingerprint : Fingerprint(
     parameters = listOf(),
     filters = listOf(
         string("SubredditInfoById(__typename="),
-        string(", highlightedPostsModeratorsInfoFragment=")
+        string(", highlightedPostsModeratorsInfoFragment="),
+        fieldAccess(type = "L")
     )
 )
 
