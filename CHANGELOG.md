@@ -1,3 +1,10 @@
+# [1.2.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.5...v1.2.0-dev.6) (2026-06-12)
+
+
+### Bug Fixes
+
+* **Reddit - Disable home screen redirect:** Support `2026.14.0` and `2026.04.0` ([2824e18](https://github.com/jkennethcarino/adobo/commit/2824e1841d11c7ee540a6b5cf8ed65c570b6ec29))
+
 # [1.2.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.4...v1.2.0-dev.5) (2026-06-12)
 
 
