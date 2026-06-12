@@ -1,3 +1,10 @@
+# [1.2.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.4...v1.2.0-dev.5) (2026-06-12)
+
+
+### Features
+
+* **Reddit:** Add `Disable home screen redirect` patch ([d028419](https://github.com/jkennethcarino/adobo/commit/d028419e987982a51f04b5d2ee28985b8ee9add4))
+
 # [1.2.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.3...v1.2.0-dev.4) (2026-06-12)
 
 

@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0-dev.4",
+  "version": "1.2.0-dev.5",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -309,6 +309,35 @@
     {
       "name": "Disable home feed swipe",
       "description": "Disables the horizontal page swipe gesture used to switch feeds.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.reddit.frontpage",
+          "name": "Reddit",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": null,
+          "signatures": [
+            "970b91143813b4c9d5f3634f672c9fcaa5621b4efaaedafd6c235cbbb869736f"
+          ],
+          "targets": [
+            {
+              "version": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Disable home screen redirect",
+      "description": "Disables the automatic redirect to the home screen after being away from the app or returning from the background.",
       "default": true,
       "dependencies": [
         "BytecodePatch"

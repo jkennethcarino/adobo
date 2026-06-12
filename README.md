@@ -52,7 +52,7 @@ Some of the features included in Adobong Morphe patches are:
 </details>
 
 <details>
-<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;16 patches</summary>
+<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;17 patches</summary>
 <br>
 
 **Package name:** `com.reddit.frontpage`
@@ -61,6 +61,7 @@ Some of the features included in Adobong Morphe patches are:
 |------------|-------------|---------|
 | Colorize comment indent lines | Replaces the default gray comment indent lines with color-coded lines. | • Line color 1<br>• Line color 2<br>• Line color 3<br>• Line color 4<br>• Line color 5<br>• Line color 6<br>• Line color 7<br>• Line color 8 |
 | Disable home feed swipe | Disables the horizontal page swipe gesture used to switch feeds. |  |
+| Disable home screen redirect | Disables the automatic redirect to the home screen after being away from the app or returning from the background. |  |
 | Disable post detail swipe | Disables the horizontal swipe gesture used to navigate between posts. |  |
 | Disable screenshot banner | Disables the banner that shows up after taking a screenshot. |  |
 | Hide Ask button from search bar | Hides the Ask button (Reddit Answers) from the search bar. |  |
