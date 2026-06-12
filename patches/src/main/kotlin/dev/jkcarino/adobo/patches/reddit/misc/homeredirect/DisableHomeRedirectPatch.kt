@@ -1,5 +1,6 @@
 package dev.jkcarino.adobo.patches.reddit.misc.homeredirect
 
+import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
@@ -16,6 +17,15 @@ val disableHomeRedirectPatch = bytecodePatch(
     dependsOn(spoofCertificateHashPatch)
 
     execute {
-        AppResumeRedirectFingerprint.method.returnEarly()
+        AppResumeRedirectFingerprint.methodOrNull?.returnEarly() ?: run {
+            OnResumeFingerprint.method.apply {
+                val onResumeIndex = OnResumeFingerprint.instructionMatches.first().index
+
+                addInstruction(
+                    index = onResumeIndex + 1,
+                    smaliInstructions = "return-void"
+                )
+            }
+        }
     }
 }
