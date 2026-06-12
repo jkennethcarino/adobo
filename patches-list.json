@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0-dev.3",
+  "version": "1.2.0-dev.4",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -116,6 +116,164 @@
           "type": "kotlin.Boolean",
           "default": true,
           "values": null
+        }
+      ]
+    },
+    {
+      "name": "Colorize comment indent lines",
+      "description": "Replaces the default gray comment indent lines with color-coded lines.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.reddit.frontpage",
+          "name": "Reddit",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": null,
+          "signatures": [
+            "970b91143813b4c9d5f3634f672c9fcaa5621b4efaaedafd6c235cbbb869736f"
+          ],
+          "targets": [
+            {
+              "version": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "key": "indentLineColors1",
+          "title": "Line color 1",
+          "description": "The hex color (#RRGGBB or #AARRGGBB) for comment indent line at depth 1.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": "#2A9D8F",
+          "values": {
+            "Default (Teal Cascade)": "#2A9D8F",
+            "Material (Crimson Flash)": "#F44336",
+            "Nord (Frost Mint)": "#8FBCBB",
+            "Solarized (Crimson Ember)": "#DC322F",
+            "Monokai (Charcoal Stone)": "#272822",
+            "Synthwave (Neon Blizzard)": "#0066FF"
+          }
+        },
+        {
+          "key": "indentLineColors2",
+          "title": "Line color 2",
+          "description": "The hex color (#RRGGBB or #AARRGGBB) for comment indent line at depth 2.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": "#C96B2C",
+          "values": {
+            "Default (Burnt Apricot)": "#C96B2C",
+            "Material (Sunset Blaze)": "#FF5722",
+            "Nord (Ice Shard)": "#88C0D0",
+            "Solarized (Rust Orange)": "#CB4B16",
+            "Monokai (Neon Pink)": "#F92672",
+            "Synthwave (Laser Pink)": "#FF2E88"
+          }
+        },
+        {
+          "key": "indentLineColors3",
+          "title": "Line color 3",
+          "description": "The hex color (#RRGGBB or #AARRGGBB) for comment indent line at depth 3.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": "#7A8F3A",
+          "values": {
+            "Default (Olive Moss)": "#7A8F3A",
+            "Material (Marigold Glow)": "#FF9800",
+            "Nord (Arctic Skies)": "#81A1C1",
+            "Solarized (Dark Ochre)": "#B58900",
+            "Monokai (Lime Pop)": "#A6E22E",
+            "Synthwave (Cyber Violet)": "#9B5CFF"
+          }
+        },
+        {
+          "key": "indentLineColors4",
+          "title": "Line color 4",
+          "description": "The hex color (#RRGGBB or #AARRGGBB) for comment indent line at depth 4.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": "#8C4A5B",
+          "values": {
+            "Default (Muted Mulberry)": "#8C4A5B",
+            "Material (Honey Gold)": "#FFC107",
+            "Nord (Deep Aurora)": "#5E81AC",
+            "Solarized (Moss Green)": "#859900",
+            "Monokai (Sunset Amber)": "#FD971F",
+            "Synthwave (Electric Cyan)": "#2DE2E6"
+          }
+        },
+        {
+          "key": "indentLineColors5",
+          "title": "Line color 5",
+          "description": "The hex color (#RRGGBB or #AARRGGBB) for comment indent line at depth 5.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": "#4A6FA5",
+          "values": {
+            "Default (Slate Blue)": "#4A6FA5",
+            "Material (Electric Lemon)": "#FFEB3B",
+            "Nord (Fjord Wave)": "#6D8FB3",
+            "Solarized (Deep Cyan)": "#2AA198",
+            "Monokai (Electric Cyan)": "#66D9EF",
+            "Synthwave (Miami Sunset)": "#FF5FA2"
+          }
+        },
+        {
+          "key": "indentLineColors6",
+          "title": "Line color 6",
+          "description": "The hex color (#RRGGBB or #AARRGGBB) for comment indent line at depth 6.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": "#B85C38",
+          "values": {
+            "Default (Rust Clay)": "#B85C38",
+            "Material (Lime Zing)": "#CDDC39",
+            "Nord (Winter Denim)": "#7AA0C4",
+            "Solarized (Ocean Blue)": "#268BD2",
+            "Monokai (Vivid Purple)": "#AE81FF",
+            "Synthwave (Rad Orange)": "#FF8A3D"
+          }
+        },
+        {
+          "key": "indentLineColors7",
+          "title": "Line color 7",
+          "description": "The hex color (#RRGGBB or #AARRGGBB) for comment indent line at depth 7.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": "#6B7A2B",
+          "values": {
+            "Default (Juniper Berry)": "#6B7A2B",
+            "Material (Sprout Green)": "#8BC34A",
+            "Nord (Powder Blue)": "#8BB2D1",
+            "Solarized (Cosmic Iris)": "#6C71C4",
+            "Monokai (Vintage Straw)": "#E6DB74",
+            "Synthwave (Retro Gold)": "#FFD166"
+          }
+        },
+        {
+          "key": "indentLineColors8",
+          "title": "Line color 8",
+          "description": "The hex color (#RRGGBB or #AARRGGBB) for comment indent line at depth 8.",
+          "required": false,
+          "type": "kotlin.String",
+          "default": "#7B5E8E",
+          "values": {
+            "Default (Heather Purple)": "#7B5E8E",
+            "Material (Shamrock Green)": "#4CAF50",
+            "Nord (Pale Ice)": "#9BC4DC",
+            "Solarized (Royal Magenta)": "#D33682",
+            "Monokai (Stark Frost)": "#F8F8F2",
+            "Synthwave (Arcade Lime)": "#3CFF7F"
+          }
         }
       ]
     },

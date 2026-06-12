@@ -1,3 +1,10 @@
+# [1.2.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.3...v1.2.0-dev.4) (2026-06-12)
+
+
+### Features
+
+* **Reddit:** Add `Colorize comment indent lines` patch ([#11](https://github.com/jkennethcarino/adobo/issues/11)) ([5676d19](https://github.com/jkennethcarino/adobo/commit/5676d19e50385aa496e4ca10a550c5d15e144d27))
+
 # [1.2.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.2...v1.2.0-dev.3) (2026-06-06)
 
 
