@@ -32,7 +32,7 @@ internal val presetColors =
             "Nord (Deep Aurora)" to "#5E81AC",
             "Solarized (Moss Green)" to "#859900",
             "Monokai (Sunset Amber)" to "#FD971F",
-            "Synthwave (Electric Cyan)" to "#2DE2E6"
+            "Synthwave (Electric Cyan)" to "#2DE2E6",
         ),
         mapOf(
             "Default (Slate Blue)" to "#4A6FA5",
@@ -40,7 +40,7 @@ internal val presetColors =
             "Nord (Fjord Wave)" to "#6D8FB3",
             "Solarized (Deep Cyan)" to "#2AA198",
             "Monokai (Electric Cyan)" to "#66D9EF",
-            "Synthwave (Miami Sunset)" to "#FF5FA2"
+            "Synthwave (Miami Sunset)" to "#FF5FA2",
         ),
         mapOf(
             "Default (Rust Clay)" to "#B85C38",
@@ -48,7 +48,7 @@ internal val presetColors =
             "Nord (Winter Denim)" to "#7AA0C4",
             "Solarized (Ocean Blue)" to "#268BD2",
             "Monokai (Vivid Purple)" to "#AE81FF",
-            "Synthwave (Rad Orange)" to "#FF8A3D"
+            "Synthwave (Rad Orange)" to "#FF8A3D",
         ),
         mapOf(
             "Default (Juniper Berry)" to "#6B7A2B",
@@ -56,7 +56,7 @@ internal val presetColors =
             "Nord (Powder Blue)" to "#8BB2D1",
             "Solarized (Cosmic Iris)" to "#6C71C4",
             "Monokai (Vintage Straw)" to "#E6DB74",
-            "Synthwave (Retro Gold)" to "#FFD166"
+            "Synthwave (Retro Gold)" to "#FFD166",
         ),
         mapOf(
             "Default (Heather Purple)" to "#7B5E8E",
@@ -64,6 +64,6 @@ internal val presetColors =
             "Nord (Pale Ice)" to "#9BC4DC",
             "Solarized (Royal Magenta)" to "#D33682",
             "Monokai (Stark Frost)" to "#F8F8F2",
-            "Synthwave (Arcade Lime)" to "#3CFF7F"
+            "Synthwave (Arcade Lime)" to "#3CFF7F",
         )
     )

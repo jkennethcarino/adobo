@@ -28,7 +28,7 @@ internal object CommentIndentAlphaInvokeFingerprint : Fingerprint(
             literal = 0x3ecccccd,
             location = MatchAfterImmediately()
         ),
-        opcode(Opcode.MOVE, MatchAfterImmediately()),
+        opcode(Opcode.MOVE, MatchAfterImmediately())
     )
 )
 
@@ -36,6 +36,6 @@ internal object CommentIndentDrawInvokeFingerprint : Fingerprint(
     classFingerprint = CommentIndentAlphaInvokeFingerprint,
     filters = listOf(
         opcode(Opcode.CONST_4),
-        opcode(Opcode.INVOKE_STATIC_RANGE, MatchAfterImmediately()),
+        opcode(Opcode.INVOKE_STATIC_RANGE, MatchAfterImmediately())
     )
 )
