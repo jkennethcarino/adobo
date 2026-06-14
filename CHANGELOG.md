@@ -1,3 +1,10 @@
+# [1.2.0-dev.8](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.7...v1.2.0-dev.8) (2026-06-14)
+
+
+### Features
+
+* **9GAG:** Add `Remove 9GAG's ads, trackers, and analytics` patch ([85dc956](https://github.com/jkennethcarino/adobo/commit/85dc9565bbbb1952ae76e178402ddb3f25bc886d))
+
 # [1.2.0-dev.7](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.6...v1.2.0-dev.7) (2026-06-14)
 
 

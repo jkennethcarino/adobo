@@ -80,6 +80,23 @@ Some of the features included in Adobong Morphe patches are:
 </details>
 
 <details>
+<summary>📦 9GAG&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**Package name:** `com.ninegag.android.app`
+
+**Supported versions:**
+
+| 8.17.5 | 8.17.4 |
+| :---: | :---: |
+
+| Patch Name | Description | Options |
+|------------|-------------|---------|
+| Remove 9GAG's ads, trackers, and analytics | Removes ads, trackers, and analytics in the 9GAG app. |  |
+
+</details>
+
+<details>
 <summary>📦 IMDb&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
 
