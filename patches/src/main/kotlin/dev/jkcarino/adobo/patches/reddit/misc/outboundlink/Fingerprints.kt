@@ -1,18 +1,24 @@
 package dev.jkcarino.adobo.patches.reddit.misc.outboundlink
 
 import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.string
 import dev.jkcarino.adobo.patches.reddit.shared.LinkToStringFingerprint
 
 private object AccountPreferencesToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),
-    strings = listOf("AccountPreferences(over18=")
+    filters = listOf(
+        string("AccountPreferences(over18=")
+    )
 )
 
 private object AccountToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),
-    strings = listOf("Account(id=")
+    filters = listOf(
+        string("Account(id="),
+        string(", outboundClickTracking=")
+    )
 )
 
 internal object GetAllowClickTrackingFingerprint : Fingerprint(

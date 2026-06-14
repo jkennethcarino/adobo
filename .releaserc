@@ -10,17 +10,34 @@
     [
       "@semantic-release/commit-analyzer", {
         "releaseRules": [
+          { "type": "fix", "release": "patch" },
+          { "type": "feat", "release": "minor" },
+          { "type": "bump", "release": "patch" },
+          { "type": "perf", "release": "patch" },
           { "type": "build", "scope": "Needs bump", "release": "patch" }
         ]
       }
     ],
-    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/release-notes-generator", {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            { "type": "fix", "section": "Bug Fixes", "hidden": false },
+            { "type": "feat", "section": "Features", "hidden": false },
+            { "type": "bump", "section": "Updated App Support", "hidden": false },
+            { "type": "perf", "section": "Improvements",  "hidden": false },
+            { "type": "build", "hidden": true }
+          ]
+        }
+      }
+    ],
     [
       "@MorpheApp/changelog", {
         "releaseJson": {
           "path": "patches-bundle.json",
           "downloadUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/v${version}/patches-${version}.mpp",
-          "signatureUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/v${version}/patches-${version}.mpp.asc"
+          "signatureUrlTemplate": ""
         }
       }
     ],
@@ -28,7 +45,9 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json"
+        "prepareCmd": "./gradlew generatePatchesList \
+          && jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json \
+          && python3 .github/scripts/generate_patches_readme.py $GITHUB_REPOSITORY $GITHUB_REF_NAME patches-list.json README.md"
       }
     ],
     [
@@ -38,7 +57,8 @@
           "CHANGELOG.md",
           "gradle.properties",
           "patches-bundle.json",
-          "patches-list.json"
+          "patches-list.json",
+          "README.md"
         ],
         "message": "chore: Release v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
@@ -55,7 +75,7 @@
       }
     ],
     [
-      "@saithodev/semantic-release-backmerge",
+      "@cleyrop-org/semantic-release-backmerge",
       {
         "backmergeBranches": [{"from": "main", "to": "dev"}],
         "clearWorkspace": true

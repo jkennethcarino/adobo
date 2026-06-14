@@ -4,12 +4,10 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
+import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
-
-private const val EXTENSION_CLASS_DESCRIPTOR =
-    "Ldev/jkcarino/extension/reddit/frontpage/AdBlockInterceptor;"
 
 @Suppress("unused")
 val removeAdsAndTelemetryPatch = bytecodePatch(
@@ -39,45 +37,71 @@ val removeAdsAndTelemetryPatch = bytecodePatch(
             )
         }
 
-        val adBlockInterceptorClass = classDefBy(EXTENSION_CLASS_DESCRIPTOR)
-
-        InterceptFingerprint.match(adBlockInterceptorClass).method.apply {
+        InterceptFingerprint.method.apply {
             val realBufferedSourceClassDef =
                 RealBufferedSourceCommonIndexOfFingerprint.originalClassDef
             val bufferedSource = realBufferedSourceClassDef.interfaces.first()
             val bufferClassDef = BufferCommonReadAndWriteUnsafeFingerprint.originalClassDef
             val buffer = bufferClassDef.type
 
-            val getBuffer = bufferedSourceGetBufferFingerprint(bufferClassDef)
-                .match(realBufferedSourceClassDef)
-                .method
-                .name
+            val getBuffer = bufferedSourceGetBufferFingerprint(bufferClassDef).method.name
 
-            val cloneMethod = BufferCloneFingerprint.match(bufferClassDef).method
-            val realClone = navigate(cloneMethod).to(0).original().name
+            val realCloneInstruction = BufferCloneFingerprint.instructionMatches.first()
+            val realClone = realCloneInstruction.getMethodCalled().name
 
-            val readString = BufferReadStringFingerprint
-                .match(bufferClassDef)
-                .method
-                .name
+            val readString = BufferReadStringFingerprint.method.name
 
+            // responseBody.source()
             val responseBodySourceIndex = InterceptFingerprint.instructionMatches.first().index
+            val responseBodySourceInstruction =
+                getInstruction<FiveRegisterInstruction>(responseBodySourceIndex)
+            val responseBodySourceSmali =
+                "invoke-virtual {v${responseBodySourceInstruction.registerC}}, " +
+                    "Lokhttp3/ResponseBody;->source()$bufferedSource"
+
+            // source.request(Long.MAX_VALUE)
             val sourceRequestIndex = responseBodySourceIndex + 3
+            val sourceRequestInstruction =
+                getInstruction<FiveRegisterInstruction>(sourceRequestIndex)
+            val sourceRequestSmali =
+                buildString {
+                    append("invoke-interface {")
+                    append("v${sourceRequestInstruction.registerC}, ")
+                    append("v${sourceRequestInstruction.registerD}, ")
+                    append("v${sourceRequestInstruction.registerE}")
+                    append("}, $bufferedSource->request(J)Z")
+                }
+
+            // source.getBuffer()
             val sourceGetBufferIndex = sourceRequestIndex + 1
+            val sourceGetBufferInstruction =
+                getInstruction<FiveRegisterInstruction>(sourceGetBufferIndex)
+            val sourceGetBufferSmali =
+                "invoke-interface {v${sourceGetBufferInstruction.registerC}}, " +
+                    "$bufferedSource->$getBuffer()$buffer"
+
+            // .clone()
             val bufferCloneIndex = sourceGetBufferIndex + 2
+            val bufferCloneInstruction = getInstruction<FiveRegisterInstruction>(bufferCloneIndex)
+            val bufferCloneSmali =
+                "invoke-virtual {v${bufferCloneInstruction.registerC}}, " +
+                    "$buffer->$realClone()$buffer"
+
+            // buffer.readString(charset)
             val bufferReadStringIndex = InterceptFingerprint.instructionMatches.last().index
+            val bufferReadStringInstruction =
+                getInstruction<FiveRegisterInstruction>(bufferReadStringIndex)
+            val bufferReadStringSmali =
+                "invoke-virtual {v${bufferReadStringInstruction.registerC}, " +
+                    "v${bufferReadStringInstruction.registerD}}, " +
+                    "$buffer->$readString(Ljava/nio/charset/Charset;)Ljava/lang/String;"
 
             mapOf(
-                responseBodySourceIndex to
-                    "invoke-virtual {v0}, Lokhttp3/ResponseBody;->source()$bufferedSource",
-                sourceRequestIndex to
-                    "invoke-interface {v0, v2, v3}, $bufferedSource->request(J)Z",
-                sourceGetBufferIndex to
-                    "invoke-interface {v0}, $bufferedSource->$getBuffer()$buffer",
-                bufferCloneIndex to
-                    "invoke-virtual {v0}, $buffer->$realClone()$buffer",
-                bufferReadStringIndex to
-                    "invoke-virtual {v0, v2}, $buffer->$readString(Ljava/nio/charset/Charset;)Ljava/lang/String;"
+                responseBodySourceIndex to responseBodySourceSmali,
+                sourceRequestIndex to sourceRequestSmali,
+                sourceGetBufferIndex to sourceGetBufferSmali,
+                bufferCloneIndex to bufferCloneSmali,
+                bufferReadStringIndex to bufferReadStringSmali
             ).forEach { (index, smali) ->
                 replaceInstruction(index, smali)
             }

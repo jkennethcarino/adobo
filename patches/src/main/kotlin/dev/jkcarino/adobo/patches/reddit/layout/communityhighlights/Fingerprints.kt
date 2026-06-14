@@ -4,6 +4,7 @@ import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
 import app.morphe.patcher.InstructionLocation.MatchFirst
 import app.morphe.patcher.OpcodesFilter
+import app.morphe.patcher.fieldAccess
 import app.morphe.patcher.opcode
 import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
@@ -33,22 +34,25 @@ internal object UnitFingerprint : Fingerprint(
 internal object SubredditInfoByIdToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),
-    strings = listOf(
-        "SubredditInfoById(__typename=",
-        ", highlightedPostsModeratorsInfoFragment=",
+    filters = listOf(
+        string("SubredditInfoById(__typename="),
+        string(", highlightedPostsModeratorsInfoFragment="),
+        fieldAccess(type = "L")
     )
 )
 
 internal object InvokeFingerprint : Fingerprint(
     name = "invoke",
-    strings = listOf(
-        "\$this\$AnimatedContent",
-        "collapse_expand_highlight",
+    filters = listOf(
+        string("collapse_expand_highlight"),
+        string("content caret")
     )
 )
 
 internal object LoadedToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),
-    strings = listOf("Loaded(highlightedItems=")
+    filters = listOf(
+        string("Loaded(highlightedItems=")
+    )
 )

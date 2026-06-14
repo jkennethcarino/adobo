@@ -20,14 +20,16 @@ val sanitizeShareLinkPatch = bytecodePatch(
             smaliInstructions = "return-object p0"
         )
 
-        val generateShareLinkMethod = GenerateShareLinkFingerprint.method
-        val getShortUrlMethod = navigate(generateShareLinkMethod)
-            .to(GenerateShareLinkFingerprint.instructionMatches.last().index - 1)
-            .stop()
-
-        getShortUrlMethod.addInstruction(
+        GetShortUrlFingerprint.method.addInstruction(
             index = 0,
             smaliInstructions = "return-object p1"
         )
+
+        shareLinkFactoryGetShortUrlFingerprints.forEach { fingerprint ->
+            fingerprint.methodOrNull?.addInstruction(
+                index = 0,
+                smaliInstructions = "return-object p2"
+            )
+        }
     }
 }

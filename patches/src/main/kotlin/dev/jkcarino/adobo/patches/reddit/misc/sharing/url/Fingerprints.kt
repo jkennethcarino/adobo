@@ -1,9 +1,9 @@
 package dev.jkcarino.adobo.patches.reddit.misc.sharing.url
 
 import app.morphe.patcher.Fingerprint
-import app.morphe.patcher.OpcodesFilter
-import app.morphe.patcher.string
-import com.android.tools.smali.dexlib2.Opcode
+import app.morphe.patcher.InstructionLocation.MatchFirst
+import app.morphe.patcher.instanceOf
+import app.morphe.patcher.methodCall
 
 internal object CreateShareLinkFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
@@ -12,25 +12,36 @@ internal object CreateShareLinkFingerprint : Fingerprint(
         "Ljava/util/Map;",
     ),
     filters = listOf(
-        string("url"),
-        string("getQueryParameterNames(...)"),
-        string("toString(...)"),
+        methodCall(
+            definingClass = $$"Landroid/net/Uri$Builder;",
+            name = "clearQuery",
+            returnType = $$"Landroid/net/Uri$Builder;"
+        )
     )
 )
 
-internal object GenerateShareLinkFingerprint : Fingerprint(
+internal object GetShortUrlFingerprint : Fingerprint(
     returnType = "L",
-    filters = OpcodesFilter.opcodesToFilters(
-        Opcode.MOVE_OBJECT,
-        Opcode.IGET_OBJECT,
-        null,
-        Opcode.INVOKE_VIRTUAL,
-        Opcode.MOVE_RESULT_OBJECT,
-    ),
-    strings = listOf(
-        "shareTrigger",
-        "shareAction",
-        "permalink",
-        "share_id",
+    parameters = listOf("Ljava/lang/String;", "L"),
+    filters = listOf(
+        instanceOf($$"RemoteGqlSharingDataSource$getShortUrl")
     )
 )
+
+internal val shareLinkFactoryGetShortUrlFingerprints =
+    setOf(
+        $$"/ShareLinkFactory$getShortUrlLegacy$1;",
+        $$"/ShareLinkFactory$getShortUrlObserved$1;"
+    ).map { className ->
+        Fingerprint(
+            returnType = "L",
+            parameters = listOf(
+                "Ljava/lang/String;",
+                "Ljava/lang/String;",
+                "L"
+            ),
+            filters = listOf(
+                instanceOf(className, MatchFirst())
+            )
+        )
+    }
