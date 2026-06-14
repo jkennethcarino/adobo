@@ -1,3 +1,13 @@
+# [1.2.0-dev.7](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.6...v1.2.0-dev.7) (2026-06-14)
+
+
+### Bug Fixes
+
+* **Reddit - Disable home feed swipe:** Support `2026.14.0` and `2026.04.0` ([054bf75](https://github.com/jkennethcarino/adobo/commit/054bf756dca9b0a00f9883f6208028084b9ee3fb))
+* **Reddit - Disable post detail swipe:** Support `2026.14.0` and `2026.04.0` ([5ac1257](https://github.com/jkennethcarino/adobo/commit/5ac1257c018c9329a42bd348ff5a851a455ebdd5))
+* **Reddit - Hide prominent search bar:** Support `2026.14.0` and `2026.04.0` ([d3252e2](https://github.com/jkennethcarino/adobo/commit/d3252e294465d61ac3e98cc672e4ef2c1d2054f7))
+* **Reddit - Hide user flairs:** Support `2026.14.0` and `2026.04.0` ([e5fa00b](https://github.com/jkennethcarino/adobo/commit/e5fa00be5fef76b5183cad4241e34c394c57c61a))
+
 # [1.2.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.5...v1.2.0-dev.6) (2026-06-12)
 
 

@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0-dev.6",
+  "version": "1.2.0-dev.7",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -309,7 +309,7 @@
     {
       "name": "Disable home feed swipe",
       "description": "Disables the horizontal page swipe gesture used to switch feeds.",
-      "default": true,
+      "default": false,
       "dependencies": [
         "BytecodePatch"
       ],
@@ -483,7 +483,7 @@
     {
       "name": "Disable post detail swipe",
       "description": "Disables the horizontal swipe gesture used to navigate between posts.",
-      "default": true,
+      "default": false,
       "dependencies": [
         "BytecodePatch"
       ],
