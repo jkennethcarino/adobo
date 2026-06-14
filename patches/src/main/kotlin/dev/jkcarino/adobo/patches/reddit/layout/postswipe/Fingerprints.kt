@@ -1,48 +1,38 @@
 package dev.jkcarino.adobo.patches.reddit.layout.postswipe
 
 import app.morphe.patcher.Fingerprint
-import app.morphe.patcher.fieldAccess
-import app.morphe.patcher.opcode
+import app.morphe.patcher.methodCall
 import com.android.tools.smali.dexlib2.AccessFlags
-import com.android.tools.smali.dexlib2.Opcode
 
-internal object DisablePostDetailSwipeFingerprint : Fingerprint(
-    definingClass = "Ldev/jkcarino/extension/reddit/frontpage/DisablePostDetailSwipePatch;",
-    name = "apply"
-)
-
-internal object PostDetailPagerFingerprint : Fingerprint(
-    definingClass = "/PostDetailPagerScreen;",
-    returnType = "V",
-    parameters = listOf("Landroid/view/View;"),
-    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
-    filters = listOf(
-        opcode(Opcode.INVOKE_SUPER),
-        opcode(Opcode.IGET_OBJECT)
-    )
-)
-
-internal object UpdateLayoutSuppressionFingerprint : Fingerprint(
-    definingClass = "/PostDetailPagerScreen;",
-    returnType = "V",
-    parameters = listOf(),
-    filters = listOf(
-        fieldAccess(
-            type = "Lcom/reddit/screen/widget/ScreenPager;"
+internal val pagerAdapterFingerprint = { definingClass: String ->
+    Fingerprint(
+        name = "invoke",
+        filters = listOf(
+            methodCall(
+                definingClass = "Landroid/view/ViewGroup;",
+                name = "removeView"
+            ),
+            methodCall(
+                definingClass = "Landroid/view/View;",
+                name = "findViewById"
+            ),
+            methodCall(
+                definingClass = definingClass,
+                name = "setAdapter"
+            )
         )
     )
-)
+}
 
-internal object ScreenPagerOnInterceptTouchEventFingerprint : Fingerprint(
-    definingClass = "Lcom/reddit/screen/widget/ScreenPager;",
-    name = "onInterceptTouchEvent",
+internal object CanScrollHorizontallyFingerprint : Fingerprint(
+    name = "canScrollHorizontally",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
     returnType = "Z",
-    parameters = listOf("Landroid/view/MotionEvent;")
-)
-
-internal object ScreenPagerOnTouchEventFingerprint : Fingerprint(
-    definingClass = "Lcom/reddit/screen/widget/ScreenPager;",
-    name = "onTouchEvent",
-    returnType = "Z",
-    parameters = listOf("Landroid/view/MotionEvent;")
+    parameters = listOf("I"),
+    filters = listOf(
+        methodCall(
+            definingClass = "Landroid/view/View;",
+            name = "isEnabled"
+        )
+    )
 )
