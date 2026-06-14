@@ -20,7 +20,11 @@ internal val commentPresentationModelToStringFingerprints =
             filters = listOf(
                 string("CommentPresentationModel(id="),
                 string(fieldName),
-                opcode(Opcode.INVOKE_VIRTUAL, MatchAfterImmediately()),
+                anyInstruction(
+                    opcode(Opcode.INVOKE_VIRTUAL),
+                    opcode(Opcode.IGET_OBJECT),
+                    location = MatchAfterImmediately()
+                ),
                 opcode(Opcode.IGET_OBJECT, MatchAfterImmediately())
             )
         )
