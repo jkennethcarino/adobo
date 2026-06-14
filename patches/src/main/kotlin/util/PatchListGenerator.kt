@@ -31,7 +31,7 @@
  * applicable to this file.
  */
 
-package dev.jkcarino.adobo.util
+package util
 
 import app.morphe.patcher.patch.Patch
 import app.morphe.patcher.patch.loadPatchesFromJar
@@ -116,7 +116,7 @@ private fun generatePatchList(version: String, patches: Set<Patch<*>>) {
         .create()
 
     val jsonObject = JsonObject()
-    jsonObject.addProperty("version", "v$version")
+    jsonObject.addProperty("version", version)
     jsonObject.add("patches", gson.toJsonTree(patchesMap))
 
     listJson.writeText(gson.toJson(jsonObject))

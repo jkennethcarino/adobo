@@ -53,7 +53,7 @@ def patches_table(patches):
         else:
             opts_cell = ""
 
-        desc = p.get("description") or ""
+        desc = (p.get("description") or "").replace("\n", "<br>")
         rows.append(f"| {p['name']} | {desc} | {opts_cell} |")
 
     return "\n".join(rows)
@@ -90,7 +90,7 @@ def versions_table(targets):
     rows = [header, separator]
 
     # Include description row if any target has one.
-    descriptions = [t.get("description") or "" for t in targets]
+    descriptions = [(t.get("description") or "").replace("\n", "<br>") for t in targets]
     if any(descriptions):
         rows.append("| " + " | ".join(descriptions) + " |")
 
@@ -182,7 +182,7 @@ def main():
 
     owner, repo = repo_full.split("/", 1)
 
-    with open(json_path) as f:
+    with open(json_path, encoding="utf-8") as f:
         data = json.load(f)
 
     # Parse patches and group by compatible package.

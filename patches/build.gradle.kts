@@ -19,9 +19,13 @@ kotlin {
     }
 }
 
+// Separate configuration so gson is available at runtime for the
+// generatePatchesList task but never bundled into the APK.
+val patchListGeneratorClasspath: Configuration by configurations.creating
+
 dependencies {
-    // Used by JsonGenerator.
-    implementation(libs.gson)
+    compileOnly(libs.gson)
+    patchListGeneratorClasspath(libs.gson)
 }
 
 tasks {
@@ -30,8 +34,8 @@ tasks {
 
         dependsOn(build)
 
-        classpath = sourceSets["main"].runtimeClasspath
-        mainClass.set("dev.jkcarino.adobo.util.PatchListGeneratorKt")
+        classpath = sourceSets["main"].runtimeClasspath + patchListGeneratorClasspath
+        mainClass.set("util.PatchListGeneratorKt")
     }
     // Used by gradle-semantic-release-plugin.
     publish {
