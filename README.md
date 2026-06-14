@@ -3,30 +3,20 @@
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/jkennethcarino/adobo/release.yml)][gh-actions]
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)][gpl-3.0]
 ![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white)
-![Total Downloads](https://img.shields.io/github/downloads/jkennethcarino/adobo/total?style=social)
 
-This repository contains a collection of patches for [Morphe](https://morphe.software/), an
-open-source Android patching tool for modifying apps like YouTube and Reddit to block ads and add
-new features.
+This repository contains patches for [Morphe](https://morphe.software/), an open-source Android
+patching tool for modifying apps like YouTube and Reddit to block ads and add new features.
 
-[![Import](https://img.shields.io/badge/Add%20Patch%20Source-blue?style=for-the-badge&label=Morphe%20Manager)][import-adobo]
+[![Import](https://img.shields.io/badge/Import-blue?style=for-the-badge&label=Morphe%20Manager)][import-adobo]
 
 ## Features
 
-Some of the features included in Adobong Morphe patches are:
-
-- **Block ads, trackers, and analytics**: Enjoy a distraction-free experience by removing unwanted
-  ads and data collection in your favorite apps and games.
-- **Remove internet permission**: Remove unnecessary internet permission from apps that work fully
-  offline.
-- **Disable WebView metrics collection**: Prevent the collection of diagnostic data or usage
-  statistics that are sent to Google.
-- **Spoof signature verification**: Bypass signature checks in apps that require them, allowing you
-  to use modified versions without issues.
-- **Always-incognito mode for Gboard**: Make Gboard always open in incognito mode to disable typing
-  history collection and personalization.
-- Everything in
-  the [Privacy ReVanced patches](https://github.com/jkennethcarino/privacy-revanced-patches),
+- Block ads, trackers, and analytics from your favorite apps and games
+- Remove internet permission from apps and games that don't need it
+- Disable WebView metrics collection sent to Google
+- Bypass signature verification checks
+- Force Gboard into incognito mode to disable typing history and personalization
+- Everything in the [Privacy ReVanced patches](https://github.com/jkennethcarino/privacy-revanced-patches),
   and much more!
 
 ## Patches
@@ -132,8 +122,8 @@ Some of the features included in Adobong Morphe patches are:
 
 ## Getting Started
 
-You can use [Morphe CLI](https://github.com/MorpheApp/morphe-cli)
-or [Morphe Manager](https://github.com/MorpheApp/morphe-manager) to use Adobong Morphe patches.
+You'll need [Morphe CLI](https://github.com/MorpheApp/morphe-cli)
+or [Morphe Manager](https://github.com/MorpheApp/morphe-manager).
 
 ### Morphe Manager
 
@@ -167,23 +157,32 @@ https://github.com/jkennethcarino/adobo
 
 ## Building
 
-To build Adobong Morphe patches, you can follow
-the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
+You can follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation) to
+build these patches.
+
+## Contributing
+
+I'm not accepting pull requests. If you want to make changes, feel free to fork this repository and
+maintain your own version.
+
+I do welcome feature requests and bug reports. I won't implement patches that bypass payments or
+premium features; the only exception is removing ads, annoyances, and analytics. Since I work on
+this in my spare time, I can't commit to implementing patches or fixes quickly. Open an
+[issue](https://github.com/jkennethcarino/adobo/issues) here to report a bug or suggest a feature.
 
 ## Disclaimer
 
 > [!WARNING]  
 > These patches are provided as-is for personal use.
 >
-> Use them at your own risk. The author is not responsible for any potential issues, including app
+> Use them at your own risk. I'm not responsible for any potential issues, including app
 instability, crashes, or violations of terms of service that can lead to account bans or other
 consequences.
 
 ## License
 
-Adobo is licensed under
-the [GNU General Public License v3.0 (GPL-3.0)][gpl-3.0].
-See the [LICENSE](LICENSE) file for more details.
+Adobo is licensed under the [GNU General Public License v3.0 (GPL-3.0)][gpl-3.0].
+See [LICENSE](LICENSE) for details.
 
 [import-adobo]: https://morphe.software/add-source?github=jkennethcarino/adobo
 [gh-actions]: https://github.com/jkennethcarino/adobo/actions
