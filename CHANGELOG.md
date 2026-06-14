@@ -1,3 +1,9 @@
+## [1.2.0-dev.9](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.8...v1.2.0-dev.9) (2026-06-14)
+
+### Bug Fixes
+
+* **Gboard - Enable Undo feature:** Already enabled by default since `17.3.3.902587967` ([21d9a73](https://github.com/jkennethcarino/adobo/commit/21d9a73807f597be648672365fff138b09dff366))
+
 # [1.2.0-dev.8](https://github.com/jkennethcarino/adobo/compare/v1.2.0-dev.7...v1.2.0-dev.8) (2026-06-14)
 
 

@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0-dev.8",
+  "version": "1.2.0-dev.9",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -13,7 +13,7 @@
           "packageName": "com.google.android.inputmethod.latin",
           "name": "Gboard",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": null,
           "signatures": [
             "7ce83c1b71f3d572fed04c8d40c5cb10ff75e6d87d9df6fbd53f0468c2905053",
@@ -550,7 +550,7 @@
           "packageName": "com.google.android.inputmethod.latin",
           "name": "Gboard",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": null,
           "signatures": [
             "7ce83c1b71f3d572fed04c8d40c5cb10ff75e6d87d9df6fbd53f0468c2905053",
@@ -571,7 +571,7 @@
     {
       "name": "Enable Undo feature",
       "description": "Enables undo feature to quickly undo or correct typing mistakes.",
-      "default": true,
+      "default": false,
       "dependencies": [
         "BytecodePatch"
       ],
@@ -580,7 +580,7 @@
           "packageName": "com.google.android.inputmethod.latin",
           "name": "Gboard",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": null,
           "signatures": [
             "7ce83c1b71f3d572fed04c8d40c5cb10ff75e6d87d9df6fbd53f0468c2905053",
@@ -610,7 +610,7 @@
           "packageName": "com.google.android.inputmethod.latin",
           "name": "Gboard",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": null,
           "signatures": [
             "7ce83c1b71f3d572fed04c8d40c5cb10ff75e6d87d9df6fbd53f0468c2905053",
@@ -640,7 +640,7 @@
           "packageName": "com.google.android.inputmethod.latin",
           "name": "Gboard",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": null,
           "signatures": [
             "7ce83c1b71f3d572fed04c8d40c5cb10ff75e6d87d9df6fbd53f0468c2905053",
@@ -670,7 +670,7 @@
           "packageName": "com.google.android.inputmethod.latin",
           "name": "Gboard",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": null,
           "signatures": [
             "7ce83c1b71f3d572fed04c8d40c5cb10ff75e6d87d9df6fbd53f0468c2905053",
@@ -1203,7 +1203,7 @@
           "packageName": "com.google.android.inputmethod.latin",
           "name": "Gboard",
           "description": null,
-          "apkFileType": null,
+          "apkFileType": "APK",
           "appIconColor": null,
           "signatures": [
             "7ce83c1b71f3d572fed04c8d40c5cb10ff75e6d87d9df6fbd53f0468c2905053",
