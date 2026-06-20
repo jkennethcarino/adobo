@@ -32,7 +32,8 @@ val disableHomeSwipePatch = bytecodePatch(
             )
         }
 
-        SwipingVariantFingerprint.method.apply {
+        // Applicable only to version 2026.23.0 and earlier
+        SwipingVariantFingerprint.methodOrNull?.apply {
             val isVariantEnabledIndex =
                 SwipingVariantFingerprint.instructionMatches.first().index
             val variantIndex =
