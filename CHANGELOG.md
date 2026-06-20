@@ -1,3 +1,9 @@
+## [1.3.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.2.1-dev.1...v1.3.0-dev.1) (2026-06-20)
+
+### Features
+
+* **Reddit:** Add `Disable home feed auto-refresh` patch ([a8b0a4f](https://github.com/jkennethcarino/adobo/commit/a8b0a4f01322719fd4f888981aa749fd256b1687))
+
 ## [1.2.1-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.2.0...v1.2.1-dev.1) (2026-06-20)
 
 ### Updated App Support
