@@ -22,7 +22,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 ## Patches
 
 <!-- PATCHES_START -->
-[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=version&label=main)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
+[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=version&label=dev)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
 <details>
 <summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
@@ -47,6 +47,11 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 
 **Package name:** `com.reddit.frontpage`
 
+**Supported versions:**
+
+| 2026.25.0 | 2026.24.0 | 2026.23.0 | 2026.22.0 | 2026.14.0 |
+| :---: | :---: | :---: | :---: | :---: |
+
 | Patch Name | Description | Options |
 |------------|-------------|---------|
 | Colorize comment indent lines | Replaces the default gray comment indent lines with color-coded lines. | • Line color 1<br>• Line color 2<br>• Line color 3<br>• Line color 4<br>• Line color 5<br>• Line color 6<br>• Line color 7<br>• Line color 8 |
@@ -58,7 +63,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Hide awards | Hides the awards on Reddit posts and comments. |  |
 | Hide community highlights | Hides the community highlights section. |  |
 | Hide post view counts | Removes the "views" indicator from the post metadata. |  |
-| Hide prominent search bar | Hides the new prominent search bar on the main screen. |  |
+| Hide prominent search bar | Hides the new prominent search bar on the main screen. Applicable only to version 2026.24.0 and earlier. |  |
 | Hide share count | Hides the share count on Reddit posts. |  |
 | Hide upvote scores | Hides the scores on Reddit posts and comments. | • Hide post scores<br>• Hide comment scores |
 | Hide user community badges | Hides the user community badges on Reddit comments. |  |
