@@ -1,8 +1,8 @@
 package dev.jkcarino.adobo.patches.shared.resource
 
 import app.morphe.patcher.patch.ResourcePatchContext
+import app.morphe.util.adoptChild
 import dev.jkcarino.adobo.util.asElementSequence
-import dev.jkcarino.adobo.util.createElement
 import dev.jkcarino.adobo.util.filterElements
 import dev.jkcarino.adobo.util.get
 import dev.jkcarino.adobo.util.removeElements
@@ -60,12 +60,10 @@ fun Document.metaData(vararg properties: Pair<String, String>) {
         if (metaData != null) {
             metaData.setAttribute(ANDROID_VALUE_ATTR, value)
         } else {
-            application.appendChild(
-                createElement(META_DATA_TAG) {
-                    this[ANDROID_NAME_ATTR] = name
-                    this[ANDROID_VALUE_ATTR] = value
-                }
-            )
+            application.adoptChild(META_DATA_TAG) {
+                this[ANDROID_NAME_ATTR] = name
+                this[ANDROID_VALUE_ATTR] = value
+            }
         }
     }
 }

@@ -3,12 +3,12 @@ package dev.jkcarino.adobo.util.transformation
 import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.util.proxy.mutableTypes.MutableField
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
+import app.morphe.util.findMutableMethodOf
 import com.android.tools.smali.dexlib2.iface.ClassDef
 import com.android.tools.smali.dexlib2.iface.Field
 import com.android.tools.smali.dexlib2.iface.Method
 import com.android.tools.smali.dexlib2.iface.instruction.Instruction
 import dev.jkcarino.adobo.util.findMutableFieldOf
-import dev.jkcarino.adobo.util.findMutableMethodOf
 
 fun <T> BytecodePatchContext.transformationPatch(
     classDef: ClassDef? = null,

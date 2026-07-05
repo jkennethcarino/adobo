@@ -4,11 +4,11 @@ import app.morphe.patcher.extensions.InstructionExtensions.instructionsOrNull
 import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.booleanOption
+import app.morphe.util.findMutableMethodOf
+import app.morphe.util.getReference
 import com.android.tools.smali.dexlib2.iface.reference.StringReference
 import dev.jkcarino.adobo.util.filterMethods
-import dev.jkcarino.adobo.util.findMutableMethodOf
-import dev.jkcarino.adobo.util.getReference
-import dev.jkcarino.adobo.util.returnEarly
+import dev.jkcarino.adobo.util.defaultReturnEarly
 
 internal val disableGoogleAdMobOption = booleanOption(
     key = "disableGoogleAdMob",
@@ -68,7 +68,7 @@ internal fun BytecodePatchContext.applyGoogleAdMobPatch() = buildList {
                 .forEach { method ->
                     mutableClassDefBy(method.definingClass)
                         .findMutableMethodOf(method)
-                        .returnEarly()
+                        .defaultReturnEarly()
                 }
         }
     }.also(::add)
@@ -88,7 +88,7 @@ internal fun BytecodePatchContext.applyGoogleAdMobPatch() = buildList {
             .forEach { method ->
                 mutableClass
                     .findMutableMethodOf(method)
-                    .returnEarly()
+                    .defaultReturnEarly()
             }
     }.also(::add)
 
@@ -98,7 +98,7 @@ internal fun BytecodePatchContext.applyGoogleAdMobPatch() = buildList {
         GoogleAdMobNativeAdFingerprint,
     ).forEach { fingerprint ->
         runCatching {
-            fingerprint.method.returnEarly()
+            fingerprint.method.defaultReturnEarly()
         }.also(::add)
     }
 }

@@ -1,9 +1,9 @@
 package dev.jkcarino.adobo.patches.reddit.layout.communitybadge
 
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.util.returnEarly
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
-import dev.jkcarino.adobo.util.returnEarly
 
 @Suppress("unused")
 val hideCommunityBadgesPatch = bytecodePatch(
@@ -16,6 +16,6 @@ val hideCommunityBadgesPatch = bytecodePatch(
     dependsOn(spoofCertificateHashPatch)
 
     execute {
-        GetAuthorAchievementsBadgeFingerprint.method.returnEarly()
+        GetAuthorAchievementsBadgeFingerprint.method.returnEarly(null)
     }
 }

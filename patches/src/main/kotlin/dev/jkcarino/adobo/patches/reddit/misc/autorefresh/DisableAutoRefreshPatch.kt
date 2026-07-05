@@ -9,7 +9,7 @@ import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 val disableAutoRefreshPatch = bytecodePatch(
     name = "Disable home feed auto-refresh",
     description = "Disables the automatic refresh of the home feed " +
-        "after reading a post or after being away from the app.",
+        "after viewing a post or after being away from the app.",
     default = false
 ) {
     compatibleWith(COMPATIBILITY_REDDIT)

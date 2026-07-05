@@ -3,10 +3,10 @@ package dev.jkcarino.adobo.patches.reddit.layout.screenshotbanner
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.util.returnEarly
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
-import dev.jkcarino.adobo.util.returnEarly
 
 @Suppress("unused")
 val disableScreenshotBannerPatch = bytecodePatch(

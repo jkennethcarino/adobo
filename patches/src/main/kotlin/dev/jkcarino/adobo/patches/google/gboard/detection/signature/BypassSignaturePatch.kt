@@ -1,9 +1,9 @@
 package dev.jkcarino.adobo.patches.google.gboard.detection.signature
 
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.util.returnEarly
 import dev.jkcarino.adobo.patches.google.gboard.fixes.applyWorkaroundPatch
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
-import dev.jkcarino.adobo.util.returnEarly
 
 val bypassSignaturePatch = bytecodePatch(
     description = "Bypasses the signature verification checks."

@@ -6,6 +6,7 @@ import app.morphe.patcher.methodCall
 import app.morphe.patcher.newInstance
 
 internal object OnAutoRefreshFeedFingerprint : Fingerprint(
+    name = "invoke",
     filters = listOf(
         newInstance(type = "Lcom/reddit/feeds/ui/events/OnAutoRefreshFeed;"),
         methodCall(

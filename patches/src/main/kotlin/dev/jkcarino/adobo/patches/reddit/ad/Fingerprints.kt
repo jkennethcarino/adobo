@@ -16,7 +16,7 @@ internal const val EXTENSION_CLASS_DESCRIPTOR =
 internal object InterceptFingerprint : Fingerprint(
     definingClass = EXTENSION_CLASS_DESCRIPTOR,
     returnType = "Lokhttp3/Response;",
-    parameters = listOf("Lokhttp3/Interceptor\$Chain;"),
+    parameters = listOf($$"Lokhttp3/Interceptor$Chain;"),
     filters = OpcodesFilter.opcodesToFilters(
         // responseBody.source()
         Opcode.INVOKE_VIRTUAL,
@@ -46,7 +46,7 @@ internal object InterceptFingerprint : Fingerprint(
 internal object OkHttpConstructorFingerprint : Fingerprint(
     definingClass = "Lokhttp3/OkHttpClient;",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.CONSTRUCTOR),
-    parameters = listOf("Lokhttp3/OkHttpClient\$Builder;"),
+    parameters = listOf($$"Lokhttp3/OkHttpClient$Builder;"),
     filters = listOf(
         opcode(Opcode.MOVE_RESULT_OBJECT),
         opcode(Opcode.IPUT_OBJECT, MatchAfterImmediately()),

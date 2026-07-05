@@ -47,3 +47,15 @@ internal val commentToStringFingerprints =
             )
         )
     }
+
+internal object GetAuthorFlairTextFingerprint : Fingerprint(
+    name = "getAuthorFlairText",
+    returnType = "Ljava/lang/String;",
+    parameters = listOf()
+)
+
+internal object GetAuthorFlairRichTextFingerprint : Fingerprint(
+    name = "getAuthorFlairRichText",
+    returnType = "Ljava/util/List;",
+    parameters = listOf()
+)

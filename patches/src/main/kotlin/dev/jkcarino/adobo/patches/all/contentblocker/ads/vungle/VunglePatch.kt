@@ -2,9 +2,9 @@ package dev.jkcarino.adobo.patches.all.contentblocker.ads.vungle
 
 import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
+import app.morphe.util.findMutableMethodOf
 import dev.jkcarino.adobo.util.filterMethods
-import dev.jkcarino.adobo.util.findMutableMethodOf
-import dev.jkcarino.adobo.util.returnEarly
+import dev.jkcarino.adobo.util.defaultReturnEarly
 
 internal val disableVungleOption = booleanOption(
     key = "disableVungle",
@@ -33,7 +33,7 @@ internal fun BytecodePatchContext.applyVunglePatch() = buildList {
                 .forEach { method ->
                     mutableClass
                         .findMutableMethodOf(method)
-                        .returnEarly()
+                        .defaultReturnEarly()
                 }
         }.also(::add)
     }

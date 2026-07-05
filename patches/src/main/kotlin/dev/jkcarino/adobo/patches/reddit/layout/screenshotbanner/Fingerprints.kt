@@ -9,7 +9,7 @@ internal object OnScreenCapturedFingerprint : Fingerprint(
     returnType = "V",
     parameters = listOf(),
     custom = { _, classDef ->
-        classDef.interfaces.any { it == "Landroid/app/Activity\$ScreenCaptureCallback;" }
+        classDef.interfaces.any { it == $$"Landroid/app/Activity$ScreenCaptureCallback;" }
     }
 )
 
@@ -23,7 +23,7 @@ internal object ScreenshotBannerInvokeSuspendFingerprint : Fingerprint(
         Opcode.INVOKE_INTERFACE,
     ),
     custom = { _, classDef ->
-        classDef.type.contains("/RedditScreenshotTriggerSharingListener\$ScreenshotBanner")
+        classDef.type.contains($$"/RedditScreenshotTriggerSharingListener$ScreenshotBanner")
     }
 )
 
@@ -38,6 +38,6 @@ internal object ScreenshotTakenBannerInvokeSuspendFingerprint : Fingerprint(
         Opcode.INVOKE_INTERFACE,
     ),
     custom = { _, classDef ->
-        classDef.type.contains("/ScreenshotTakenBannerKt\$ScreenshotTakenBanner")
+        classDef.type.contains($$"/ScreenshotTakenBannerKt$ScreenshotTakenBanner")
     }
 )
