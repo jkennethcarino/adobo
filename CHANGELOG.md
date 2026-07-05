@@ -1,3 +1,9 @@
+## [1.3.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.1...v1.3.0-dev.2) (2026-07-05)
+
+### Features
+
+* Add `Replace Google Maps API key` patch ([#27](https://github.com/jkennethcarino/adobo/issues/27)) ([2eaf942](https://github.com/jkennethcarino/adobo/commit/2eaf9429ae2931046b0c5119114bd6250168534a))
+
 ## [1.3.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.2.1-dev.1...v1.3.0-dev.1) (2026-06-20)
 
 ### Features

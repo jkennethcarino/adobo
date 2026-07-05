@@ -55,7 +55,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Patch Name | Description | Options |
 |------------|-------------|---------|
 | Colorize comment indent lines | Replaces the default gray comment indent lines with color-coded lines. | • Line color 1<br>• Line color 2<br>• Line color 3<br>• Line color 4<br>• Line color 5<br>• Line color 6<br>• Line color 7<br>• Line color 8 |
-| Disable home feed auto-refresh | Disables the automatic refresh of the home feed after reading a post or after being away from the app. |  |
+| Disable home feed auto-refresh | Disables the automatic refresh of the home feed after viewing a post or after being away from the app. |  |
 | Disable home feed swipe | Disables the horizontal page swipe gesture used to switch feeds. |  |
 | Disable home screen redirect | Disables the automatic redirect to the home screen after being away from the app or returning from the background. |  |
 | Disable post detail swipe | Disables the horizontal swipe gesture used to navigate between posts. |  |
@@ -105,7 +105,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;11 patches</summary>
+<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;12 patches</summary>
 <br>
 
 | Patch Name | Description | Options |
@@ -118,6 +118,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Disable metrics collection in WebView | Disables the collection of diagnostic data or usage statistics that are sent to Google. |  |
 | Disable mobile ads | Disables banner, interstitial, and other ad formats. | • AppLovin MAX<br>• BIGO<br>• Google AdMob<br>• Meta Audience Network<br>• Mintegral<br>• myTarget<br>• Pangle<br>• TopOn<br>• Unity<br>• Liftoff Monetize<br>• Yandex Advertising Network |
 | Remove internet permission | Removes unnecessary internet permission from apps that can still work without internet access. |  |
+| Replace Google Maps API key | Replaces the Google Maps API key with a custom key. | • Maps API Key |
 | Spoof Advertising ID | Spoofs the device's advertising ID with a string of zeros. |  |
 | Spoof Firebase certificate hash | Spoofs the app's package certificate hash used by Firebase Installations so that push notifications, remote config, and other Firebase services continue to work as expected. | • Certificate hash |
 | Spoof signature verification | Spoofs the signature verification when the app starts up. It is recommended to use the unmodified app to work properly. | • Package name<br>• Base64-encoded signature |
