@@ -12,7 +12,7 @@ import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
 context(_: BytecodePatchContext)
-internal fun toggleFeatureFlag(
+fun toggleFeatureFlag(
     flag: String,
     enabled: Boolean,
 ) {
@@ -65,5 +65,23 @@ internal fun toggleFeatureFlag(
                 smaliInstructions = smaliInstruction
             )
         }
+    }
+}
+
+context(_: BytecodePatchContext)
+fun toggleFeatureFlag(
+    flag: String,
+    value: String,
+) {
+    val fingerprint = stringFlagFingerprint(flag)
+
+    fingerprint.method.apply {
+        val targetIndex = fingerprint.instructionMatches[1].index
+        val register = getInstruction<OneRegisterInstruction>(targetIndex).registerA
+
+        replaceInstruction(
+            index = targetIndex,
+            smaliInstruction = "const-string v$register, $value"
+        )
     }
 }
