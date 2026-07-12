@@ -23,5 +23,11 @@ val enableOcrPatch = bytecodePatch(
             flag = "enable_ocr",
             enabled = true
         )
+
+        // Enable OCR for all languages (default is English only)
+        toggleFeatureFlag(
+            flag = "enabled_ocr_language_tags",
+            value = "\"\""
+        )
     }
 }

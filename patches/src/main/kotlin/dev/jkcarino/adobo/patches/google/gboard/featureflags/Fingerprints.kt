@@ -24,3 +24,18 @@ internal val booleanFlagFingerprint = { flag: String ->
         )
     )
 }
+
+internal val stringFlagFingerprint = { flag: String ->
+    Fingerprint(
+        accessFlags = listOf(AccessFlags.STATIC, AccessFlags.CONSTRUCTOR),
+        returnType = "V",
+        parameters = listOf(),
+        filters = listOf(
+            string(flag),
+            opcode(Opcode.CONST_STRING, MatchAfterImmediately()),
+            opcode(Opcode.INVOKE_STATIC, MatchAfterImmediately()),
+            opcode(Opcode.MOVE_RESULT_OBJECT, MatchAfterImmediately()),
+            opcode(Opcode.SPUT_OBJECT, MatchAfterImmediately())
+        )
+    )
+}
