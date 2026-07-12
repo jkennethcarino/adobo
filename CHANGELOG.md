@@ -1,3 +1,9 @@
+## [1.3.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.2...v1.3.0-dev.3) (2026-07-12)
+
+### Features
+
+* **Gboard:** Add `Enable access points menu redesign` patch ([#35](https://github.com/jkennethcarino/adobo/issues/35)) ([d09f8aa](https://github.com/jkennethcarino/adobo/commit/d09f8aad96aaa074d434b6a922bc9ebd1e5cf09e))
+
 ## [1.3.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.1...v1.3.0-dev.2) (2026-07-05)
 
 ### Features

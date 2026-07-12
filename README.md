@@ -24,7 +24,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 <!-- PATCHES_START -->
 [![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=version&label=dev)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
 <details>
-<summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
+<summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;8 patches</summary>
 <br>
 
 **Package name:** `com.google.android.inputmethod.latin`
@@ -32,8 +32,9 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Patch Name | Description | Options |
 |------------|-------------|---------|
 | Always-incognito mode | Always opens Gboard in incognito mode to disable typing history collection and personalization. |  |
-| Enable OCR feature | Enables OCR feature to extract text from images and insert it into text fields. |  |
-| Enable Undo feature | Enables undo feature to quickly undo or correct typing mistakes. |  |
+| Enable OCR feature | Enables the Scan Text feature to extract text from images and insert them into text fields. |  |
+| Enable Undo feature | Enables the undo feature to quickly undo or correct typing mistakes. |  |
+| Enable access points menu redesign | Enables the redesign of the additional actions menu. |  |
 | Enable clipboard in incognito | Enables clipboard support in incognito mode. |  |
 | Enable key shape selection | Enables an option to select a key shape from the theme. |  |
 | Enable voice typing in incognito | Enables voice typing in incognito mode. |  |
