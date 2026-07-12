@@ -1,14 +1,10 @@
 package dev.jkcarino.adobo.patches.google.gboard.featureflags
 
-import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
-import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.stringsOption
-import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
-import dev.jkcarino.adobo.util.toHexString
 import java.util.logging.Logger
 
 @Suppress("unused")
@@ -45,21 +41,11 @@ val toggleFeatureFlagsPatch = bytecodePatch(
 
     execute {
         featureFlags!!.forEach { flag ->
-            val fingerprint = featureFlagFingerprint(flag.trim())
-
             runCatching {
-                fingerprint.method.apply {
-                    val isEnabledIndex = fingerprint.instructionMatches.last().index
-                    val isEnabledInstruction =
-                        getInstruction<OneRegisterInstruction>(isEnabledIndex)
-                    val isEnabledRegister = isEnabledInstruction.registerA
-                    val enabled = enableFlags.toHexString()
-
-                    replaceInstruction(
-                        index = isEnabledIndex,
-                        smaliInstruction = "const/4 v$isEnabledRegister, $enabled"
-                    )
-                }
+                toggleFeatureFlag(
+                    flag = flag.trim(),
+                    enabled = enableFlags!!
+                )
             }.onSuccess {
                 val state = if (enableFlags!!) "on" else "off"
                 logger.info("[Found] \"$flag\" toggled $state.")
