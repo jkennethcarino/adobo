@@ -1,3 +1,9 @@
+## [1.3.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.3...v1.3.0-dev.4) (2026-07-12)
+
+### Features
+
+* **Gboard - Enable OCR feature:** Always show Scan Text option regardless of language ([#36](https://github.com/jkennethcarino/adobo/issues/36)) ([aa23f0a](https://github.com/jkennethcarino/adobo/commit/aa23f0a45126fde76c06296ae67f7d192364bd23))
+
 ## [1.3.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.2...v1.3.0-dev.3) (2026-07-12)
 
 ### Features
