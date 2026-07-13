@@ -3,8 +3,8 @@ package dev.jkcarino.adobo.patches.imdb.ad
 internal const val AD_HOSTS = """
     ad.doubleclick.net
     admob-gmats.uc.r.appspot.com
+    advertising.a2z.com
     amazon-adsystem.com
-    api.beta.sdklogger.publishers.advertising.a2z.com
     api.branch.io
     api.imdb.eu-west-1.prod.paets.advertising.amazon.dev
     api2.branch.io
@@ -35,8 +35,6 @@ internal const val AD_HOSTS = """
     logs.us-west-2.amazonaws.com
     mobileanalytics.us-east-1.amazonaws.com
     pagead2.googlesyndication.com
-    prod.cm.publishers.advertising.a2z.com
-    prod.tahoe-analytics.publishers.advertising.a2z.com
     sb.scorecardresearch.com
     sdk.iad-01.braze.com
     sondheim.braze.com

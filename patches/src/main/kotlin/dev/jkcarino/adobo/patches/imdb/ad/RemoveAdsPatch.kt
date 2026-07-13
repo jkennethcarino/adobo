@@ -23,8 +23,21 @@ val removeAdsPatch = bytecodePatch(
     )
 
     execute {
-        InflateHtmlViewFingerprint.method.returnEarly()
-        PageFrameworkWidgetInflateHtmlViewFingerprint.method.returnEarly()
-        HtmlViewLoadDataImplFingerprint.method.returnEarly()
+        setOf(
+            InflateHtmlViewFingerprint,
+            HtmlViewLoadDataImplFingerprint,
+            AdvertisingMultiSourceAdWidgetFingerprint,
+        ).forEach { fingerprint ->
+            fingerprint.method.returnEarly()
+        }
+
+        multiSourceAdWidgetFingerprints.forEach { fingerprint ->
+            fingerprint.method.returnEarly()
+        }
+
+        // Applicable only to version 9.3.2 and earlier
+        PageFrameworkWidgetInflateHtmlViewFingerprint
+            .methodOrNull
+            ?.returnEarly()
     }
 }
