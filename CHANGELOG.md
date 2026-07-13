@@ -1,3 +1,9 @@
+## [1.3.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.4...v1.3.0-dev.5) (2026-07-13)
+
+### Updated App Support
+
+* **IMDb:** Add support for `9.3.3` ([67766d9](https://github.com/jkennethcarino/adobo/commit/67766d992018af5983b8df3d944446d1e21c6b99))
+
 ## [1.3.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.3...v1.3.0-dev.4) (2026-07-12)
 
 ### Features
