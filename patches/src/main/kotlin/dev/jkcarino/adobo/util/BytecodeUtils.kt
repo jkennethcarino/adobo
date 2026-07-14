@@ -68,15 +68,15 @@ fun List<ClassDef>.filterMethods(
  * @receiver MutableMethod The method to inject the early return into.
  */
 fun MutableMethod.defaultReturnEarly() =
-    when (returnType) {
-        "V" -> returnEarly()
-        "C" -> returnEarly(Char.MIN_VALUE)
-        "B" -> returnEarly(0.toByte())
-        "Z" -> returnEarly(false)
-        "S" -> returnEarly(0.toShort())
-        "I" -> returnEarly(0)
-        "F" -> returnEarly(0f)
-        "J" -> returnEarly(0L)
-        "D" -> returnEarly(0.0)
+    when (returnType.first()) {
+        'V' -> returnEarly()
+        'C' -> returnEarly(Char.MIN_VALUE)
+        'B' -> returnEarly(0.toByte())
+        'Z' -> returnEarly(false)
+        'S' -> returnEarly(0.toShort())
+        'I' -> returnEarly(0)
+        'F' -> returnEarly(0f)
+        'J' -> returnEarly(0L)
+        'D' -> returnEarly(0.0)
         else -> returnEarly(null)
     }
