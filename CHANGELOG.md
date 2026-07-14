@@ -1,3 +1,9 @@
+## [1.3.0-dev.7](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.6...v1.3.0-dev.7) (2026-07-14)
+
+### Bug Fixes
+
+* **Reddit - Sanitize share links:** Fix broken 'Copy Link' and 'Share via' options ([98fce33](https://github.com/jkennethcarino/adobo/commit/98fce33322a28e4e42892a2cad44e6ed3a091f3a))
+
 ## [1.3.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.5...v1.3.0-dev.6) (2026-07-14)
 
 ### Bug Fixes
