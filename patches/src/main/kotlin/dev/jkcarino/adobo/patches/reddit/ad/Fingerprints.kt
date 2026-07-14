@@ -4,6 +4,7 @@ import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
 import app.morphe.patcher.OpcodesFilter
 import app.morphe.patcher.anyInstruction
+import app.morphe.patcher.fieldAccess
 import app.morphe.patcher.opcode
 import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
@@ -106,3 +107,19 @@ internal val bufferedSourceGetBufferFingerprint = { classDef: ClassDef ->
         )
     )
 }
+
+internal object IsAdEligibleFingerprint : Fingerprint(
+    definingClass = "Lcom/reddit/ads/impl/commentspage/placeholder/",
+    returnType = "Z",
+    parameters = listOf("Ljava/lang/String;"),
+    filters = listOf(
+        fieldAccess(
+            definingClass = "Lcom/reddit/type/PostAdEligibilityStatus;",
+            name = "ELIGIBLE"
+        ),
+        fieldAccess(
+            definingClass = "Lcom/reddit/type/UserAdEligibilityStatus;",
+            name = "ELIGIBLE"
+        )
+    )
+)
