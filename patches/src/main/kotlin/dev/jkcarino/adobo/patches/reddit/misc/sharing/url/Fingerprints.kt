@@ -30,6 +30,10 @@ internal object GetShortUrlFingerprint : Fingerprint(
 
 internal val shareLinkFactoryGetShortUrlFingerprints =
     setOf(
+        // Present in Reddit 2026.26.0 and later
+        $$"/ShareLinkFactory$getShortUrl$1;",
+
+        // Present in Reddit 2026.25.0 and earlier
         $$"/ShareLinkFactory$getShortUrlLegacy$1;",
         $$"/ShareLinkFactory$getShortUrlObserved$1;"
     ).map { className ->
