@@ -1,3 +1,9 @@
+## [1.3.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.5...v1.3.0-dev.6) (2026-07-14)
+
+### Bug Fixes
+
+* **Reddit - Remove ads and telemetry:** Remove comment ad placeholder ([d505482](https://github.com/jkennethcarino/adobo/commit/d505482ba0c8c43698f3e04c4ecc76b286f19e12))
+
 ## [1.3.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.4...v1.3.0-dev.5) (2026-07-13)
 
 ### Updated App Support
