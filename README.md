@@ -43,7 +43,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;18 patches</summary>
+<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;19 patches</summary>
 <br>
 
 **Package name:** `com.reddit.frontpage`
@@ -64,6 +64,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Hide Ask button from search bar | Hides the Ask button (Reddit Answers) from the search bar. |  |
 | Hide awards | Hides the awards on Reddit posts and comments. |  |
 | Hide community highlights | Hides the community highlights section. |  |
+| Hide community menu badge | Hides the red notification badge on the community menu (hamburger menu). |  |
 | Hide post view counts | Removes the "views" indicator from the post metadata. |  |
 | Hide prominent search bar | Hides the new prominent search bar on the main screen. Applicable only to version 2026.24.0 and earlier. |  |
 | Hide share count | Hides the share count on Reddit posts. |  |

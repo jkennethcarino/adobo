@@ -1,3 +1,9 @@
+## [1.3.0-dev.9](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.8...v1.3.0-dev.9) (2026-07-15)
+
+### Features
+
+* **Reddit:** Add `Hide community menu badge` patch ([e39684c](https://github.com/jkennethcarino/adobo/commit/e39684c448c3571a239d0b3bfa3e43e1dd9efaa3))
+
 ## [1.3.0-dev.8](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.7...v1.3.0-dev.8) (2026-07-14)
 
 ### Updated App Support
