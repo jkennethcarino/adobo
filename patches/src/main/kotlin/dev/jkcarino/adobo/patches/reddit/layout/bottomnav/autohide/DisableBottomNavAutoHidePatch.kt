@@ -7,7 +7,7 @@ import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 @Suppress("unused")
 val disableBottomNavAutoHidePatch = bytecodePatch(
-    name = "Disable bottom nav auto-hide",
+    name = "Disable bottom navigation bar auto-hide",
     description = "Prevents the bottom navigation bar from hiding when scrolling down.",
     default = false
 ) {
