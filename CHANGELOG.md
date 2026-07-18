@@ -1,3 +1,9 @@
+## [1.3.0-dev.10](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.9...v1.3.0-dev.10) (2026-07-18)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.29.0` ([e487e58](https://github.com/jkennethcarino/adobo/commit/e487e587503dd28461661aa38ffafa05b5001b91))
+
 ## [1.3.0-dev.9](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.8...v1.3.0-dev.9) (2026-07-15)
 
 ### Features
