@@ -70,7 +70,6 @@ internal object RealBufferedSourceCommonIndexOfFingerprint : Fingerprint(
 )
 
 internal object BufferCommonReadAndWriteUnsafeFingerprint : Fingerprint(
-    returnType = "L",
     parameters = listOf("L"),
     filters = listOf(
         string("already attached to a buffer")
