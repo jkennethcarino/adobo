@@ -1,3 +1,9 @@
+## [1.3.0-dev.11](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.10...v1.3.0-dev.11) (2026-07-18)
+
+### Features
+
+* **Reddit:** Add `Disable bottom navigation bar auto-hide` patch ([#42](https://github.com/jkennethcarino/adobo/issues/42)) ([0ff15fd](https://github.com/jkennethcarino/adobo/commit/0ff15fdc292ce4411eccfbbf8df31b457450e2d1))
+
 ## [1.3.0-dev.10](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.9...v1.3.0-dev.10) (2026-07-18)
 
 ### Updated App Support
