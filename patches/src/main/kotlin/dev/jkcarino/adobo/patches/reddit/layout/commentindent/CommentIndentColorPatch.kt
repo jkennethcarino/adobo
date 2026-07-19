@@ -4,6 +4,7 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
+import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.stringOption
 import com.android.tools.smali.dexlib2.builder.instruction.BuilderArrayPayload
@@ -22,6 +23,12 @@ val commentIndentColorPatch = bytecodePatch(
     extendWith("extensions/reddit/frontpage.mpe")
 
     dependsOn(spoofCertificateHashPatch)
+
+    val isCurrentLevelOnly by booleanOption(
+        key = "isCurrentLevelOnly",
+        title = "Show indent line at current depth only",
+        default = false
+    )
 
     val indentLineColors =
         presetColors.mapIndexed { index, colors ->
@@ -117,6 +124,20 @@ val commentIndentColorPatch = bytecodePatch(
                     move-result-wide v$colorRegister
                 """
             )
+
+            if (isCurrentLevelOnly!!) {
+                val indentLoopInitIndex =
+                    CommentIndentLoopInitFingerprint.instructionMatches.first().index
+                val depthValueRegister =
+                    CommentIndentAlphaInvokeFingerprint.method
+                        .getInstruction<TwoRegisterInstruction>(indentLoopInitIndex)
+                        .registerA
+
+                replaceInstruction(
+                    index = depthIndex,
+                    smaliInstruction = "move v$depthRegister, v$depthValueRegister"
+                )
+            }
         }
     }
 }
