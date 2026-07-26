@@ -1,3 +1,9 @@
+## [1.3.0-dev.13](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.12...v1.3.0-dev.13) (2026-07-26)
+
+### Bug Fixes
+
+* **Reddit - Colorize comment indent lines:** Fix broken `Show indent line at current depth only` option in `2026.14.0` ([2ca3440](https://github.com/jkennethcarino/adobo/commit/2ca3440a97385b6a5c687eb67f754cb2961b4b65))
+
 ## [1.3.0-dev.12](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.11...v1.3.0-dev.12) (2026-07-26)
 
 ### Features
