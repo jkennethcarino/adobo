@@ -55,7 +55,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 
 | Patch Name | Description | Options |
 |------------|-------------|---------|
-| Colorize comment indent lines | Replaces the default gray comment indent lines with color-coded lines. | • Line color 1<br>• Line color 2<br>• Line color 3<br>• Line color 4<br>• Line color 5<br>• Line color 6<br>• Line color 7<br>• Line color 8 |
+| Colorize comment indent lines | Replaces the default gray comment indent lines with color-coded lines. | • Show indent line at current depth only<br>• Line color 1<br>• Line color 2<br>• Line color 3<br>• Line color 4<br>• Line color 5<br>• Line color 6<br>• Line color 7<br>• Line color 8 |
 | Disable bottom navigation bar auto-hide | Prevents the bottom navigation bar from hiding when scrolling down. |  |
 | Disable home feed auto-refresh | Disables the automatic refresh of the home feed after viewing a post or after being away from the app. |  |
 | Disable home feed swipe | Disables the horizontal page swipe gesture used to switch feeds. |  |

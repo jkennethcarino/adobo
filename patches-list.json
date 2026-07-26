@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.3.0-dev.11",
+  "version": "1.3.0-dev.12",
   "patches": [
     {
       "name": "Always-incognito mode",
@@ -178,6 +178,15 @@
         }
       ],
       "options": [
+        {
+          "key": "isCurrentLevelOnly",
+          "title": "Show indent line at current depth only",
+          "description": null,
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": false,
+          "values": null
+        },
         {
           "key": "indentLineColors1",
           "title": "Line color 1",
