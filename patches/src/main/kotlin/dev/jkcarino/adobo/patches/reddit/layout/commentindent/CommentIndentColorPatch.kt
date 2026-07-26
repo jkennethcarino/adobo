@@ -141,7 +141,7 @@ val commentIndentColorPatch = bytecodePatch(
                 )
 
                 val strokeWidthIndex =
-                    CommentIndentStrokeWidthFingerprint.instructionMatches.first().index
+                    CommentIndentStrokeWidthFingerprint.instructionMatches.last().index
                 val strokeWidthRegister =
                     CommentIndentStrokeWidthFingerprint.method
                         .getInstruction<OneRegisterInstruction>(strokeWidthIndex)
