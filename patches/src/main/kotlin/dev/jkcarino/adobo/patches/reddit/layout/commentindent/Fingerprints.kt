@@ -50,3 +50,10 @@ internal object CommentIndentLoopInitFingerprint : Fingerprint(
         opcode(Opcode.MOVE, MatchAfterImmediately())
     )
 )
+
+internal object CommentIndentStrokeWidthFingerprint : Fingerprint(
+    classFingerprint = CommentIndentAlphaInvokeFingerprint,
+    filters = listOf(
+        literal(literal = 0x3f800000)
+    )
+)

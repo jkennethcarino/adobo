@@ -9,6 +9,7 @@ import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.stringOption
 import com.android.tools.smali.dexlib2.builder.instruction.BuilderArrayPayload
 import com.android.tools.smali.dexlib2.builder.instruction.BuilderInstruction31t
+import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
@@ -133,9 +134,23 @@ val commentIndentColorPatch = bytecodePatch(
                         .getInstruction<TwoRegisterInstruction>(indentLoopInitIndex)
                         .registerA
 
+                // Change loop start from 1 (draw all depths) to current depth (draw only one)
                 replaceInstruction(
                     index = depthIndex,
                     smaliInstruction = "move v$depthRegister, v$depthValueRegister"
+                )
+
+                val strokeWidthIndex =
+                    CommentIndentStrokeWidthFingerprint.instructionMatches.first().index
+                val strokeWidthRegister =
+                    CommentIndentStrokeWidthFingerprint.method
+                        .getInstruction<OneRegisterInstruction>(strokeWidthIndex)
+                        .registerA
+
+                // Increase indent line stroke width from 1dp to 2dp
+                replaceInstruction(
+                    index = strokeWidthIndex,
+                    smaliInstruction = "const/high16 v$strokeWidthRegister, 0x40000000"
                 )
             }
         }
