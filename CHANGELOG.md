@@ -1,3 +1,9 @@
+## [1.3.0-dev.14](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.13...v1.3.0-dev.14) (2026-08-02)
+
+### Bug Fixes
+
+* **Reddit - Remove ads and telemetry:** Consider ad cells when blocking ads and promoted posts ([012f5bc](https://github.com/jkennethcarino/adobo/commit/012f5bc8274ab18e457043f5389fb1c4c8f9e4ec))
+
 ## [1.3.0-dev.13](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.12...v1.3.0-dev.13) (2026-07-26)
 
 ### Bug Fixes
