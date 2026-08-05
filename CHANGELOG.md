@@ -1,3 +1,9 @@
+## [1.3.0-dev.16](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.15...v1.3.0-dev.16) (2026-08-05)
+
+### Bug Fixes
+
+* **Reddit - Remove ads and telemetry:** Remove promoted profile posts ([552a99e](https://github.com/jkennethcarino/adobo/commit/552a99e98a3c85bc33458d5d85a7df2956c0c89b))
+
 ## [1.3.0-dev.15](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.14...v1.3.0-dev.15) (2026-08-02)
 
 ### Updated App Support
