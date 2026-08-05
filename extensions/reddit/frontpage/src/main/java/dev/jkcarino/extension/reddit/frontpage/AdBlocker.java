@@ -4,7 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import okhttp3.Request;
@@ -58,13 +57,11 @@ public final class AdBlocker {
             "MerchandisingUnitCell"
     );
 
-    private static final HashSet<String> blockedHosts = new HashSet<>(
-            Set.of(
-                    "alb.reddit.com",
-                    "e.reddit.com",
-                    "w3-reporting.reddit.com",
-                    "api2.branch.io"
-            )
+    private static final Set<String> blockedHosts = Set.of(
+            "alb.reddit.com",
+            "e.reddit.com",
+            "w3-reporting.reddit.com",
+            "api2.branch.io"
     );
 
     private static boolean hasBlockedHosts(Request request) {
@@ -77,19 +74,21 @@ public final class AdBlocker {
         return PDP_COMMENTS_ADS_OP.equals(apolloOperationName);
     }
 
+    private static JSONObject nodeOf(JSONObject edge) {
+        return edge.optJSONObject(NODE);
+    }
+
     private static JSONObject contextOf(JSONObject edge) {
-        JSONObject node = edge.optJSONObject(NODE);
+        JSONObject node = nodeOf(edge);
         return node == null ? null : node.optJSONObject(GROUP_RECOMMENDATION_CONTEXT);
     }
 
     private static boolean isAd(JSONObject edge) {
-        JSONObject node = edge.optJSONObject(NODE);
+        JSONObject node = nodeOf(edge);
         if (node == null) {
             return false;
         }
-        boolean hasAdPayload = node.has(AD_PAYLOAD) && !node.isNull(AD_PAYLOAD);
-        boolean hasAdCell = isAdCell(node);
-        return hasAdPayload || hasAdCell;
+        return (node.has(AD_PAYLOAD) && !node.isNull(AD_PAYLOAD)) || isAdCell(node);
     }
 
     private static boolean isAdCell(JSONObject node) {
@@ -112,16 +111,16 @@ public final class AdBlocker {
 
     private static boolean isGameRecommendation(JSONObject edge) {
         JSONObject context = contextOf(edge);
-        if (context == null) {
-            return false;
-        }
-        String typeIdentifier = context.optString(GROUP_RECOMMENDATION_TYPE_ID);
-        return TYPE_ID_GAMES.equalsIgnoreCase(typeIdentifier);
+        return context != null && TYPE_ID_GAMES.equalsIgnoreCase(
+                context.optString(GROUP_RECOMMENDATION_TYPE_ID));
     }
 
-    private static boolean isFromSearch(JSONObject data) {
+    private static JSONObject searchRecommendationOf(JSONObject data) {
         JSONObject recommendation = data.optJSONObject(SEARCH_RECOMMENDATION);
-        return recommendation != null && recommendation.has(SEARCH_TRENDING_QUERIES);
+        if (recommendation == null || !recommendation.has(SEARCH_TRENDING_QUERIES)) {
+            return null;
+        }
+        return recommendation;
     }
 
     private static JSONArray filter(JSONArray items, AdFilter keep) throws JSONException {
@@ -145,21 +144,24 @@ public final class AdBlocker {
             JSONArray edges = elements == null ? null : elements.optJSONArray(EDGES);
 
             if (edges != null) {
-                elements.put(EDGES, filter(edges, edge -> {
-                    if (isAd(edge) || isGameRecommendation(edge)) {
-                        return false;
-                    }
-                    removeRecommendationContextCell(edge);
-                    return true;
-                }));
+                elements.put(EDGES, filter(edges, AdBlocker::shouldKeepEdge));
             }
             break;
         }
     }
 
+    private static boolean shouldKeepEdge(JSONObject edge) throws JSONException {
+        if (isAd(edge) || isGameRecommendation(edge)) {
+            return false;
+        }
+        removeRecommendationContextCell(edge);
+        return true;
+    }
+
     private static void removeRecommendationContextCell(JSONObject edge) throws JSONException {
-        if (!edge.has(NODE)) return;
-        if (contextOf(edge) == null) return;
+        if (!edge.has(NODE) || contextOf(edge) == null) {
+            return;
+        }
 
         JSONObject node = edge.getJSONObject(NODE);
         node.put(GROUP_RECOMMENDATION_CONTEXT, JSONObject.NULL);
@@ -175,21 +177,21 @@ public final class AdBlocker {
         }
     }
 
-    private static void removeSearchAds(JSONObject data) throws JSONException {
-        JSONObject trending = data
-                .getJSONObject(SEARCH_RECOMMENDATION)
-                .getJSONObject(SEARCH_TRENDING_QUERIES);
+    private static void removeSearchAds(JSONObject recommendation) throws JSONException {
+        JSONObject trending = recommendation.getJSONObject(SEARCH_TRENDING_QUERIES);
         JSONArray edges = trending.optJSONArray(EDGES);
 
         if (edges != null) {
-            trending.put(EDGES, filter(edges, edge -> {
-                if (!edge.has(NODE)) {
-                    return false;
-                }
-                JSONObject node = edge.getJSONObject(NODE);
-                return !node.optBoolean(SEARCH_IS_PROMOTED, false);
-            }));
+            trending.put(EDGES, filter(edges, edge -> !isPromotedSearchEdge(edge)));
         }
+    }
+
+    private static boolean isPromotedSearchEdge(JSONObject edge) throws JSONException {
+        if (!edge.has(NODE)) {
+            return false;
+        }
+        JSONObject node = edge.getJSONObject(NODE);
+        return node.optBoolean(SEARCH_IS_PROMOTED, false);
     }
 
     public static boolean isRequestBlocked(Request request) {
@@ -201,8 +203,9 @@ public final class AdBlocker {
             JSONObject response = new JSONObject(jsonString);
             JSONObject data = response.optJSONObject(DATA);
             if (data != null) {
-                if (isFromSearch(data)) {
-                    removeSearchAds(data);
+                JSONObject searchRecommendation = searchRecommendationOf(data);
+                if (searchRecommendation != null) {
+                    removeSearchAds(searchRecommendation);
                 } else {
                     removeFeedAds(data);
                 }

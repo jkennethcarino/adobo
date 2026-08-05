@@ -108,6 +108,13 @@ val removeAdsAndTelemetryPatch = bytecodePatch(
             }
         }
 
+        val adElementDefiningClass = AdElementToStringFingerprint.method.definingClass
+        val adConverterFingerprint = adConverterFingerprint(adElementDefiningClass)
+
+        adConverterConvertFingerprint(adConverterFingerprint)
+            .method
+            .returnEarly(null)
+
         IsAdEligibleFingerprint.method.returnEarly(false)
     }
 }

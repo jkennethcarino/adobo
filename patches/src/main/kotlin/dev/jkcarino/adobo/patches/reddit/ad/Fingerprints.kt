@@ -5,11 +5,13 @@ import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
 import app.morphe.patcher.OpcodesFilter
 import app.morphe.patcher.anyInstruction
 import app.morphe.patcher.fieldAccess
+import app.morphe.patcher.methodCall
 import app.morphe.patcher.opcode
 import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.ClassDef
+import dev.jkcarino.adobo.util.constClass
 
 internal const val EXTENSION_CLASS_DESCRIPTOR =
     "Ldev/jkcarino/extension/reddit/frontpage/AdBlockInterceptor;"
@@ -104,6 +106,35 @@ internal val bufferedSourceGetBufferFingerprint = { classDef: ClassDef ->
         filters = listOf(
             opcode(Opcode.RETURN_OBJECT)
         )
+    )
+}
+
+internal object AdElementToStringFingerprint : Fingerprint(
+    returnType = "Ljava/lang/String;",
+    parameters = listOf(),
+    filters = listOf(
+        string("AdElement(linkId="),
+    )
+)
+
+internal val adConverterFingerprint = { adElementDefiningClass: String ->
+    Fingerprint(
+        name = "<init>",
+        filters = listOf(
+            constClass(adElementDefiningClass),
+            methodCall(
+                definingClass = "Lkotlin/jvm/internal/",
+                parameters = listOf("Ljava/lang/Class;")
+            )
+        )
+    )
+}
+
+internal val adConverterConvertFingerprint = { classFingerprint: Fingerprint ->
+    Fingerprint(
+        classFingerprint = classFingerprint,
+        returnType = "L",
+        parameters = listOf("L", "L")
     )
 }
 
