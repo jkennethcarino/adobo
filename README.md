@@ -185,9 +185,8 @@ this in my spare time, I can't commit to implementing patches or fixes quickly. 
 > [!WARNING]  
 > These patches are provided as-is for personal use.
 >
-> Use them at your own risk. I'm not responsible for any potential issues, including app
-instability, crashes, or violations of terms of service that can lead to account bans or other
-consequences.
+> Use them at your own risk. I'm not responsible for any potential issues, including violations of
+> terms of service that can lead to account bans or other consequences.
 
 ## License
 
