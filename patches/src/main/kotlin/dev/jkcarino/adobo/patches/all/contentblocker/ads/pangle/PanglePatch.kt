@@ -2,7 +2,7 @@ package dev.jkcarino.adobo.patches.all.contentblocker.ads.pangle
 
 import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
-import dev.jkcarino.adobo.util.returnEarly
+import app.morphe.util.returnEarly
 
 internal val disablePangleOption = booleanOption(
     key = "disablePangle",
@@ -13,6 +13,6 @@ internal val disablePangleOption = booleanOption(
 
 internal fun BytecodePatchContext.applyPanglePatch() = buildList {
     runCatching {
-        SdkLoadAdFactoryFingerprint.method.returnEarly()
+        SdkLoadAdFactoryFingerprint.method.returnEarly(null)
     }.also(::add)
 }

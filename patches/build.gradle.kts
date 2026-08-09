@@ -26,6 +26,10 @@ val patchListGeneratorClasspath: Configuration by configurations.creating
 dependencies {
     compileOnly(libs.gson)
     patchListGeneratorClasspath(libs.gson)
+
+    implementation(libs.morphe.patches.library) {
+        exclude(group = "com.google.code.gson", module = "gson")
+    }
 }
 
 tasks {
@@ -35,7 +39,7 @@ tasks {
         dependsOn(build)
 
         classpath = sourceSets["main"].runtimeClasspath + patchListGeneratorClasspath
-        mainClass.set("util.PatchListGeneratorKt")
+        mainClass.set("app.morphe.util.PatchListGeneratorKt")
     }
     // Used by gradle-semantic-release-plugin.
     publish {

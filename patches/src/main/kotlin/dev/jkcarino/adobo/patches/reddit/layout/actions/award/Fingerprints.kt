@@ -23,6 +23,12 @@ internal val toStringFingerprints =
         )
     }.plus(CommentPresentationModelToStringFingerprint)
 
+internal object IsGildableFingerprint : Fingerprint(
+    name = "isGildable",
+    returnType = "Z",
+    parameters = listOf()
+)
+
 private object CommentPresentationModelToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),

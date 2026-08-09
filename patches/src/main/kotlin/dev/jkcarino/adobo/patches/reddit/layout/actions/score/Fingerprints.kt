@@ -19,6 +19,21 @@ internal val searchPostScoreToStringFingerprints =
         )
     }
 
+internal val scoreHiddenFingerprints =
+    setOf(
+        "getScoreHidden",
+        "isScoreHidden",
+    ).map { methodName ->
+        Fingerprint(
+            name = methodName,
+            custom = { _, classDef ->
+                classDef.interfaces.any {
+                    it.endsWith("/AnalyticableComment;")
+                }
+            }
+        )
+    }
+
 internal object ActionCellFragmentToStringFingerprint : Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),

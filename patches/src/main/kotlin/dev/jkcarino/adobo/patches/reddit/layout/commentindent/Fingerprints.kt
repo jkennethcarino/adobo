@@ -3,6 +3,8 @@ package dev.jkcarino.adobo.patches.reddit.layout.commentindent
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
 import app.morphe.patcher.InstructionLocation.MatchFirst
+import app.morphe.patcher.anyInstruction
+import app.morphe.patcher.fieldAccess
 import app.morphe.patcher.literal
 import app.morphe.patcher.opcode
 import com.android.tools.smali.dexlib2.Opcode
@@ -37,5 +39,27 @@ internal object CommentIndentDrawInvokeFingerprint : Fingerprint(
     filters = listOf(
         opcode(Opcode.CONST_4),
         opcode(Opcode.INVOKE_STATIC_RANGE, MatchAfterImmediately())
+    )
+)
+
+internal object CommentIndentLoopInitFingerprint : Fingerprint(
+    classFingerprint = CommentIndentAlphaInvokeFingerprint,
+    filters = listOf(
+        fieldAccess(type = "I"),
+        opcode(Opcode.CONST_4, MatchAfterImmediately()),
+        opcode(Opcode.IF_GT, MatchAfterImmediately()),
+        opcode(Opcode.MOVE, MatchAfterImmediately())
+    )
+)
+
+internal object CommentIndentStrokeWidthFingerprint : Fingerprint(
+    classFingerprint = CommentIndentAlphaInvokeFingerprint,
+    filters = listOf(
+        opcode(Opcode.OR_LONG),
+        anyInstruction(
+            literal(literal = 0x3f800000),
+            opcode(Opcode.INT_TO_FLOAT),
+            location = MatchAfterImmediately()
+        )
     )
 )

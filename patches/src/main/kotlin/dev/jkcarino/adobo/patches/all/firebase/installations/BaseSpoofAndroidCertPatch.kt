@@ -3,11 +3,11 @@ package dev.jkcarino.adobo.patches.all.firebase.installations
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.instructions
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.util.getReference
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.builder.BuilderInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
-import dev.jkcarino.adobo.util.getReference
 
 fun baseSpoofAndroidCertPatch(certificateHash: () -> String) = bytecodePatch {
     execute {

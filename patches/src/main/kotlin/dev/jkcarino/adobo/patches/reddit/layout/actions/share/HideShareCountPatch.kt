@@ -2,13 +2,13 @@ package dev.jkcarino.adobo.patches.reddit.layout.actions.share
 
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.util.getReference
+import app.morphe.util.returnEarly
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.patches.reddit.shared.util.updateClassField
-import dev.jkcarino.adobo.util.getReference
-import dev.jkcarino.adobo.util.returnEarly
 
 @Suppress("unused")
 val hideShareCountPatch = bytecodePatch(
@@ -36,6 +36,6 @@ val hideShareCountPatch = bytecodePatch(
             )
         }
 
-        GetShareCountFingerprint.method.returnEarly()
+        GetShareCountFingerprint.method.returnEarly(null)
     }
 }

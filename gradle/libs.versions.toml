@@ -2,12 +2,14 @@
 agp = "9.2.0"
 gson = "2.14.0"
 hidden-api-bypass = "6.1"
+morphe-patches-library = "1.5.1"
 morphe-patcher = "1.5.2"
 smali = "d92701d947"
 
 [libraries]
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 lsposed-hiddenApiBypass = { module = "org.lsposed.hiddenapibypass:hiddenapibypass", version.ref = "hidden-api-bypass" }
+morphe-patches-library = { module = "app.morphe:morphe-patches-library", version.ref = "morphe-patches-library" }
 
 [plugins]
 android-library = { id = "com.android.library", version.ref = "agp" }

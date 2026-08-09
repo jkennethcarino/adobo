@@ -1,6 +1,6 @@
-package dev.jkcarino.adobo.patches.ninegag.shared
+package dev.jkcarino.adobo.patches.ninegag.ad
 
-internal const val NINEGAG_AD_HOSTS = """
+internal const val AD_HOSTS = """
     mxpl.9gag.com
     prod.cm.publishers.advertising.a2z.com
     prod.tahoe-analytics.publishers.advertising.a2z.com

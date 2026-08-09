@@ -1,3 +1,118 @@
+## [1.3.0-dev.18](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.17...v1.3.0-dev.18) (2026-08-09)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.31.1` ([84bf4a1](https://github.com/jkennethcarino/adobo/commit/84bf4a199c6e52d4da7f0ac7c59d2190cb63a9c0))
+
+## [1.3.0-dev.17](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.16...v1.3.0-dev.17) (2026-08-06)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.31.0` ([c9f3bf0](https://github.com/jkennethcarino/adobo/commit/c9f3bf027e93dad45ef20a434f06d7e3378a3ec2))
+
+## [1.3.0-dev.16](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.15...v1.3.0-dev.16) (2026-08-05)
+
+### Bug Fixes
+
+* **Reddit - Remove ads and telemetry:** Remove promoted profile posts ([552a99e](https://github.com/jkennethcarino/adobo/commit/552a99e98a3c85bc33458d5d85a7df2956c0c89b))
+
+## [1.3.0-dev.15](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.14...v1.3.0-dev.15) (2026-08-02)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2029.30.0` ([7f4e864](https://github.com/jkennethcarino/adobo/commit/7f4e8649cf19282d5b7d186875af628a651ad565))
+
+## [1.3.0-dev.14](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.13...v1.3.0-dev.14) (2026-08-02)
+
+### Bug Fixes
+
+* **Reddit - Remove ads and telemetry:** Consider ad cells when blocking ads and promoted posts ([012f5bc](https://github.com/jkennethcarino/adobo/commit/012f5bc8274ab18e457043f5389fb1c4c8f9e4ec))
+
+## [1.3.0-dev.13](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.12...v1.3.0-dev.13) (2026-07-26)
+
+### Bug Fixes
+
+* **Reddit - Colorize comment indent lines:** Fix broken `Show indent line at current depth only` option in `2026.14.0` ([2ca3440](https://github.com/jkennethcarino/adobo/commit/2ca3440a97385b6a5c687eb67f754cb2961b4b65))
+
+## [1.3.0-dev.12](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.11...v1.3.0-dev.12) (2026-07-26)
+
+### Features
+
+* **Reddit - Colorize comment indent lines:** Add `Show indent line at current depth only` option ([#46](https://github.com/jkennethcarino/adobo/issues/46)) ([2ab0b86](https://github.com/jkennethcarino/adobo/commit/2ab0b86de0176f4481776dfacd48ed8c737165a7))
+
+## [1.3.0-dev.11](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.10...v1.3.0-dev.11) (2026-07-18)
+
+### Features
+
+* **Reddit:** Add `Disable bottom navigation bar auto-hide` patch ([#42](https://github.com/jkennethcarino/adobo/issues/42)) ([0ff15fd](https://github.com/jkennethcarino/adobo/commit/0ff15fdc292ce4411eccfbbf8df31b457450e2d1))
+
+## [1.3.0-dev.10](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.9...v1.3.0-dev.10) (2026-07-18)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.29.0` ([e487e58](https://github.com/jkennethcarino/adobo/commit/e487e587503dd28461661aa38ffafa05b5001b91))
+
+## [1.3.0-dev.9](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.8...v1.3.0-dev.9) (2026-07-15)
+
+### Features
+
+* **Reddit:** Add `Hide community menu badge` patch ([e39684c](https://github.com/jkennethcarino/adobo/commit/e39684c448c3571a239d0b3bfa3e43e1dd9efaa3))
+
+## [1.3.0-dev.8](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.7...v1.3.0-dev.8) (2026-07-14)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.28.0` ([177cf38](https://github.com/jkennethcarino/adobo/commit/177cf38a6b6e31ab000dc7a5bc3c53dc00adecdb))
+
+## [1.3.0-dev.7](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.6...v1.3.0-dev.7) (2026-07-14)
+
+### Bug Fixes
+
+* **Reddit - Sanitize share links:** Fix broken 'Copy Link' and 'Share via' options ([98fce33](https://github.com/jkennethcarino/adobo/commit/98fce33322a28e4e42892a2cad44e6ed3a091f3a))
+
+## [1.3.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.5...v1.3.0-dev.6) (2026-07-14)
+
+### Bug Fixes
+
+* **Reddit - Remove ads and telemetry:** Remove comment ad placeholder ([d505482](https://github.com/jkennethcarino/adobo/commit/d505482ba0c8c43698f3e04c4ecc76b286f19e12))
+
+## [1.3.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.4...v1.3.0-dev.5) (2026-07-13)
+
+### Updated App Support
+
+* **IMDb:** Add support for `9.3.3` ([67766d9](https://github.com/jkennethcarino/adobo/commit/67766d992018af5983b8df3d944446d1e21c6b99))
+
+## [1.3.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.3...v1.3.0-dev.4) (2026-07-12)
+
+### Features
+
+* **Gboard - Enable OCR feature:** Always show Scan Text option regardless of language ([#36](https://github.com/jkennethcarino/adobo/issues/36)) ([aa23f0a](https://github.com/jkennethcarino/adobo/commit/aa23f0a45126fde76c06296ae67f7d192364bd23))
+
+## [1.3.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.2...v1.3.0-dev.3) (2026-07-12)
+
+### Features
+
+* **Gboard:** Add `Enable access points menu redesign` patch ([#35](https://github.com/jkennethcarino/adobo/issues/35)) ([d09f8aa](https://github.com/jkennethcarino/adobo/commit/d09f8aad96aaa074d434b6a922bc9ebd1e5cf09e))
+
+## [1.3.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.3.0-dev.1...v1.3.0-dev.2) (2026-07-05)
+
+### Features
+
+* Add `Replace Google Maps API key` patch ([#27](https://github.com/jkennethcarino/adobo/issues/27)) ([2eaf942](https://github.com/jkennethcarino/adobo/commit/2eaf9429ae2931046b0c5119114bd6250168534a))
+
+## [1.3.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.2.1-dev.1...v1.3.0-dev.1) (2026-06-20)
+
+### Features
+
+* **Reddit:** Add `Disable home feed auto-refresh` patch ([a8b0a4f](https://github.com/jkennethcarino/adobo/commit/a8b0a4f01322719fd4f888981aa749fd256b1687))
+
+## [1.2.1-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.2.0...v1.2.1-dev.1) (2026-06-20)
+
+### Updated App Support
+
+* **Reddit:** Add compatible app versions ([7240761](https://github.com/jkennethcarino/adobo/commit/724076190c2ccb0724dd6d77f6c43d66f8c81fce))
+* **Reddit:** Support the latest version ([664abf3](https://github.com/jkennethcarino/adobo/commit/664abf3f464f5c83eee2a64c2ef870409e5a4752))
+
 ## [1.2.0](https://github.com/jkennethcarino/adobo/compare/v1.1.0...v1.2.0) (2026-06-14)
 
 ### Bug Fixes

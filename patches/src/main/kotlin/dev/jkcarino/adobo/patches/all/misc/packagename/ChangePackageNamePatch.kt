@@ -89,10 +89,11 @@ val changePackageNamePatch = resourcePatch(
                         isReceiverPermission || isCustomPermission
                     }
                     .forEach { element ->
-                        element[ANDROID_NAME_ATTR] = element[ANDROID_NAME_ATTR].replace(
-                            oldValue = packageName,
-                            newValue = newPackageName
-                        )
+                        element[ANDROID_NAME_ATTR] =
+                            element[ANDROID_NAME_ATTR].replace(
+                                oldValue = packageName,
+                                newValue = newPackageName
+                            )
                     }
             }
 
@@ -104,10 +105,11 @@ val changePackageNamePatch = resourcePatch(
                     .asElementSequence()
                     .filter { it[authoritiesAttr].startsWith(packageName) }
                     .forEach { provider ->
-                        provider[authoritiesAttr] = provider[authoritiesAttr].replace(
-                            oldValue = packageName,
-                            newValue = newPackageName
-                        )
+                        provider[authoritiesAttr] =
+                            provider[authoritiesAttr].replace(
+                                oldValue = packageName,
+                                newValue = newPackageName
+                            )
                     }
             }
         }

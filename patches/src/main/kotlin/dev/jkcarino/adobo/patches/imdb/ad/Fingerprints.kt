@@ -4,12 +4,30 @@ import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.methodCall
 import app.morphe.patcher.string
 
+internal val multiSourceAdWidgetFingerprints =
+    setOf(
+        "inflateContents",
+        "populate",
+        "populateAd",
+    ).map { methodName ->
+        Fingerprint(
+            definingClass = "/common/multisource/MultiSourceAdWidget",
+            name = methodName,
+            returnType = "V"
+        )
+    }
+
+internal object AdvertisingMultiSourceAdWidgetFingerprint : Fingerprint(
+    definingClass = "/advertising/multisource/MultiSourceAdWidget",
+    name = "getAdOnRefresh",
+    returnType = "V"
+)
+
 internal object InflateHtmlViewFingerprint : Fingerprint(
     definingClass = "/HtmlCardView;",
     returnType = "V",
     parameters = listOf("L", "L", "Ljava/lang/String;"),
     filters = listOf(
-        string("HtmlCardView.inflateHtmlView"),
         string("getContext(...)"),
         string("getResources(...)")
     )

@@ -1,27 +1,33 @@
 package dev.jkcarino.adobo.patches.google.gboard.misc.ocr
 
-import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
+import dev.jkcarino.adobo.patches.google.gboard.featureflags.toggleFeatureFlag
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 
 @Suppress("unused")
 val enableOcrPatch = bytecodePatch(
     name = "Enable OCR feature",
-    description = "Enables OCR feature to extract text from images and insert it into text fields."
+    description = "Enables the Scan Text feature to extract text from images " +
+        "and insert them into text fields."
 ) {
     compatibleWith(COMPATIBILITY_GBOARD)
 
     dependsOn(bypassSignaturePatch)
 
     execute {
-        OcrAccessPointFingerprint.method.apply {
-            val isEnabledIndex = OcrAccessPointFingerprint.instructionMatches.last().index
+        // Sources:
+        //   - Nail Sadykov (X/Twitter: @Nail_Sadykov)
+        //   - GMS Flags: https://github.com/polodarb/GMS-Flags
+        toggleFeatureFlag(
+            flag = "enable_ocr",
+            enabled = true
+        )
 
-            replaceInstruction(
-                index = isEnabledIndex,
-                smaliInstruction = "const/4 v1, 0x1"
-            )
-        }
+        // Enable OCR for all languages (default is English only)
+        toggleFeatureFlag(
+            flag = "enabled_ocr_language_tags",
+            value = "\"\""
+        )
     }
 }

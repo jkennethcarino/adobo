@@ -3,7 +3,7 @@ package dev.jkcarino.adobo.patches.reddit.misc.outboundlink
 import app.morphe.patcher.patch.bytecodePatch
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
-import dev.jkcarino.adobo.util.returnEarly
+import dev.jkcarino.adobo.util.defaultReturnEarly
 
 @Suppress("unused")
 val openLinksDirectlyPatch = bytecodePatch(
@@ -20,7 +20,7 @@ val openLinksDirectlyPatch = bytecodePatch(
             GetOutboundClickTrackingFingerprint,
             GetOutboundLinkFingerprint,
         ).forEach { fingerprint ->
-            fingerprint.method.returnEarly()
+            fingerprint.method.defaultReturnEarly()
         }
     }
 }

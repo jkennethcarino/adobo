@@ -1,16 +1,15 @@
 package dev.jkcarino.adobo.patches.reddit.layout.actions.award
 
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
+import app.morphe.patcher.extensions.InstructionExtensions.instructionsOrNull
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.util.getReference
+import app.morphe.util.returnEarly
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.patches.reddit.shared.util.updateClassField
-import dev.jkcarino.adobo.util.filterMethods
-import dev.jkcarino.adobo.util.findMutableMethodOf
-import dev.jkcarino.adobo.util.getReference
-import dev.jkcarino.adobo.util.returnEarly
 
 @Suppress("unused")
 val hideAwardsPatch = bytecodePatch(
@@ -36,14 +35,9 @@ val hideAwardsPatch = bytecodePatch(
             )
         }
 
-        classDefForEach { classDef ->
-            classDef
-                .filterMethods { _, method -> method.name == "isGildable" }
-                .forEach { method ->
-                    mutableClassDefBy(method.definingClass)
-                        .findMutableMethodOf(method)
-                        .returnEarly(false)
-                }
+        IsGildableFingerprint.matchAll().forEach { match ->
+            match.method.instructionsOrNull ?: return@forEach
+            match.method.returnEarly(false)
         }
     }
 }

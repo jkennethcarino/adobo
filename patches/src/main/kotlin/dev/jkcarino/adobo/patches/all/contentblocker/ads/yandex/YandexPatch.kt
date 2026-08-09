@@ -3,10 +3,10 @@ package dev.jkcarino.adobo.patches.all.contentblocker.ads.yandex
 import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.booleanOption
+import app.morphe.util.findMutableMethodOf
 import com.android.tools.smali.dexlib2.AccessFlags
 import dev.jkcarino.adobo.util.filterMethods
-import dev.jkcarino.adobo.util.findMutableMethodOf
-import dev.jkcarino.adobo.util.returnEarly
+import dev.jkcarino.adobo.util.defaultReturnEarly
 
 internal val disableYandexOption = booleanOption(
     key = "disableYandex",
@@ -54,7 +54,7 @@ internal fun BytecodePatchContext.applyYandexPatch() = buildList {
                 .forEach { method ->
                     mutableClass
                         .findMutableMethodOf(method)
-                        .returnEarly()
+                        .defaultReturnEarly()
                 }
         }.also(::add)
     }
@@ -90,7 +90,7 @@ internal fun BytecodePatchContext.applyYandexPatch() = buildList {
                     .forEach { method ->
                         mutableClassDefBy(method.definingClass)
                             .findMutableMethodOf(method)
-                            .returnEarly()
+                            .defaultReturnEarly()
                     }
             }
         }
@@ -106,7 +106,7 @@ internal fun BytecodePatchContext.applyYandexPatch() = buildList {
             .forEach { method ->
                 mutableClass
                     .findMutableMethodOf(method)
-                    .returnEarly()
+                    .defaultReturnEarly()
             }
     }.also(::add)
 }
