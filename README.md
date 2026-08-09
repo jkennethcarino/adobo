@@ -50,7 +50,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 
 **Supported versions:**
 
-| 2026.31.0 | 2026.30.0 | 2026.29.0 | 2026.24.0 | 2026.14.0 |
+| 2026.31.1 | 2026.30.0 | 2026.29.0 | 2026.24.0 | 2026.14.0 |
 | :---: | :---: | :---: | :---: | :---: |
 
 | Patch Name | Description | Options |
