@@ -17,3 +17,15 @@ internal object TrailingAskButtonFingerprint : Fingerprint(
         string("search_ask_label"),
     )
 )
+
+internal object AskPillFingerprint : Fingerprint(
+    accessFlags = listOf(
+        AccessFlags.PUBLIC,
+        AccessFlags.STATIC,
+        AccessFlags.FINAL
+    ),
+    returnType = "V",
+    filters = listOf(
+        string("search-ask-button-border")
+    )
+)

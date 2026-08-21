@@ -17,5 +17,6 @@ val hideSearchAskButtonPatch = bytecodePatch(
 
     execute {
         TrailingAskButtonFingerprint.method.returnEarly()
+        AskPillFingerprint.methodOrNull?.returnEarly()
     }
 }
