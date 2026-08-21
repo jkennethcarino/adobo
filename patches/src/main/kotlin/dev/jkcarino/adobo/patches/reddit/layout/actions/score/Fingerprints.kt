@@ -1,7 +1,10 @@
 package dev.jkcarino.adobo.patches.reddit.layout.actions.score
 
 import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
+import app.morphe.patcher.opcode
 import app.morphe.patcher.string
+import com.android.tools.smali.dexlib2.Opcode
 import dev.jkcarino.adobo.patches.reddit.shared.LinkToStringFingerprint
 
 internal val searchPostScoreToStringFingerprints =
@@ -14,7 +17,9 @@ internal val searchPostScoreToStringFingerprints =
             parameters = listOf(),
             filters = listOf(
                 string(prefix),
-                string(", score=")
+                string(", score="),
+                opcode(Opcode.INVOKE_VIRTUAL, MatchAfterImmediately()),
+                opcode(Opcode.IGET_OBJECT, MatchAfterImmediately())
             )
         )
     }
@@ -39,7 +44,9 @@ internal object ActionCellFragmentToStringFingerprint : Fingerprint(
     parameters = listOf(),
     filters = listOf(
         string(", isScoreHidden="),
-        string("ActionCellFragment(id=")
+        string("ActionCellFragment(id="),
+        opcode(Opcode.IGET_OBJECT, MatchAfterImmediately()),
+        opcode(Opcode.IGET_BOOLEAN, MatchAfterImmediately())
     )
 )
 
@@ -62,6 +69,8 @@ internal object SearchCommentScoreToStringFingerprint : Fingerprint(
     parameters = listOf(),
     filters = listOf(
         string("SearchComment(commentId="),
-        string(", score=")
+        string(", score="),
+        opcode(Opcode.INVOKE_VIRTUAL, MatchAfterImmediately()),
+        opcode(Opcode.IGET, MatchAfterImmediately())
     )
 )

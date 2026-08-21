@@ -1,17 +1,12 @@
 package dev.jkcarino.adobo.patches.reddit.layout.actions.score
 
-import app.morphe.patcher.Fingerprint
-import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.instructionsOrNull
 import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.patch.bytecodePatch
-import app.morphe.util.getReference
 import app.morphe.util.returnEarly
-import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
-import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
-import dev.jkcarino.adobo.patches.reddit.shared.util.updateClassField
+import dev.jkcarino.adobo.patches.reddit.shared.util.overrideFieldValue
 import java.util.logging.Logger
 
 @Suppress("unused")
@@ -39,18 +34,6 @@ val hideScoresPatch = bytecodePatch(
     )
 
     execute {
-        fun Fingerprint.updateScoreClassField(value: Any?, offset: Int = 2) {
-            val scoreIndex = this.instructionMatches.last().index + offset
-            val scoreInstruction = this.method.getInstruction<TwoRegisterInstruction>(scoreIndex)
-            val scoreFieldReference = scoreInstruction.getReference<FieldReference>()!!
-
-            updateClassField(
-                classDef = this.classDef,
-                fieldReference = scoreFieldReference,
-                value = value
-            )
-        }
-
         if (!hidePostScores!! && !hideCommentScores!!) {
             return@execute Logger
                 .getLogger(this::class.java.name)
@@ -58,17 +41,17 @@ val hideScoresPatch = bytecodePatch(
         }
 
         if (hidePostScores!!) {
-            ActionCellFragmentToStringFingerprint.updateScoreClassField(value = true)
+            ActionCellFragmentToStringFingerprint.overrideFieldValue(true)
             GetScoreFingerprint.method.returnEarly(0)
             GetHideScoreFingerprint.method.returnEarly(true)
 
             searchPostScoreToStringFingerprints.forEach { fingerprint ->
-                fingerprint.updateScoreClassField(value = null)
+                fingerprint.overrideFieldValue(null)
             }
         }
 
         if (hideCommentScores!!) {
-            SearchCommentScoreToStringFingerprint.updateScoreClassField(value = null)
+            SearchCommentScoreToStringFingerprint.overrideFieldValue(null)
 
             scoreHiddenFingerprints.forEach { fingerprint ->
                 fingerprint.matchAll().forEach { match ->
