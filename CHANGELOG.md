@@ -1,3 +1,9 @@
+## [1.3.1-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.3.1-dev.1...v1.3.1-dev.2) (2026-08-21)
+
+### Bug Fixes
+
+* **Reddit - Hide Ask button from search bar:** Remove new Ask pill ([3cf0852](https://github.com/jkennethcarino/adobo/commit/3cf0852b3413952b6eaf435b57938fa2799c6256))
+
 ## [1.3.1-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.3.0...v1.3.1-dev.1) (2026-08-09)
 
 ### Updated App Support
