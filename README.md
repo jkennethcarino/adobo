@@ -108,7 +108,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;12 patches</summary>
+<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;13 patches</summary>
 <br>
 
 | Patch Name | Description | Options |
@@ -121,6 +121,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Disable metrics collection in WebView | Disables the collection of diagnostic data or usage statistics that are sent to Google. |  |
 | Disable mobile ads | Disables banner, interstitial, and other ad formats. | • AppLovin MAX<br>• BIGO<br>• Google AdMob<br>• Meta Audience Network<br>• Mintegral<br>• myTarget<br>• Pangle<br>• TopOn<br>• Unity<br>• Liftoff Monetize<br>• Yandex Advertising Network |
 | Remove internet permission | Removes unnecessary internet permission from apps that can still work without internet access. |  |
+| Remove screenshot detection | Prevents the app from detecting when a screenshot is taken. |  |
 | Replace Google Maps API key | Replaces the Google Maps API key with a custom key. | • Maps API Key |
 | Spoof Advertising ID | Spoofs the device's advertising ID with a string of zeros. |  |
 | Spoof Firebase certificate hash | Spoofs the app's package certificate hash used by Firebase Installations so that push notifications, remote config, and other Firebase services continue to work as expected. | • Certificate hash |

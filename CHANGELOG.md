@@ -1,3 +1,9 @@
+## [1.4.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.3.1-dev.2...v1.4.0-dev.1) (2026-08-21)
+
+### Features
+
+* Add `Remove screenshot detection` patch ([02a62c0](https://github.com/jkennethcarino/adobo/commit/02a62c093f93202f340da698dccf0ce4d843e1bb))
+
 ## [1.3.1-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.3.1-dev.1...v1.3.1-dev.2) (2026-08-21)
 
 ### Bug Fixes
