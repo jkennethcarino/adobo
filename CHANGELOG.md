@@ -1,3 +1,10 @@
+## [1.4.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.3...v1.4.0-dev.4) (2026-08-30)
+
+### Bug Fixes
+
+* **Disable mobile ads:** Block AdMob's app open ad and mediation ([63cf9ca](https://github.com/jkennethcarino/adobo/commit/63cf9ca17253621dd16ed0971b7e9598be8e79a3))
+* **Disable mobile ads:** Block Bytedance Pangle's ad entry points ([c3bde04](https://github.com/jkennethcarino/adobo/commit/c3bde042f5bc260bf644eec94ebb9becf43ac161))
+
 ## [1.4.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.2...v1.4.0-dev.3) (2026-08-30)
 
 ### Updated App Support
