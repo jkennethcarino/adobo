@@ -18,7 +18,7 @@ val COMPATIBILITY_REDDIT =
                 minSdk = 29
             ),
             AppTarget(
-                version = "2026.33.1",
+                version = "2026.33.2",
                 minSdk = 29
             ),
             AppTarget(
