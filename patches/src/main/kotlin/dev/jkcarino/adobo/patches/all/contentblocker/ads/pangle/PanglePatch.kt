@@ -15,4 +15,15 @@ internal fun BytecodePatchContext.applyPanglePatch() = buildList {
     runCatching {
         SdkLoadAdFactoryFingerprint.method.returnEarly(null)
     }.also(::add)
+
+    setOf(
+        LoadAdFingerprint,
+        ShowFingerprint,
+    ).forEach { fingerprint ->
+        runCatching {
+            fingerprint.matchAll().forEach { match ->
+                match.method.returnEarly()
+            }
+        }.also(::add)
+    }
 }
