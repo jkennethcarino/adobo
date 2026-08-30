@@ -2,6 +2,7 @@ package dev.jkcarino.adobo.patches.all.contentblocker.hosts
 
 import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.filePathOption
 import app.morphe.patcher.patch.stringOption
 import java.io.File
 
@@ -12,7 +13,7 @@ val hostsBlockerPatch = bytecodePatch(
         "using a hosts file.",
     default = false
 ) {
-    val hostsOption by stringOption(
+    val hostsOption by filePathOption(
         key = "hosts",
         default = null,
         title = "Hosts file",
