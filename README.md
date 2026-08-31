@@ -22,9 +22,9 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 ## Patches
 
 <!-- PATCHES_START -->
-[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=version&label=main)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
+[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=version&label=dev)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
 <details>
-<summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;8 patches</summary>
+<summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;9 patches</summary>
 <br>
 
 **Package name:** `com.google.android.inputmethod.latin`
@@ -36,6 +36,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Enable Undo feature | Enables the undo feature to quickly undo or correct typing mistakes. |  |
 | Enable access points menu redesign | Enables the redesign of the additional actions menu. |  |
 | Enable clipboard in incognito | Enables clipboard support in incognito mode. |  |
+| Enable extended clipboard history | Enables extending the clipboard history expiration time. |  |
 | Enable key shape selection | Enables an option to select a key shape from the theme. |  |
 | Enable voice typing in incognito | Enables voice typing in incognito mode. |  |
 | Toggle feature flags | Toggles Gboard feature flags to enable or disable experimental or hidden features. | • Feature flags<br>• Enable feature flags |
@@ -43,14 +44,14 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;20 patches</summary>
+<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;21 patches</summary>
 <br>
 
 **Package name:** `com.reddit.frontpage`
 
 **Supported versions:**
 
-| 2026.31.1 | 2026.30.0 | 2026.29.0 | 2026.24.0 | 2026.14.0 |
+| 2026.35.0 | 2026.34.0 | 2026.33.2 | 2026.24.0 | 2026.14.0 |
 | :---: | :---: | :---: | :---: | :---: |
 
 | Patch Name | Description | Options |
@@ -58,6 +59,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Colorize comment indent lines | Replaces the default gray comment indent lines with color-coded lines. | • Show indent line at current depth only<br>• Line color 1<br>• Line color 2<br>• Line color 3<br>• Line color 4<br>• Line color 5<br>• Line color 6<br>• Line color 7<br>• Line color 8 |
 | Disable bottom navigation bar auto-hide | Prevents the bottom navigation bar from hiding when scrolling down. |  |
 | Disable home feed auto-refresh | Disables the automatic refresh of the home feed after viewing a post or after being away from the app. |  |
+| Disable home feed refresh on back to exit | Disables the back-to-top scroll and home feed refresh on back navigation to exit. |  |
 | Disable home feed swipe | Disables the horizontal page swipe gesture used to switch feeds. |  |
 | Disable home screen redirect | Disables the automatic redirect to the home screen after being away from the app or returning from the background. |  |
 | Disable post detail swipe | Disables the horizontal swipe gesture used to navigate between posts. |  |
@@ -108,7 +110,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;12 patches</summary>
+<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;13 patches</summary>
 <br>
 
 | Patch Name | Description | Options |
@@ -121,6 +123,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Disable metrics collection in WebView | Disables the collection of diagnostic data or usage statistics that are sent to Google. |  |
 | Disable mobile ads | Disables banner, interstitial, and other ad formats. | • AppLovin MAX<br>• BIGO<br>• Google AdMob<br>• Meta Audience Network<br>• Mintegral<br>• myTarget<br>• Pangle<br>• TopOn<br>• Unity<br>• Liftoff Monetize<br>• Yandex Advertising Network |
 | Remove internet permission | Removes unnecessary internet permission from apps that can still work without internet access. |  |
+| Remove screenshot detection | Prevents the app from detecting when a screenshot is taken. |  |
 | Replace Google Maps API key | Replaces the Google Maps API key with a custom key. | • Maps API Key |
 | Spoof Advertising ID | Spoofs the device's advertising ID with a string of zeros. |  |
 | Spoof Firebase certificate hash | Spoofs the app's package certificate hash used by Firebase Installations so that push notifications, remote config, and other Firebase services continue to work as expected. | • Certificate hash |

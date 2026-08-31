@@ -1,3 +1,54 @@
+## [1.4.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.5...v1.4.0-dev.6) (2026-08-31)
+
+### Features
+
+* **Reddit:** Add `Disable home feed refresh on back to exit` patch ([9cf2579](https://github.com/jkennethcarino/adobo/commit/9cf2579ed7c0442b346b580a7ecc3c1b8557521e))
+
+## [1.4.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.4...v1.4.0-dev.5) (2026-08-31)
+
+### Features
+
+* **Gboard:** Add `Enable extended clipboard history` patch ([de234b7](https://github.com/jkennethcarino/adobo/commit/de234b7de9e77a2c88e496c7d1f8b2adcdad422e))
+
+## [1.4.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.3...v1.4.0-dev.4) (2026-08-30)
+
+### Bug Fixes
+
+* **Disable mobile ads:** Block AdMob's app open ad and mediation ([63cf9ca](https://github.com/jkennethcarino/adobo/commit/63cf9ca17253621dd16ed0971b7e9598be8e79a3))
+* **Disable mobile ads:** Block Bytedance Pangle's ad entry points ([c3bde04](https://github.com/jkennethcarino/adobo/commit/c3bde042f5bc260bf644eec94ebb9becf43ac161))
+
+## [1.4.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.2...v1.4.0-dev.3) (2026-08-30)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.33.2` ([12a3efc](https://github.com/jkennethcarino/adobo/commit/12a3efc0fa0a00b27f4379b9e8203b20ec6558d4))
+* **Reddit:** Add support for `2026.35.0` ([965fd7d](https://github.com/jkennethcarino/adobo/commit/965fd7d92e01b9b93d104efd29f6ce1af422cc72))
+
+## [1.4.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.1...v1.4.0-dev.2) (2026-08-21)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.33.1` ([26da26a](https://github.com/jkennethcarino/adobo/commit/26da26a3b915268fa2e39fde3e157a92d33a537e))
+* **Reddit:** Add support for `2026.34.0` ([6db6319](https://github.com/jkennethcarino/adobo/commit/6db6319aa138d6589fb89c5fd224548fb652024e))
+
+## [1.4.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.3.1-dev.2...v1.4.0-dev.1) (2026-08-21)
+
+### Features
+
+* Add `Remove screenshot detection` patch ([02a62c0](https://github.com/jkennethcarino/adobo/commit/02a62c093f93202f340da698dccf0ce4d843e1bb))
+
+## [1.3.1-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.3.1-dev.1...v1.3.1-dev.2) (2026-08-21)
+
+### Bug Fixes
+
+* **Reddit - Hide Ask button from search bar:** Remove new Ask pill ([3cf0852](https://github.com/jkennethcarino/adobo/commit/3cf0852b3413952b6eaf435b57938fa2799c6256))
+
+## [1.3.1-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.3.0...v1.3.1-dev.1) (2026-08-09)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.32.0` ([b6bde3a](https://github.com/jkennethcarino/adobo/commit/b6bde3aa67a440538870073b2b7ef836eb4b25b6))
+
 ## [1.3.0](https://github.com/jkennethcarino/adobo/compare/v1.2.0...v1.3.0) (2026-08-09)
 
 ### Bug Fixes

@@ -6,7 +6,7 @@ import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.patch.bytecodePatch
-import app.morphe.patcher.patch.stringOption
+import app.morphe.patcher.patch.colorOption
 import com.android.tools.smali.dexlib2.builder.instruction.BuilderArrayPayload
 import com.android.tools.smali.dexlib2.builder.instruction.BuilderInstruction31t
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
@@ -35,7 +35,7 @@ val commentIndentColorPatch = bytecodePatch(
         presetColors.mapIndexed { index, colors ->
             val depth = index + 1
 
-            stringOption(
+            colorOption(
                 key = "indentLineColors$depth",
                 default = colors.values.first(),
                 values = colors,

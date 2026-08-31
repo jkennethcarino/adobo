@@ -5,6 +5,7 @@ import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.util.returnEarly
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+import dev.jkcarino.adobo.patches.all.screenshot.detection.removeScreenshotDetectionPatch
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
@@ -15,15 +16,15 @@ val disableScreenshotBannerPatch = bytecodePatch(
 ) {
     compatibleWith(COMPATIBILITY_REDDIT)
 
-    dependsOn(spoofCertificateHashPatch)
+    dependsOn(
+        spoofCertificateHashPatch,
+        removeScreenshotDetectionPatch
+    )
 
     execute {
         OnScreenCapturedFingerprint.methodOrNull?.returnEarly()
 
-        setOf(
-            ScreenshotBannerInvokeSuspendFingerprint,
-            ScreenshotTakenBannerInvokeSuspendFingerprint
-        ).forEach { fingerprint ->
+        screenshotBannerFingerprints.forEach { fingerprint ->
             fingerprint.method.apply {
                 val booleanIndex = fingerprint.instructionMatches.last().index - 1
                 val booleanRegister =

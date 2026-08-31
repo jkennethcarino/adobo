@@ -7,12 +7,11 @@ import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.util.getReference
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
-import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.TypeReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
-import dev.jkcarino.adobo.patches.reddit.shared.util.updateClassField
+import dev.jkcarino.adobo.patches.reddit.shared.util.overrideFieldValue
 
 @Suppress("unused")
 val hideCommunityHighlightsPatch = bytecodePatch(
@@ -25,19 +24,7 @@ val hideCommunityHighlightsPatch = bytecodePatch(
     dependsOn(spoofCertificateHashPatch)
 
     execute {
-        SubredditInfoByIdToStringFingerprint.apply {
-            val highlightedPostsIndex = instructionMatches.last().index
-            val highlightedPostsInstruction =
-                method.getInstruction<TwoRegisterInstruction>(highlightedPostsIndex)
-            val highlightedPostsFieldReference =
-                highlightedPostsInstruction.getReference<FieldReference>()!!
-
-            updateClassField(
-                classDef = classDef,
-                fieldReference = highlightedPostsFieldReference,
-                value = null
-            )
-        }
+        SubredditInfoByIdToStringFingerprint.overrideFieldValue(null)
 
         InvokeFingerprint.method.apply {
             val uiStateInterface = LoadedToStringFingerprint.classDef.interfaces.first()
