@@ -1,3 +1,9 @@
+## [1.4.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.4...v1.4.0-dev.5) (2026-08-31)
+
+### Features
+
+* **Gboard:** Add `Enable extended clipboard history` patch ([de234b7](https://github.com/jkennethcarino/adobo/commit/de234b7de9e77a2c88e496c7d1f8b2adcdad422e))
+
 ## [1.4.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.3...v1.4.0-dev.4) (2026-08-30)
 
 ### Bug Fixes
