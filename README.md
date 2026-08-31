@@ -44,7 +44,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;20 patches</summary>
+<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;21 patches</summary>
 <br>
 
 **Package name:** `com.reddit.frontpage`
@@ -59,6 +59,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Colorize comment indent lines | Replaces the default gray comment indent lines with color-coded lines. | • Show indent line at current depth only<br>• Line color 1<br>• Line color 2<br>• Line color 3<br>• Line color 4<br>• Line color 5<br>• Line color 6<br>• Line color 7<br>• Line color 8 |
 | Disable bottom navigation bar auto-hide | Prevents the bottom navigation bar from hiding when scrolling down. |  |
 | Disable home feed auto-refresh | Disables the automatic refresh of the home feed after viewing a post or after being away from the app. |  |
+| Disable home feed refresh on back to exit | Disables the back-to-top scroll and home feed refresh on back navigation to exit. |  |
 | Disable home feed swipe | Disables the horizontal page swipe gesture used to switch feeds. |  |
 | Disable home screen redirect | Disables the automatic redirect to the home screen after being away from the app or returning from the background. |  |
 | Disable post detail swipe | Disables the horizontal swipe gesture used to navigate between posts. |  |

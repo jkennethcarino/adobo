@@ -1,3 +1,9 @@
+## [1.4.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.5...v1.4.0-dev.6) (2026-08-31)
+
+### Features
+
+* **Reddit:** Add `Disable home feed refresh on back to exit` patch ([9cf2579](https://github.com/jkennethcarino/adobo/commit/9cf2579ed7c0442b346b580a7ecc3c1b8557521e))
+
 ## [1.4.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v1.4.0-dev.4...v1.4.0-dev.5) (2026-08-31)
 
 ### Features
