@@ -22,7 +22,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 ## Patches
 
 <!-- PATCHES_START -->
-[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=version&label=main)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
+[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=version&label=dev)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
 <details>
 <summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;9 patches</summary>
 <br>
@@ -44,7 +44,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;21 patches</summary>
+<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;23 patches</summary>
 <br>
 
 **Package name:** `com.reddit.frontpage`
@@ -64,6 +64,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Disable home screen redirect | Disables the automatic redirect to the home screen after being away from the app or returning from the background. |  |
 | Disable post detail swipe | Disables the horizontal swipe gesture used to navigate between posts. |  |
 | Disable screenshot banner | Disables the banner that shows up after taking a screenshot. |  |
+| Enable guest mode | Enables browsing Reddit without signing in. |  |
 | Hide Ask button from search bar | Hides the Ask button (Reddit Answers) from the search bar. |  |
 | Hide awards | Hides the awards on Reddit posts and comments. |  |
 | Hide community highlights | Hides the community highlights section. |  |
@@ -74,6 +75,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Hide upvote scores | Hides the scores on Reddit posts and comments. | • Hide post scores<br>• Hide comment scores |
 | Hide user community badges | Hides the user community badges on Reddit comments. |  |
 | Hide user flairs | Hides the user flairs on Reddit comments. |  |
+| Make system navigation bar transparent | Sets the system navigation bar to fully transparent. |  |
 | Open external links directly | Opens external links directly without going through out.reddit.com. |  |
 | Remove ads and telemetry | Removes ads and telemetry everywhere. |  |
 | Sanitize share links | Unshortens and removes the tracking query parameters from shared links. |  |
