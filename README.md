@@ -44,7 +44,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;22 patches</summary>
+<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;23 patches</summary>
 <br>
 
 **Package name:** `com.reddit.frontpage`
@@ -75,6 +75,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Hide upvote scores | Hides the scores on Reddit posts and comments. | • Hide post scores<br>• Hide comment scores |
 | Hide user community badges | Hides the user community badges on Reddit comments. |  |
 | Hide user flairs | Hides the user flairs on Reddit comments. |  |
+| Make system navigation bar transparent | Sets the system navigation bar to fully transparent. |  |
 | Open external links directly | Opens external links directly without going through out.reddit.com. |  |
 | Remove ads and telemetry | Removes ads and telemetry everywhere. |  |
 | Sanitize share links | Unshortens and removes the tracking query parameters from shared links. |  |
