@@ -138,8 +138,8 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 
 ## Getting Started
 
-You'll need [Morphe CLI](https://github.com/MorpheApp/morphe-cli)
-or [Morphe Manager](https://github.com/MorpheApp/morphe-manager).
+You'll need [Morphe Manager](https://github.com/MorpheApp/morphe-manager)
+or [Morphe Desktop](https://github.com/MorpheApp/morphe-desktop).
 
 ### Morphe Manager
 
