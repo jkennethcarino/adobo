@@ -22,7 +22,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 ## Patches
 
 <!-- PATCHES_START -->
-[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=version&label=main)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
+[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=version&label=dev)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
 <details>
 <summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;9 patches</summary>
 <br>
@@ -44,7 +44,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;23 patches</summary>
+<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;24 patches</summary>
 <br>
 
 **Package name:** `com.reddit.frontpage`
@@ -69,6 +69,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Hide awards | Hides the awards on Reddit posts and comments. |  |
 | Hide community highlights | Hides the community highlights section. |  |
 | Hide community menu badge | Hides the red notification badge on the community menu (hamburger menu). |  |
+| Hide crosspost | Hides the crosspost on Reddit posts. |  |
 | Hide post view counts | Removes the "views" indicator from the post metadata. |  |
 | Hide prominent search bar | Hides the new prominent search bar on the main screen. Applicable only to version 2026.24.0 and earlier. |  |
 | Hide share count | Hides the share count on Reddit posts. |  |

@@ -1,3 +1,9 @@
+## [1.6.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.5.0...v1.6.0-dev.1) (2026-09-20)
+
+### Features
+
+* **Reddit:** Add `Hide crosspost` patch ([9932fe9](https://github.com/jkennethcarino/adobo/commit/9932fe9982b8c7b237fd0bd9bb39de6300c34c85))
+
 ## [1.5.0](https://github.com/jkennethcarino/adobo/compare/v1.4.0...v1.5.0) (2026-09-19)
 
 ### Bug Fixes
