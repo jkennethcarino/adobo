@@ -84,18 +84,19 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>📦 9GAG&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<summary>📦 9GAG&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
 <br>
 
 **Package name:** `com.ninegag.android.app`
 
 **Supported versions:**
 
-| 8.17.5 | 8.17.4 |
-| :---: | :---: |
+| 8.24.5 | 8.23.0 | 8.22.0 |
+| :---: | :---: | :---: |
 
 | Patch Name | Description | Options |
 |------------|-------------|---------|
+| Disable forced update dialog | Disables the forced update dialog on an outdated app version. |  |
 | Remove 9GAG's ads, trackers, and analytics | Removes ads, trackers, and analytics in the 9GAG app. |  |
 
 </details>
