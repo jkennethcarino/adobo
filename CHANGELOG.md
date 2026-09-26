@@ -1,3 +1,9 @@
+## [1.6.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.6.0-dev.2...v1.6.0-dev.3) (2026-09-26)
+
+### Features
+
+* **9GAG:** Add `Sanitize share links` patch ([ab5d7b3](https://github.com/jkennethcarino/adobo/commit/ab5d7b33aad0f559bc2d7006a09bb8daccfb8bc7))
+
 ## [1.6.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.6.0-dev.1...v1.6.0-dev.2) (2026-09-26)
 
 ### Features
