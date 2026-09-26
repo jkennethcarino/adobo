@@ -1,49 +1,45 @@
 package dev.jkcarino.adobo.patches.ninegag.ad
 
 internal const val AD_HOSTS = """
-    mxpl.9gag.com
-    prod.cm.publishers.advertising.a2z.com
-    prod.tahoe-analytics.publishers.advertising.a2z.com
-    cdn-f.adsmoloco.com
-    amazon-adsystem.com
-    app-measurement.com
     admob-gmats.uc.r.appspot.com
+    adsmoloco.com
+    advertising.a2z.com
+    amazon-adsystem.com
+    api.rlcdn.com
+    app-measurement.com
+    cdn.confiant-integrations.net
+    chartboost.com
+    doubleclick.net
+    fh.under9.co
+    firebase-settings.crashlytics.com
+    fundingchoicesmessages.google.com
+    fyber.com
+    google-analytics.com
+    googleadservices.com
+    googlesyndication.com
+    googletagservices.com
+    inmobi.com
+    inmobicdn.net
+    inner-active.mobi
+    liveramp.com
+    mediation.goog
+    mixpanel.com
+    mobileads.google.com
+    moloco.com
+    mxpl.9gag.com
     pbs-onboarding-eu.ay.delivery
     pbs-onboarding-us.ay.delivery
-    chartboost.com
     protected-by.clarium.io
-    cdn.confiant-integrations.net
-    firebase-settings.crashlytics.com
-    ad.doubleclick.net
-    googleads.g.doubleclick.net
-    fyber.com
-    mediation.goog
-    google-analytics.com
-    fundingchoicesmessages.google.com
-    mobileads.google.com
-    www.googleadservices.com
-    pagead2.googlesyndication.com
-    inmobi.com
-    supply.inmobicdn.net
-    cdn2.inner-active.mobi
-    sdk-events.inner-active.mobi
-    wv.inner-active.mobi
-    liveramp.com
-    api.mixpanel.com
-    sdkapi.dsp-api.moloco.com
-    sdkopmetrics-us.dsp-api.moloco.com
     pubnative.net
-    api.rlcdn.com
+    rlog.9gag.com
+    s1.2mdn.net
     smaato.com
     smaato.net
     spadsync.com
-    telemetry.tk0x1.com
+    tk0x1.com
     uidapi.com
-    fh.under9.co
-    customendcard.verve.com
-    feedback.verve.com
-    sdkc.vervegroupinc.net
+    verve.com
+    vervegroupinc.net
     vrvm.com
-    tags-prod.vrvm.com
     vungle.com
 """
