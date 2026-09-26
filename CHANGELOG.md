@@ -1,3 +1,25 @@
+## [1.6.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v1.6.0-dev.2...v1.6.0-dev.3) (2026-09-26)
+
+### Features
+
+* **9GAG:** Add `Sanitize share links` patch ([ab5d7b3](https://github.com/jkennethcarino/adobo/commit/ab5d7b33aad0f559bc2d7006a09bb8daccfb8bc7))
+
+## [1.6.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v1.6.0-dev.1...v1.6.0-dev.2) (2026-09-26)
+
+### Features
+
+* **9GAG:** Add `Disable forced update dialog` patch ([bc94501](https://github.com/jkennethcarino/adobo/commit/bc94501e4f943e0d96ad14f0304e49361ced88d3))
+
+### Updated App Support
+
+* **9GAG:** Add support for `8.24.5`, `8.23.0`, and `8.22.0` ([795523b](https://github.com/jkennethcarino/adobo/commit/795523b2a3318185152387487be4a3d72bbc797f))
+
+## [1.6.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.5.0...v1.6.0-dev.1) (2026-09-20)
+
+### Features
+
+* **Reddit:** Add `Hide crosspost` patch ([9932fe9](https://github.com/jkennethcarino/adobo/commit/9932fe9982b8c7b237fd0bd9bb39de6300c34c85))
+
 ## [1.5.0](https://github.com/jkennethcarino/adobo/compare/v1.4.0...v1.5.0) (2026-09-19)
 
 ### Bug Fixes
