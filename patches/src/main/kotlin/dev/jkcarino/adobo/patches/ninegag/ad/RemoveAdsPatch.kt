@@ -1,8 +1,12 @@
 package dev.jkcarino.adobo.patches.ninegag.ad
 
+import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
+import app.morphe.patcher.extensions.InstructionExtensions.replaceInstructions
 import app.morphe.patcher.patch.bytecodePatch
-import app.morphe.util.returnBoxedBooleanEarly
+import app.morphe.util.getReference
 import app.morphe.util.returnEarly
+import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import dev.jkcarino.adobo.patches.all.contentblocker.hosts.HostsBlocker
 import dev.jkcarino.adobo.patches.all.contentblocker.hosts.HostsBlockerConfig
 import dev.jkcarino.adobo.patches.all.contentblocker.hosts.baseHostsBlockerPatch
@@ -25,7 +29,19 @@ val removeAdsPatch = bytecodePatch(
     )
 
     execute {
-        AdGateFingerprint.method.returnEarly(false)
-        RuntimeAdGateFingerprint.method.returnBoxedBooleanEarly(false)
+        val unitIndex = UnitFingerprint.instructionMatches.last().index
+        val unitInstruction =
+            UnitFingerprint.method.getInstruction<OneRegisterInstruction>(unitIndex)
+        val unit = unitInstruction.getReference<FieldReference>()!!
+
+        InitializeFingerprint.method.replaceInstructions(
+            index = 0,
+            smaliInstructions = """
+                sget-object v0, ${unit.definingClass}->${unit.name}:${unit.type}
+                return-object v0
+            """
+        )
+
+        ShouldShowAdsFingerprint.method.returnEarly(false)
     }
 }

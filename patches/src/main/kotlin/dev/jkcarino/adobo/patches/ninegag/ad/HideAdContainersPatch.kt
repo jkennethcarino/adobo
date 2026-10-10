@@ -10,7 +10,7 @@ private const val AD_CONTAINER_ID = "adview_adhesion_banner_container"
 private const val LAYOUT_HEIGHT_ATTR = "android:layout_height"
 
 val hideAdContainersPatch = resourcePatch(
-    description = "Removes blank ad containers from the layout."
+    description = "Removes ad containers from the layout."
 ) {
     compatibleWith(COMPATIBILITY_NINEGAG)
 
@@ -27,12 +27,6 @@ val hideAdContainersPatch = resourcePatch(
                     .filterElements { it["android:id"].contains(AD_CONTAINER_ID) }
                     .forEach { it[LAYOUT_HEIGHT_ATTR] = "0dp" }
             }
-        }
-
-        document("res/layout/view_aatk_native.xml").use { document ->
-            val root = document.documentElement
-            root["android:visibility"] = "gone"
-            root[LAYOUT_HEIGHT_ATTR] = "0dp"
         }
     }
 }

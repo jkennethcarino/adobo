@@ -1,49 +1,52 @@
 package dev.jkcarino.adobo.patches.ninegag.ad
 
 import app.morphe.patcher.Fingerprint
-import app.morphe.patcher.checkCast
-import app.morphe.patcher.fieldAccess
-import app.morphe.patcher.methodCall
+import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
+import app.morphe.patcher.InstructionLocation.MatchFirst
+import app.morphe.patcher.OpcodesFilter
 import app.morphe.patcher.opcode
 import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 
-internal object AdGateFingerprint : Fingerprint(
-    returnType = "Z",
+private object UnitToStringFingerprint : Fingerprint(
+    name = "toString",
+    returnType = "Ljava/lang/String;",
     parameters = listOf(),
-    accessFlags = listOf(
-        AccessFlags.PUBLIC,
-        AccessFlags.STATIC,
-        AccessFlags.FINAL
-    ),
     filters = listOf(
-        opcode(Opcode.IF_EQZ),
-        fieldAccess(type = "Lkotlinx/coroutines/flow/MutableStateFlow;"),
-        methodCall(
-            definingClass = "Lkotlinx/coroutines/flow/MutableStateFlow;",
-            name = "getValue",
-            returnType = "Ljava/lang/Object;"
-        ),
-        opcode(Opcode.MOVE_RESULT_OBJECT),
-        checkCast(type = "Ljava/lang/Boolean;"),
-        methodCall(
-            definingClass = "Ljava/lang/Boolean;",
-            name = "booleanValue",
-            returnType = "Z"
-        ),
-        opcode(Opcode.MOVE_RESULT),
-        opcode(Opcode.IF_NEZ)
+        string("kotlin.Unit", MatchFirst()),
+        opcode(Opcode.RETURN_OBJECT, MatchAfterImmediately())
     )
 )
 
-internal object RuntimeAdGateFingerprint : Fingerprint(
-    name = "invokeSuspend",
-    returnType = "Ljava/lang/Object;",
-    parameters = listOf("Ljava/lang/Object;"),
-    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
-    filters = listOf(
-        string("adsEnabled: consentProvided="),
-        string("9Ads")
+internal object UnitFingerprint : Fingerprint(
+    classFingerprint = UnitToStringFingerprint,
+    accessFlags = listOf(AccessFlags.STATIC, AccessFlags.CONSTRUCTOR),
+    parameters = listOf(),
+    filters = OpcodesFilter.opcodesToFilters(
+        Opcode.NEW_INSTANCE,
+        Opcode.INVOKE_DIRECT,
+        Opcode.SPUT_OBJECT
     )
+)
+
+internal object InitializeFingerprint : Fingerprint(
+    filters = listOf(
+        string("9Ads"),
+        string("MobileAds.initialize started")
+    )
+)
+
+private object HandleIdentityFingerprint : Fingerprint(
+    returnType = "V",
+    filters = listOf(
+        string(" identity="),
+        string("handleIdentity: Adding ")
+    )
+)
+
+internal object ShouldShowAdsFingerprint : Fingerprint(
+    classFingerprint = HandleIdentityFingerprint,
+    returnType = "Z",
+    parameters = listOf()
 )
