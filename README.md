@@ -51,7 +51,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 
 **Supported versions:**
 
-| 2026.40.0 | 2026.39.1 | 2026.38.0 | 2026.24.0 | 2026.14.0 |
+| 2026.41.0 | 2026.40.0 | 2026.39.1 | 2026.24.0 | 2026.14.0 |
 | :---: | :---: | :---: | :---: | :---: |
 
 | Patch Name | Description | Options |
