@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-11-01T16:23:50",
-  "description": "## [2.0.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.7.0...v2.0.0-dev.1) (2026-11-01)\n\n### ⚠ BREAKING CHANGES\n\n* Patches now use Morphe Patcher 2.0.0\n\n* Update Morphe Patcher and Patches Library ([a2d9540](https://github.com/jkennethcarino/adobo/commit/a2d9540c34caaa5bf963fbb0789564f70fd8a27b))",
-  "download_url": "https://github.com/jkennethcarino/adobo/releases/download/v2.0.0-dev.1/patches-2.0.0-dev.1.mpp",
+  "created_at": "2026-11-01T17:01:49",
+  "description": "## [2.0.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.1...v2.0.0-dev.2) (2026-11-01)\n\n### Updated App Support\n\n* **Reddit:** Add support for `2026.43.1` and `2026.44.0` ([5abe1bd](https://github.com/jkennethcarino/adobo/commit/5abe1bdff7de2126c0cf278b1feaf798bf476426))",
+  "download_url": "https://github.com/jkennethcarino/adobo/releases/download/v2.0.0-dev.2/patches-2.0.0-dev.2.mpp",
   "signature_download_url": "",
-  "version": "2.0.0-dev.1",
+  "version": "2.0.0-dev.2",
   "public_key": "mIoxsHlobyL7P6VWwBAUUSXBJ5fyqMe9iqM1f3+LlF0="
 }
