@@ -1,3 +1,9 @@
+## [2.0.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.2...v2.0.0-dev.3) (2026-11-01)
+
+### Features
+
+* **Reddit:** Add `Hide videos for you` patch ([#89](https://github.com/jkennethcarino/adobo/issues/89)) ([0cd6659](https://github.com/jkennethcarino/adobo/commit/0cd66592711b5d3b92c9f934847b7768a1e4c30d))
+
 ## [2.0.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.1...v2.0.0-dev.2) (2026-11-01)
 
 ### Updated App Support
