@@ -1,3 +1,11 @@
+## [2.0.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.7.0...v2.0.0-dev.1) (2026-11-01)
+
+### ⚠ BREAKING CHANGES
+
+* Patches now use Morphe Patcher 2.0.0
+
+* Update Morphe Patcher and Patches Library ([a2d9540](https://github.com/jkennethcarino/adobo/commit/a2d9540c34caaa5bf963fbb0789564f70fd8a27b))
+
 ## [1.7.0](https://github.com/jkennethcarino/adobo/compare/v1.6.0...v1.7.0) (2026-10-25)
 
 ### Bug Fixes
