@@ -22,7 +22,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 ## Patches
 
 <!-- PATCHES_START -->
-[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=version&label=main)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fmain%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
+[![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=version&label=dev)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
 <details>
 <summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;9 patches</summary>
 <br>
@@ -44,14 +44,14 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;26 patches</summary>
+<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;27 patches</summary>
 <br>
 
 **Package name:** `com.reddit.frontpage`
 
 **Supported versions:**
 
-| 2026.43.0 | 2026.42.0 | 2026.41.0 | 2026.40.0 | 2026.24.0 |
+| 2026.45.0 | 2026.44.0 | 2026.43.1 | 2026.42.0 | 2026.24.0 |
 | :---: | :---: | :---: | :---: | :---: |
 
 | Patch Name | Description | Options |
@@ -78,6 +78,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Hide upvote scores | Hides the scores on Reddit posts and comments. | • Hide post scores<br>• Hide comment scores |
 | Hide user community badges | Hides the user community badges on Reddit comments. |  |
 | Hide user flairs | Hides the user flairs on Reddit comments. |  |
+| Hide videos for you | Hides the "Videos for you" or video carousel recommendation section between feed posts. |  |
 | Make system navigation bar transparent | Sets the system navigation bar to fully transparent. |  |
 | Open external links directly | Opens external links directly without going through out.reddit.com. |  |
 | Remove ads and telemetry | Removes ads and telemetry everywhere. |  |

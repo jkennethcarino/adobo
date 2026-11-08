@@ -1,3 +1,29 @@
+## [2.0.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.3...v2.0.0-dev.4) (2026-11-08)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.45.0` ([3c2afbe](https://github.com/jkennethcarino/adobo/commit/3c2afbec56ce0ac1e1c3ce918dd9f9d4cbc17c62))
+
+## [2.0.0-dev.3](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.2...v2.0.0-dev.3) (2026-11-01)
+
+### Features
+
+* **Reddit:** Add `Hide videos for you` patch ([#89](https://github.com/jkennethcarino/adobo/issues/89)) ([0cd6659](https://github.com/jkennethcarino/adobo/commit/0cd66592711b5d3b92c9f934847b7768a1e4c30d))
+
+## [2.0.0-dev.2](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.1...v2.0.0-dev.2) (2026-11-01)
+
+### Updated App Support
+
+* **Reddit:** Add support for `2026.43.1` and `2026.44.0` ([5abe1bd](https://github.com/jkennethcarino/adobo/commit/5abe1bdff7de2126c0cf278b1feaf798bf476426))
+
+## [2.0.0-dev.1](https://github.com/jkennethcarino/adobo/compare/v1.7.0...v2.0.0-dev.1) (2026-11-01)
+
+### ⚠ BREAKING CHANGES
+
+* Patches now use Morphe Patcher 2.0.0
+
+* Update Morphe Patcher and Patches Library ([a2d9540](https://github.com/jkennethcarino/adobo/commit/a2d9540c34caaa5bf963fbb0789564f70fd8a27b))
+
 ## [1.7.0](https://github.com/jkennethcarino/adobo/compare/v1.6.0...v1.7.0) (2026-10-25)
 
 ### Bug Fixes
