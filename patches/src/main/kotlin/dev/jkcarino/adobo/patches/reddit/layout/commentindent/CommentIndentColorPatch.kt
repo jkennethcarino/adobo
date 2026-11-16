@@ -5,8 +5,8 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.booleanOption
-import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.colorOption
+import app.morphe.patcher.patch.patch
 import com.android.tools.smali.dexlib2.builder.instruction.BuilderArrayPayload
 import com.android.tools.smali.dexlib2.builder.instruction.BuilderInstruction31t
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
@@ -15,7 +15,7 @@ import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 @Suppress("unused")
-val commentIndentColorPatch = bytecodePatch(
+val commentIndentColorPatch = patch(
     name = "Colorize comment indent lines",
     description = "Replaces the default gray comment indent lines with color-coded lines."
 ) {

@@ -1,11 +1,11 @@
 package dev.jkcarino.adobo.patches.all.firebase.analytics
 
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.shared.resource.androidManifest
 import dev.jkcarino.adobo.patches.shared.resource.metaData
 
 @Suppress("unused")
-val deactivateFirebaseAnalyticsPatch = resourcePatch(
+val deactivateFirebaseAnalyticsPatch = patch(
     name = "Deactivate Firebase Analytics",
     description = "Deactivates Firebase Analytics and removes its associated " +
         "broadcast receivers and services.",

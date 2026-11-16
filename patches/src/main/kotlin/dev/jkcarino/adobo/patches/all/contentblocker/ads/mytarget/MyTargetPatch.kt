@@ -1,6 +1,5 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads.mytarget
 
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.util.returnEarly
 import app.morphe.util.findMutableMethodOf
@@ -15,7 +14,7 @@ internal val disableMyTargetOption = booleanOption(
         "In-Stream Video and Audio, and Carousel ad formats."
 )
 
-internal fun BytecodePatchContext.applyMyTargetPatch() = buildList {
+internal fun applyMyTargetPatch() = buildList {
     val adLoaderAdMethods = setOf(
         "handleResult",
         "load",

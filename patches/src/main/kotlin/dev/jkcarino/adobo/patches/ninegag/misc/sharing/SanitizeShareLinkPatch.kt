@@ -3,12 +3,12 @@ package dev.jkcarino.adobo.patches.ninegag.misc.sharing
 import app.morphe.patcher.StringComparisonType
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.removeInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patches.all.misc.string.replaceStringPatch
 import dev.jkcarino.adobo.patches.ninegag.shared.COMPATIBILITY_NINEGAG
 
 @Suppress("unused")
-val sanitizeShareLinkPatch = bytecodePatch(
+val sanitizeShareLinkPatch = patch(
     name = "Sanitize share links",
     description = "Removes the tracking query parameters from shared links.",
     default = true

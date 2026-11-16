@@ -1,35 +1,31 @@
 package dev.jkcarino.adobo.patches.shared.resource
 
-import app.morphe.patcher.patch.ResourcePatchContext
-import app.morphe.util.adoptChild
-import dev.jkcarino.adobo.util.asElementSequence
-import dev.jkcarino.adobo.util.filterElements
+import app.morphe.patcher.patch.resourceXml
+import app.morphe.patcher.xml.ResourceXml
+import app.morphe.patcher.xml.XmlElement
 import dev.jkcarino.adobo.util.get
-import dev.jkcarino.adobo.util.removeElements
 import dev.jkcarino.adobo.util.set
-import org.w3c.dom.Document
 
-typealias Manifest = Document
+typealias Manifest = ResourceXml
 
-internal const val MANIFEST_NODE = "manifest"
+private const val MANIFEST_NODE = "manifest"
 internal const val APPLICATION_NODE = "application"
 internal const val META_DATA_TAG = "meta-data"
 internal const val ANDROID_NAME_ATTR = "android:name"
 internal const val ANDROID_VALUE_ATTR = "android:value"
 
 /**
- * Applies a configuration block to the AndroidManifest document.
+ * Applies a configuration block to the AndroidManifest.
  */
-fun ResourcePatchContext.androidManifest(
-    block: Manifest.() -> Unit,
-): Document = document("AndroidManifest.xml").use { document ->
-    document.apply(block)
-}
+fun androidManifest(block: Manifest.() -> Unit): ResourceXml =
+    resourceXml("AndroidManifest.xml").use { xml ->
+        xml.apply(block)
+    }
 
 /**
- * Removes elements from the manifest document based on the specified tag name and element names.
+ * Removes elements from the manifest based on the specified tag name and element names.
  */
-private fun Document.removeManifestElements(
+private fun Manifest.removeManifestElements(
     tagName: String,
     vararg elements: String,
     isRootLevel: Boolean = false,
@@ -38,29 +34,29 @@ private fun Document.removeManifestElements(
     val node = this[nodeName]
     val regexes = elements.map(String::toRegex)
 
-    node.getElementsByTagName(tagName)
-        .filterElements { element ->
+    node.elements(tagName)
+        .filter { element ->
             val androidName = element[ANDROID_NAME_ATTR]
             regexes.any { it.matches(androidName) }
         }
-        .let(node::removeElements)
+        .forEach(XmlElement::remove)
 }
 
 /**
- * Adds or updates meta-data elements in the manifest document.
+ * Adds or updates meta-data elements in the manifest.
  */
-fun Document.metaData(vararg properties: Pair<String, String>) {
+fun Manifest.metaData(vararg properties: Pair<String, String>) {
     val application = this[APPLICATION_NODE]
 
     properties.forEach { (name, value) ->
-        val metaData = application.getElementsByTagName(META_DATA_TAG)
-            .asElementSequence()
+        val metaData = application
+            .elements(META_DATA_TAG)
             .firstOrNull { it[ANDROID_NAME_ATTR] == name }
 
         if (metaData != null) {
-            metaData.setAttribute(ANDROID_VALUE_ATTR, value)
+            metaData[ANDROID_VALUE_ATTR] = value
         } else {
-            application.adoptChild(META_DATA_TAG) {
+            application.appendChild(META_DATA_TAG) {
                 this[ANDROID_NAME_ATTR] = name
                 this[ANDROID_VALUE_ATTR] = value
             }

@@ -1,6 +1,5 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads.admob
 
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.util.returnEarly
 
@@ -12,7 +11,7 @@ internal val disableGoogleAdMobOption = booleanOption(
         "App Open ad formats."
 )
 
-internal fun BytecodePatchContext.applyGoogleAdMobPatch() = buildList {
+internal fun applyGoogleAdMobPatch() = buildList {
     setOf(
         abstractAdViewAdapterFingerprints,
         mediationFingerprints,

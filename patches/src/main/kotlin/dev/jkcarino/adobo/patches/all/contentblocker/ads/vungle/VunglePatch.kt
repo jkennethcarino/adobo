@@ -1,7 +1,7 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads.vungle
 
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
+import app.morphe.patcher.patch.mutableClassDefBy
 import app.morphe.util.findMutableMethodOf
 import dev.jkcarino.adobo.util.defaultReturnEarly
 import dev.jkcarino.adobo.util.filterMethods
@@ -13,7 +13,7 @@ internal val disableVungleOption = booleanOption(
     description = "Disable Banner, Interstitial, Native, Rewarded, and App Open ad formats."
 )
 
-internal fun BytecodePatchContext.applyVunglePatch() = buildList {
+internal fun applyVunglePatch() = buildList {
     val adMethods = setOf(
         "load",
         "loadAd",

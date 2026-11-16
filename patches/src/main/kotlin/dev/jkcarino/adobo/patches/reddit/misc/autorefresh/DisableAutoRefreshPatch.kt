@@ -1,12 +1,12 @@
 package dev.jkcarino.adobo.patches.reddit.misc.autorefresh
 
 import app.morphe.patcher.extensions.InstructionExtensions.removeInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 @Suppress("unused")
-val disableAutoRefreshPatch = bytecodePatch(
+val disableAutoRefreshPatch = patch(
     name = "Disable home feed auto-refresh",
     description = "Disables the automatic refresh of the home feed " +
         "after viewing a post or after being away from the app.",

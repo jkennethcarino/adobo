@@ -1,11 +1,11 @@
 package dev.jkcarino.adobo.patches.all.firebase.analytics
 
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.shared.resource.androidManifest
 import dev.jkcarino.adobo.patches.shared.resource.removeProperty
 import dev.jkcarino.adobo.patches.shared.resource.removeUsesPermission
 
-val removeAdsServicesPatch = resourcePatch(
+val removeAdsServicesPatch = patch(
     description = "Removes AdServices config and permissions."
 ) {
     execute {

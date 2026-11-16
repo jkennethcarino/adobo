@@ -1,13 +1,13 @@
 package dev.jkcarino.adobo.patches.google.gboard.misc.undo
 
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
 import dev.jkcarino.adobo.patches.google.gboard.featureflags.toggleFeatureFlag
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 import java.util.logging.Logger
 
 @Suppress("unused")
-val enableUndoPatch = bytecodePatch(
+val enableUndoPatch = patch(
     name = "Enable Undo feature",
     description = "Enables the undo feature to quickly undo or correct typing mistakes.",
     default = false

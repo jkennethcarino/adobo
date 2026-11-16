@@ -1,12 +1,12 @@
 package dev.jkcarino.adobo.patches.reddit.misc.sharing.url
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 @Suppress("unused")
-val sanitizeShareLinkPatch = bytecodePatch(
+val sanitizeShareLinkPatch = patch(
     name = "Sanitize share links",
     description = "Unshortens and removes the tracking query parameters from shared links."
 ) {

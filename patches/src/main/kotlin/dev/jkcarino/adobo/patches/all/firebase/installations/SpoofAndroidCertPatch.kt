@@ -1,10 +1,10 @@
 package dev.jkcarino.adobo.patches.all.firebase.installations
 
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.patch.stringOption
 
 @Suppress("unused")
-val spoofAndroidCertPatch = bytecodePatch(
+val spoofAndroidCertPatch = patch(
     name = "Spoof Firebase certificate hash",
     description = "Spoofs the app's package certificate hash used by Firebase Installations " +
         "so that push notifications, remote config, and other Firebase services continue to " +

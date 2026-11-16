@@ -1,7 +1,7 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads.unity
 
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
+import app.morphe.patcher.patch.mutableClassDefBy
 import app.morphe.patcher.util.returnEarly
 import app.morphe.util.findMutableMethodOf
 import dev.jkcarino.adobo.util.defaultReturnEarly
@@ -14,7 +14,7 @@ internal val disableUnityOption = booleanOption(
     description = "Disable Banner, Interstitial, Native, and Rewarded Video ad formats."
 )
 
-internal fun BytecodePatchContext.applyUnityPatch() = buildList {
+internal fun applyUnityPatch() = buildList {
     val unityAdsClassDef = UnityAdsIsInitializedFingerprint.originalClassDefOrNull
     val adMethods = setOf(
         "initialize",

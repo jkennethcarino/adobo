@@ -1,12 +1,12 @@
 package dev.jkcarino.adobo.patches.reddit.layout.search.ask
 
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.util.returnEarly
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 @Suppress("unused")
-val hideSearchAskButtonPatch = bytecodePatch(
+val hideSearchAskButtonPatch = patch(
     name = "Hide Ask button from search bar",
     description = "Hides the Ask button (Reddit Answers) from the search bar.",
     default = false

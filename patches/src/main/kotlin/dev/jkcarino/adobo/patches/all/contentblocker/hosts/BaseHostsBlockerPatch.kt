@@ -2,7 +2,7 @@ package dev.jkcarino.adobo.patches.all.contentblocker.hosts
 
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.util.getReference
 import app.morphe.patcher.util.proxy.mutableTypes.encodedValue.MutableStringEncodedValue
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
@@ -23,7 +23,7 @@ data class HostsBlockerConfig(
 
 fun baseHostsBlockerPatch(
     configProvider: () -> HostsBlockerConfig,
-) = bytecodePatch {
+) = patch {
     val logger = Logger.getLogger(this::class.java.name)
 
     execute {

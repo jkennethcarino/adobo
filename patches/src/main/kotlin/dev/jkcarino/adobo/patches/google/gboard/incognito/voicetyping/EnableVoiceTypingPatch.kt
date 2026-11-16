@@ -2,13 +2,13 @@ package dev.jkcarino.adobo.patches.google.gboard.incognito.voicetyping
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 
 @Suppress("unused")
-val enableVoiceTypingPatch = bytecodePatch(
+val enableVoiceTypingPatch = patch(
     name = "Enable voice typing in incognito",
     description = "Enables voice typing in incognito mode.",
     default = false

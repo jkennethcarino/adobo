@@ -1,11 +1,11 @@
 package dev.jkcarino.adobo.patches.all.webview
 
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.shared.resource.androidManifest
 import dev.jkcarino.adobo.patches.shared.resource.metaData
 
 @Suppress("unused")
-val disableWebViewMetricsPatch = resourcePatch(
+val disableWebViewMetricsPatch = patch(
     name = "Disable metrics collection in WebView",
     description = "Disables the collection of diagnostic data or usage statistics " +
         "that are sent to Google.",

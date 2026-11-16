@@ -1,12 +1,12 @@
 package dev.jkcarino.adobo.patches.google.gboard.layout.menu
 
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
 import dev.jkcarino.adobo.patches.google.gboard.featureflags.toggleFeatureFlag
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 
 @Suppress("unused")
-val enableMenuRedesignPatch = bytecodePatch(
+val enableMenuRedesignPatch = patch(
     name = "Enable access points menu redesign",
     description = "Enables the redesign of the additional actions menu.",
     default = false

@@ -1,20 +1,17 @@
 package dev.jkcarino.adobo.patches.reddit.layout.communityhighlights
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
-import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.instructions
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.util.getReference
 import com.android.tools.smali.dexlib2.Opcode
-import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
-import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.TypeReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.patches.reddit.shared.util.overrideFieldValue
 
 @Suppress("unused")
-val hideCommunityHighlightsPatch = bytecodePatch(
+val hideCommunityHighlightsPatch = patch(
     name = "Hide community highlights",
     description = "Hides the community highlights section.",
     default = false
@@ -34,14 +31,10 @@ val hideCommunityHighlightsPatch = bytecodePatch(
                         && instruction.getReference<TypeReference>()?.type == uiStateInterface
                 }
 
-            val unitIndex = UnitFingerprint.instructionMatches.last().index
-            val unitInstruction =
-                UnitFingerprint.method.getInstruction<OneRegisterInstruction>(unitIndex)
-            val unitFieldReference = unitInstruction.getReference<FieldReference>()!!
-
-            val unitDefiningClass = unitFieldReference.definingClass
-            val unitFieldName = unitFieldReference.name
-            val unitFieldType = unitFieldReference.type
+            val unit = UnitFingerprint.instructionMatches.last().fieldReference
+            val unitDefiningClass = unit.definingClass
+            val unitFieldName = unit.name
+            val unitFieldType = unit.type
 
             addInstructions(
                 index = communityHighlightsStateIndex,

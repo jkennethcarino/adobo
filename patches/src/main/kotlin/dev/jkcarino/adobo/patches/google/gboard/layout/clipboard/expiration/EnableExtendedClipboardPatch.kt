@@ -1,12 +1,12 @@
 package dev.jkcarino.adobo.patches.google.gboard.layout.clipboard.expiration
 
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
 import dev.jkcarino.adobo.patches.google.gboard.featureflags.toggleFeatureFlag
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 
 @Suppress("unused")
-val enableExtendedClipboardPatch = bytecodePatch(
+val enableExtendedClipboardPatch = patch(
     name = "Enable extended clipboard history",
     description = "Enables extending the clipboard history expiration time.",
     default = false

@@ -3,14 +3,14 @@ package dev.jkcarino.adobo.patches.google.gboard.misc.incognito
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.PatchException
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.util.returnEarly
 import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 
 @Suppress("unused")
-val alwaysIncognitoModePatch = bytecodePatch(
+val alwaysIncognitoModePatch = patch(
     name = "Always-incognito mode",
     description = "Always opens Gboard in incognito mode to disable typing history collection " +
         "and personalization."

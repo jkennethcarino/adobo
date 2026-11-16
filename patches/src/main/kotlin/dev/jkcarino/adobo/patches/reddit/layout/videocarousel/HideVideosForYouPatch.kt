@@ -1,13 +1,14 @@
 package dev.jkcarino.adobo.patches.reddit.layout.videocarousel
 
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.packageMetadata
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.util.returnEarly
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import java.util.logging.Logger
 
 @Suppress("unused")
-val hideVideosForYouPatch = bytecodePatch(
+val hideVideosForYouPatch = patch(
     name = "Hide videos for you",
     description = "Hides the \"Videos for you\" or video carousel recommendation section " +
         "between feed posts.",
