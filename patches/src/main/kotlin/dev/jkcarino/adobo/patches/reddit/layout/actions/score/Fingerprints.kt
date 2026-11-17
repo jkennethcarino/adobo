@@ -1,6 +1,7 @@
 package dev.jkcarino.adobo.patches.reddit.layout.actions.score
 
 import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.InstructionFilter
 import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
 import app.morphe.patcher.opcode
 import app.morphe.patcher.string
@@ -35,16 +36,35 @@ internal val scoreHiddenFingerprints =
         )
     }
 
-internal object ActionCellFragmentToStringFingerprint : Fingerprint(
+private fun scoreHiddenToStringFingerprint(
+    vararg filters: InstructionFilter,
+) = Fingerprint(
     returnType = "Ljava/lang/String;",
     parameters = listOf(),
-    filters = listOf(
-        string(", isScoreHidden="),
-        string("ActionCellFragment(id="),
-        opcode(Opcode.IGET_OBJECT, MatchAfterImmediately()),
-        opcode(Opcode.IGET_BOOLEAN, MatchAfterImmediately())
-    )
+    filters = filters.toList()
 )
+
+internal val postScoreHiddenToStringFingerprints =
+    listOf(
+        scoreHiddenToStringFingerprint(
+            string(", isScoreHidden="),
+            string("ActionCellFragment(id="),
+            opcode(Opcode.IGET_OBJECT, MatchAfterImmediately()),
+            opcode(Opcode.IGET_BOOLEAN, MatchAfterImmediately())
+        ),
+        scoreHiddenToStringFingerprint(
+            string("PostPreviewVoteInfoFragment(score="),
+            string(", isScoreHidden="),
+            opcode(Opcode.INVOKE_VIRTUAL, MatchAfterImmediately()),
+            opcode(Opcode.IGET_BOOLEAN, MatchAfterImmediately())
+        ),
+        scoreHiddenToStringFingerprint(
+            string("MetricCellFragment(id="),
+            string(", isScoreHidden="),
+            opcode(Opcode.IGET),
+            opcode(Opcode.IGET_BOOLEAN, MatchAfterImmediately())
+        )
+    )
 
 internal object GetScoreFingerprint : Fingerprint(
     classFingerprint = LinkToStringFingerprint,

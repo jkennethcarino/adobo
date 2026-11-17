@@ -41,9 +41,12 @@ val hideScoresPatch = patch(
         }
 
         if (hidePostScores!!) {
-            ActionCellFragmentToStringFingerprint.overrideFieldValue(true)
             GetScoreFingerprint.method.returnEarly(0)
             GetHideScoreFingerprint.method.returnEarly(true)
+
+            postScoreHiddenToStringFingerprints.forEach { fingerprint ->
+                fingerprint.overrideFieldValue(true)
+            }
 
             searchPostScoreToStringFingerprints.forEach { fingerprint ->
                 fingerprint.overrideFieldValue(null)
