@@ -1,3 +1,10 @@
+## [2.0.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.4...v2.0.0-dev.5) (2026-11-17)
+
+### Updated App Support
+
+* **9GAG:** Add support for `8.29.08` ([bc1ba72](https://github.com/jkennethcarino/adobo/commit/bc1ba72ac361ec0f6901b674da273c70af57ca73))
+* **Reddit:** Add support for `2026.46.0` ([26eebde](https://github.com/jkennethcarino/adobo/commit/26eebdeed0a954e1cb0a43359e8ef1fe22a2a4b0))
+
 ## [2.0.0-dev.4](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.3...v2.0.0-dev.4) (2026-11-08)
 
 ### Updated App Support
