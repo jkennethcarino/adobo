@@ -24,7 +24,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 <!-- PATCHES_START -->
 [![Branch](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=version&label=dev)][releases] ![Patches](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjkennethcarino%2Fadobo%2Frefs%2Fheads%2Fdev%2Fpatches-list.json&query=%24.patches.length&style=social&label=Patches)
 <details>
-<summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;9 patches</summary>
+<summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;10 patches</summary>
 <br>
 
 **Package name:** `com.google.android.inputmethod.latin`
@@ -39,6 +39,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Enable extended clipboard history | Enables extending the clipboard history expiration time. |  |
 | Enable key shape selection | Enables an option to select a key shape from the theme. |  |
 | Enable voice typing in incognito | Enables voice typing in incognito mode. |  |
+| Hide incognito icon | Replaces the incognito icon from the toolbar with the normal access point icon. Incognito mode still applies to the current input session. |  |
 | Toggle feature flags | Toggles Gboard feature flags to enable or disable experimental or hidden features. | • Feature flags<br>• Enable feature flags |
 
 </details>

@@ -1,3 +1,9 @@
+## [2.0.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.5...v2.0.0-dev.6) (2026-11-18)
+
+### Features
+
+* **Gboard:** Add `Hide incognito icon` patch ([e38616a](https://github.com/jkennethcarino/adobo/commit/e38616acae39c35406cd5fda33567b1131d0f708))
+
 ## [2.0.0-dev.5](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.4...v2.0.0-dev.5) (2026-11-17)
 
 ### Updated App Support
