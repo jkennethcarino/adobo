@@ -1,3 +1,31 @@
+## [2.0.0](https://github.com/jkennethcarino/adobo/compare/v1.7.0...v2.0.0) (2026-11-21)
+
+### ⚠ BREAKING CHANGES
+
+* Patches now use Morphe Patcher 2.0.0
+
+* Update Morphe Patcher and Patches Library ([a2d9540](https://github.com/jkennethcarino/adobo/commit/a2d9540c34caaa5bf963fbb0789564f70fd8a27b))
+
+### Features
+
+* **Gboard:** Add `Hide incognito icon` patch ([e38616a](https://github.com/jkennethcarino/adobo/commit/e38616acae39c35406cd5fda33567b1131d0f708))
+* **Reddit:** Add `Hide mod queue's auto-enforce banner` patch ([#101](https://github.com/jkennethcarino/adobo/issues/101)) ([b588fc5](https://github.com/jkennethcarino/adobo/commit/b588fc5b1c8409c95cf10c513fd0cee41935ab5e))
+* **Reddit:** Add `Hide videos for you` patch ([#89](https://github.com/jkennethcarino/adobo/issues/89)) ([0cd6659](https://github.com/jkennethcarino/adobo/commit/0cd66592711b5d3b92c9f934847b7768a1e4c30d))
+
+### Bug Fixes
+
+* **Reddit - Hide mod queue's auto-enforce banner:** Add support for `2026.47.0` ([0c0be53](https://github.com/jkennethcarino/adobo/commit/0c0be533522096de282d0560802b13e12fe10d2d))
+
+### Updated App Support
+
+* **9GAG:** Add support for `8.29.08` ([bc1ba72](https://github.com/jkennethcarino/adobo/commit/bc1ba72ac361ec0f6901b674da273c70af57ca73))
+* **9GAG:** Add support for `8.30.04` ([8194910](https://github.com/jkennethcarino/adobo/commit/81949103288a7bae62e8770d1449d29f3c5de87e))
+* **Gboard:** Add support for the latest version ([8d2c26b](https://github.com/jkennethcarino/adobo/commit/8d2c26b45aae481d7e091d39b817b634d9ae1f2b))
+* **Reddit:** Add support for `2026.43.1` and `2026.44.0` ([5abe1bd](https://github.com/jkennethcarino/adobo/commit/5abe1bdff7de2126c0cf278b1feaf798bf476426))
+* **Reddit:** Add support for `2026.45.0` ([3c2afbe](https://github.com/jkennethcarino/adobo/commit/3c2afbec56ce0ac1e1c3ce918dd9f9d4cbc17c62))
+* **Reddit:** Add support for `2026.46.0` ([26eebde](https://github.com/jkennethcarino/adobo/commit/26eebdeed0a954e1cb0a43359e8ef1fe22a2a4b0))
+* **Reddit:** Add support for `2026.47.0` ([1a18569](https://github.com/jkennethcarino/adobo/commit/1a18569bee714ccf24ddcb5d3fe053e4225716cc))
+
 ## [2.0.0-dev.9](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.8...v2.0.0-dev.9) (2026-11-21)
 
 ### Bug Fixes
