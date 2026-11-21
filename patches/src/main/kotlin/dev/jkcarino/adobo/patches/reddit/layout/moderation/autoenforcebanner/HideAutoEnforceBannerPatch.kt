@@ -19,8 +19,7 @@ val hideAutoEnforceBannerPatch = patch(
     execute {
         AutoEnforceBannerFingerprint.method.apply {
             val unit = UnitFingerprint.instructionMatches.last().fieldReference
-            val bannerBranchIndex =
-                AutoEnforceBannerFingerprint.instructionMatches.first().index
+            val bannerBranchIndex = AutoEnforceBannerFingerprint.instructionMatches[1].index
 
             addInstructionsAtControlFlowLabel(
                 insertIndex = bannerBranchIndex,
