@@ -1,3 +1,9 @@
+## [2.0.0-dev.7](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.6...v2.0.0-dev.7) (2026-11-21)
+
+### Features
+
+* **Reddit:** Add `Hide mod queue's auto-enforce banner` patch ([#101](https://github.com/jkennethcarino/adobo/issues/101)) ([b588fc5](https://github.com/jkennethcarino/adobo/commit/b588fc5b1c8409c95cf10c513fd0cee41935ab5e))
+
 ## [2.0.0-dev.6](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.5...v2.0.0-dev.6) (2026-11-18)
 
 ### Features

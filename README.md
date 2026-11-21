@@ -45,7 +45,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 </details>
 
 <details>
-<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;27 patches</summary>
+<summary>📦 Reddit&nbsp;&nbsp;•&nbsp;&nbsp;28 patches</summary>
 <br>
 
 **Package name:** `com.reddit.frontpage`
@@ -71,6 +71,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 | Hide community highlights | Hides the community highlights section. |  |
 | Hide community menu badge | Hides the red notification badge on the community menu (hamburger menu). |  |
 | Hide crosspost | Hides the crosspost on Reddit posts. |  |
+| Hide mod queue's auto-enforce banner | Hide the auto-enforce promotion banner in the mod queue. |  |
 | Hide post view counts | Removes the "views" indicator from the post metadata. |  |
 | Hide prominent search bar | Hides the new prominent search bar on the main screen. Applicable only to version 2026.24.0 and earlier. |  |
 | Hide related posts | Hides the related posts section displayed at the bottom of a post. |  |
