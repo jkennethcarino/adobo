@@ -7,7 +7,9 @@
 This repository contains patches for [Morphe](https://morphe.software/), an open-source Android
 patching tool for modifying apps like YouTube and Reddit to block ads and add new features.
 
-[![Import](https://img.shields.io/badge/Import-blue?style=for-the-badge&label=Morphe%20Manager)][import-adobo]
+<a href="https://morphe.software/add-source?github=jkennethcarino/adobo">
+  <img src=".github/assets/add-to-morphe.svg" alt="Add to Morphe" height="48" />
+</a>
 
 ## Features
 
@@ -225,7 +227,6 @@ this in my free time, I can't commit to implementing patches or fixes quickly. O
 Adobo is licensed under the [GNU General Public License v3.0 (GPL-3.0)][gpl-3.0].
 See [LICENSE](LICENSE) for details.
 
-[import-adobo]: https://morphe.software/add-source?github=jkennethcarino/adobo
 [gh-actions]: https://github.com/jkennethcarino/adobo/actions
 [releases]: https://github.com/jkennethcarino/adobo/releases
 [gpl-3.0]: https://www.gnu.org/licenses/gpl-3.0.html
