@@ -60,6 +60,7 @@
           "gradle.properties",
           "patches-bundle.json",
           "patches-list.json",
+          "PATCHES.md",
           "README.md"
         ],
         "message": "chore: Release v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
