@@ -2,11 +2,13 @@ package dev.jkcarino.adobo.patches.all.detection.signature.pms
 
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.PatchException
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.classDefForEach
+import app.morphe.patcher.patch.mutableClassDefBy
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.patch.stringOption
 
 @Suppress("unused")
-val spoofSignatureVerificationPatch = bytecodePatch(
+val spoofSignatureVerificationPatch = patch(
     name = "Spoof signature verification",
     description = "Spoofs the signature verification when the app starts up. " +
         "It is recommended to use the unmodified app to work properly.",

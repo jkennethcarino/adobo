@@ -1,14 +1,14 @@
 package dev.jkcarino.adobo.patches.reddit.layout.systemnavbar
 
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.util.addInstructionsAtControlFlowLabel
 import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 @Suppress("unused")
-val makeSystemNavBarTransparentPatch = bytecodePatch(
+val makeSystemNavBarTransparentPatch = patch(
     name = "Make system navigation bar transparent",
     description = "Sets the system navigation bar to fully transparent.",
     default = false

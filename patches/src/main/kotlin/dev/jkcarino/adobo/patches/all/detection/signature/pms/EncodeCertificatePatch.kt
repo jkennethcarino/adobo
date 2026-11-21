@@ -1,6 +1,7 @@
 package dev.jkcarino.adobo.patches.all.detection.signature.pms
 
-import app.morphe.patcher.patch.rawResourcePatch
+import app.morphe.patcher.patch.patch
+import app.morphe.patcher.patch.resourceFile
 import java.io.File
 import java.security.cert.CertificateFactory
 import java.security.cert.X509Certificate
@@ -10,7 +11,7 @@ import java.util.logging.Logger
 internal var signature: String? = null
     private set
 
-val encodeCertificatePatch = rawResourcePatch(
+val encodeCertificatePatch = patch(
     description = "Extracts and encodes the digital certificate/signature to Base64."
 ) {
     execute {
@@ -18,7 +19,8 @@ val encodeCertificatePatch = rawResourcePatch(
             return isFile && extension in setOf("RSA", "DSA", "EC")
         }
 
-        val certificateFile = get("META-INF").listFiles()
+        val certificateFile = resourceFile("META-INF")
+            .listFiles()
             ?.firstOrNull(File::isCertificate)
 
         if (certificateFile == null) {

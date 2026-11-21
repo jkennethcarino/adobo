@@ -3,7 +3,8 @@ package dev.jkcarino.adobo.patches.reddit.misc.exitapp
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.packageMetadata
+import app.morphe.patcher.patch.patch
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
@@ -11,7 +12,7 @@ import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import java.util.logging.Logger
 
 @Suppress("unused")
-val disableFeedRefreshOnBackPatch = bytecodePatch(
+val disableFeedRefreshOnBackPatch = patch(
     name = "Disable home feed refresh on back to exit",
     description = "Disables the back-to-top scroll and home feed refresh on " +
         "back navigation to exit.",

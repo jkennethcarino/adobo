@@ -1,12 +1,12 @@
 package dev.jkcarino.adobo.patches.reddit.misc.guestmode
 
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.util.returnEarly
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 @Suppress("unused")
-val enableGuestModePatch = bytecodePatch(
+val enableGuestModePatch = patch(
     name = "Enable guest mode",
     description = "Enables browsing Reddit without signing in.",
     default = false

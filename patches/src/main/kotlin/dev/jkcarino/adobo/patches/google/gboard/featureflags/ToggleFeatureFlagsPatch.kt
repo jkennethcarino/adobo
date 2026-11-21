@@ -1,14 +1,14 @@
 package dev.jkcarino.adobo.patches.google.gboard.featureflags
 
 import app.morphe.patcher.patch.booleanOption
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.patch.stringsOption
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 import java.util.logging.Logger
 
 @Suppress("unused")
-val toggleFeatureFlagsPatch = bytecodePatch(
+val toggleFeatureFlagsPatch = patch(
     name = "Toggle feature flags",
     description = "Toggles Gboard feature flags to enable or disable " +
         "experimental or hidden features.",

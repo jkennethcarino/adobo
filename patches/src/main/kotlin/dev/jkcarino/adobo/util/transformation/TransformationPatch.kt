@@ -1,6 +1,7 @@
 package dev.jkcarino.adobo.util.transformation
 
-import app.morphe.patcher.patch.BytecodePatchContext
+import app.morphe.patcher.patch.classDefForEach
+import app.morphe.patcher.patch.mutableClassDefBy
 import app.morphe.patcher.util.proxy.mutableTypes.MutableField
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
 import app.morphe.util.findMutableMethodOf
@@ -10,7 +11,7 @@ import com.android.tools.smali.dexlib2.iface.Method
 import com.android.tools.smali.dexlib2.iface.instruction.Instruction
 import dev.jkcarino.adobo.util.findMutableFieldOf
 
-fun <T> BytecodePatchContext.transformationPatch(
+fun <T> transformationPatch(
     classDef: ClassDef? = null,
     fieldFilter: (ClassDef, Field) -> Boolean = { _, _ -> false },
     fieldTransform: (MutableField, ClassDef) -> Unit = { _, _ -> },

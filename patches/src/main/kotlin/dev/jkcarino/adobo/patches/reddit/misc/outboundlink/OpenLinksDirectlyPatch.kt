@@ -1,12 +1,12 @@
 package dev.jkcarino.adobo.patches.reddit.misc.outboundlink
 
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.util.defaultReturnEarly
 
 @Suppress("unused")
-val openLinksDirectlyPatch = bytecodePatch(
+val openLinksDirectlyPatch = patch(
     name = "Open external links directly",
     description = "Opens external links directly without going through out.reddit.com."
 ) {

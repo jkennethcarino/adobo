@@ -1,7 +1,7 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads.topon
 
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
+import app.morphe.patcher.patch.mutableClassDefBy
 import app.morphe.patcher.util.returnEarly
 import app.morphe.util.findMutableMethodOf
 import dev.jkcarino.adobo.util.defaultReturnEarly
@@ -14,7 +14,7 @@ internal val disableTopOnOption = booleanOption(
     description = "Disable Banner, Interstitial, Native, Rewarded, and App Open ad formats."
 )
 
-internal fun BytecodePatchContext.applyTopOnPatch() = buildList {
+internal fun applyTopOnPatch() = buildList {
     val adMethods = setOf(
         "entryAdScenario",
         "load",

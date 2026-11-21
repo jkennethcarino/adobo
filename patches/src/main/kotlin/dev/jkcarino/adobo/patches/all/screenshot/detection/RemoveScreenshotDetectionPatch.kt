@@ -1,10 +1,10 @@
 package dev.jkcarino.adobo.patches.all.screenshot.detection
 
 import app.morphe.patcher.extensions.InstructionExtensions.removeInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 
 @Suppress("unused")
-val removeScreenshotDetectionPatch = bytecodePatch(
+val removeScreenshotDetectionPatch = patch(
     name = "Remove screenshot detection",
     description = "Prevents the app from detecting when a screenshot is taken.",
     default = false

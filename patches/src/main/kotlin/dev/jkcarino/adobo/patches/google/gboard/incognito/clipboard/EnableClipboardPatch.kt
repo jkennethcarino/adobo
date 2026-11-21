@@ -1,12 +1,12 @@
 package dev.jkcarino.adobo.patches.google.gboard.incognito.clipboard
 
 import app.morphe.patcher.extensions.InstructionExtensions.removeInstructions
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.google.gboard.detection.signature.bypassSignaturePatch
 import dev.jkcarino.adobo.patches.google.gboard.shared.COMPATIBILITY_GBOARD
 
 @Suppress("unused")
-val enableClipboardPatch = bytecodePatch(
+val enableClipboardPatch = patch(
     name = "Enable clipboard in incognito",
     description = "Enables clipboard support in incognito mode."
 ) {

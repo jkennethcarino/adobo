@@ -2,13 +2,13 @@ package dev.jkcarino.adobo.patches.reddit.layout.postswipe
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 @Suppress("unused")
-val disablePostDetailSwipePatch = bytecodePatch(
+val disablePostDetailSwipePatch = patch(
     name = "Disable post detail swipe",
     description = "Disables the horizontal swipe gesture used to navigate between posts.",
     default = false

@@ -4,18 +4,11 @@ import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.fieldAccess
-import app.morphe.patcher.patch.BytecodePatchContext
-import app.morphe.patcher.util.getReference
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
-import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import dev.jkcarino.adobo.util.toHexString
 
-context(_: BytecodePatchContext)
 fun Fingerprint.overrideFieldValue(value: Any?) {
-    val fieldIndex = instructionMatches.last().index
-    val fieldInstruction =
-        method.getInstruction<TwoRegisterInstruction>(fieldIndex)
-    val fieldReference = fieldInstruction.getReference<FieldReference>()!!
+    val fieldReference = instructionMatches.last().fieldReference
 
     val overridenValue =
         when (value) {

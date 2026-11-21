@@ -1,7 +1,7 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads.applovin
 
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
+import app.morphe.patcher.patch.mutableClassDefBy
 import app.morphe.util.findMutableMethodOf
 import dev.jkcarino.adobo.util.defaultReturnEarly
 import dev.jkcarino.adobo.util.filterMethods
@@ -13,7 +13,7 @@ internal val disableAppLovinMaxOption = booleanOption(
     description = "Disable App Open, Banner & MREC, Interstitial, Native, and Rewarded ad formats."
 )
 
-internal fun BytecodePatchContext.applyAppLovinMaxPatch() = buildList {
+internal fun applyAppLovinMaxPatch() = buildList {
     val appLovinSdkInitMethods = setOf(
         "initialize",
         "initializeSdk",

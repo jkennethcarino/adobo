@@ -1,11 +1,11 @@
 package dev.jkcarino.adobo.patches.all.firebase.analytics
 
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.shared.resource.androidManifest
 import dev.jkcarino.adobo.patches.shared.resource.removeReceiver
 import dev.jkcarino.adobo.patches.shared.resource.removeService
 
-val removeAppMeasurementPatch = resourcePatch(
+val removeAppMeasurementPatch = patch(
     description = "Removes App Measurement's broadcast receivers and services."
 ) {
     execute {

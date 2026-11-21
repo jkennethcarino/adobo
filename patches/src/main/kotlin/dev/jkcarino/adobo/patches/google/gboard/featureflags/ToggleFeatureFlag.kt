@@ -4,14 +4,12 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.getInstructionOrNull
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.util.indexOfFirstInstructionReversedOrThrow
 import app.morphe.util.toHexString
 import com.android.tools.smali.dexlib2.builder.instruction.BuilderInstruction11n
 import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
-context(_: BytecodePatchContext)
 fun toggleFeatureFlag(
     flag: String,
     enabled: Boolean,
@@ -80,7 +78,6 @@ fun toggleFeatureFlag(
     }
 }
 
-context(_: BytecodePatchContext)
 fun toggleFeatureFlag(
     flag: String,
     value: String,

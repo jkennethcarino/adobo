@@ -14,6 +14,14 @@ val COMPATIBILITY_NINEGAG =
         ),
         targets = listOf(
             AppTarget(
+                version = "8.30.04",
+                minSdk = 27
+            ),
+            AppTarget(
+                version = "8.29.08",
+                minSdk = 27
+            ),
+            AppTarget(
                 version = "8.26.1",
                 minSdk = 27
             ),
@@ -23,14 +31,6 @@ val COMPATIBILITY_NINEGAG =
             ),
             AppTarget(
                 version = "8.24.8",
-                minSdk = 27
-            ),
-            AppTarget(
-                version = "8.23.0",
-                minSdk = 27
-            ),
-            AppTarget(
-                version = "8.22.0",
                 minSdk = 27
             )
         )

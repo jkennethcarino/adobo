@@ -1,6 +1,6 @@
 package dev.jkcarino.adobo.patches.all.detection.signature.pms
 
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.shared.resource.ANDROID_NAME_ATTR
 import dev.jkcarino.adobo.patches.shared.resource.APPLICATION_NODE
 import dev.jkcarino.adobo.patches.shared.resource.androidManifest
@@ -10,7 +10,7 @@ import dev.jkcarino.adobo.util.set
 private const val EXTENSION_CLASS_NAME =
     "dev.jkcarino.extension.all.detection.signature.pms.SignatureHookApp"
 
-val replaceSubApplicationPatch = resourcePatch(
+val replaceSubApplicationPatch = patch(
     description = "Sets the sub-application with our SignatureHookApp."
 ) {
     execute {

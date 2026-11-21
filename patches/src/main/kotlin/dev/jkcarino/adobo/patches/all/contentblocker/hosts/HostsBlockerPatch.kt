@@ -1,13 +1,13 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.hosts
 
 import app.morphe.patcher.patch.booleanOption
-import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.filePathOption
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.patch.stringOption
 import java.io.File
 
 @Suppress("unused")
-val hostsBlockerPatch = bytecodePatch(
+val hostsBlockerPatch = patch(
     name = "Block ads, trackers, and analytics",
     description = "Blocks ads, trackers, analytics, and unwanted content in apps and games " +
         "using a hosts file.",

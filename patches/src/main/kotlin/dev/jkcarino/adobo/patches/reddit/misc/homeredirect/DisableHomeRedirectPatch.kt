@@ -1,13 +1,13 @@
 package dev.jkcarino.adobo.patches.reddit.misc.homeredirect
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.util.returnEarly
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 
 @Suppress("unused")
-val disableHomeRedirectPatch = bytecodePatch(
+val disableHomeRedirectPatch = patch(
     name = "Disable home screen redirect",
     description = "Disables the automatic redirect to the home screen " +
         "after being away from the app or returning from the background."

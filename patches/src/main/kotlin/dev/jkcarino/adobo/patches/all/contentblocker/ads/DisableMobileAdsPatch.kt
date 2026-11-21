@@ -1,6 +1,6 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads
 
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.patch
 import dev.jkcarino.adobo.patches.all.contentblocker.ads.admob.applyGoogleAdMobPatch
 import dev.jkcarino.adobo.patches.all.contentblocker.ads.admob.disableGoogleAdMobOption
 import dev.jkcarino.adobo.patches.all.contentblocker.ads.applovin.applyAppLovinMaxPatch
@@ -26,7 +26,7 @@ import dev.jkcarino.adobo.patches.all.contentblocker.ads.yandex.disableYandexOpt
 import java.util.logging.Logger
 
 @Suppress("unused")
-val disableMobileAdsPatch = bytecodePatch(
+val disableMobileAdsPatch = patch(
     name = "Disable mobile ads",
     description = "Disables banner, interstitial, and other ad formats.",
     default = false
@@ -66,7 +66,6 @@ val disableMobileAdsPatch = bytecodePatch(
                 return@forEach
             }
 
-            // TODO: Update once the Patcher API supports passing the 'name'
             val adNetwork = option.title
 
             val appliedPatch = patch()

@@ -1,6 +1,5 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads.bigo
 
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
 import app.morphe.patcher.util.returnEarly
 import app.morphe.util.findMutableMethodOf
@@ -14,7 +13,7 @@ internal val disableBigoOption = booleanOption(
     description = "Disable Banner, Native, Interstitial, Pop-up, Rewarded, and Splash ad formats."
 )
 
-internal fun BytecodePatchContext.applyBigoPatch() = buildList {
+internal fun applyBigoPatch() = buildList {
     val adMethods = setOf(
         "show",
         "showInAdContainer",

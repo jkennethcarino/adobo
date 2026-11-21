@@ -1,18 +1,17 @@
 package dev.jkcarino.adobo.patches.all.google.maps
 
 import app.morphe.patcher.patch.PatchException
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.patch.stringOption
 import dev.jkcarino.adobo.patches.shared.resource.ANDROID_NAME_ATTR
 import dev.jkcarino.adobo.patches.shared.resource.ANDROID_VALUE_ATTR
 import dev.jkcarino.adobo.patches.shared.resource.APPLICATION_NODE
 import dev.jkcarino.adobo.patches.shared.resource.META_DATA_TAG
 import dev.jkcarino.adobo.patches.shared.resource.androidManifest
-import dev.jkcarino.adobo.util.asElementSequence
 import dev.jkcarino.adobo.util.get
 
 @Suppress("unused")
-val replaceMapsApiKeyPatch = resourcePatch(
+val replaceMapsApiKeyPatch = patch(
     name = "Replace Google Maps API key",
     description = "Replaces the Google Maps API key with a custom key.",
     default = false
@@ -38,8 +37,7 @@ val replaceMapsApiKeyPatch = resourcePatch(
             val application = this[APPLICATION_NODE]
 
             val mapsMetadata = application
-                .getElementsByTagName(META_DATA_TAG)
-                .asElementSequence()
+                .elements(META_DATA_TAG)
                 .firstOrNull { metadata ->
                     val metadataName = metadata[ANDROID_NAME_ATTR]
                     metadataName == "com.google.android.geo.API_KEY" ||

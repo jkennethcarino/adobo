@@ -1,7 +1,7 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads.mintegral
 
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.booleanOption
+import app.morphe.patcher.patch.mutableClassDefBy
 import app.morphe.patcher.util.returnEarly
 import app.morphe.util.findMutableMethodOf
 import dev.jkcarino.adobo.util.defaultReturnEarly
@@ -14,7 +14,7 @@ internal val disableMintegralOption = booleanOption(
     description = "Disable Banner, Interstitial, Rewarded Video, Native, and Splash ad formats."
 )
 
-internal fun BytecodePatchContext.applyMintegralPatch() = buildList {
+internal fun applyMintegralPatch() = buildList {
     val adMethods = setOf(
         "init",
         "load",

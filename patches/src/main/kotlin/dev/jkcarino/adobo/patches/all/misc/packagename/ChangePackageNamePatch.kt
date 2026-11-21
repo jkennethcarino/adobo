@@ -1,18 +1,15 @@
 package dev.jkcarino.adobo.patches.all.misc.packagename
 
 import app.morphe.patcher.patch.booleanOption
-import app.morphe.patcher.patch.resourcePatch
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.patch.stringOption
 import dev.jkcarino.adobo.patches.shared.resource.ANDROID_NAME_ATTR
-import dev.jkcarino.adobo.patches.shared.resource.MANIFEST_NODE
 import dev.jkcarino.adobo.patches.shared.resource.androidManifest
-import dev.jkcarino.adobo.util.asElementSequence
 import dev.jkcarino.adobo.util.get
 import dev.jkcarino.adobo.util.set
-import org.w3c.dom.NodeList
 
 @Suppress("unused")
-val changePackageNamePatch = resourcePatch(
+val changePackageNamePatch = patch(
     name = "Change package name",
     description = "Appends \".adobo\" to the package name by default. " +
         "Changing the package name of the app can lead to unexpected issues.",
@@ -60,8 +57,7 @@ val changePackageNamePatch = resourcePatch(
 
     finalize {
         androidManifest {
-            val manifest = this[MANIFEST_NODE]
-            val packageName = manifest["package"]
+            val packageName = root["package"]
             val replacementPackageName = packageNameOption.value!!
             val newPackageName =
                 if (replacementPackageName == packageNameOption.default) {
@@ -70,15 +66,14 @@ val changePackageNamePatch = resourcePatch(
                     replacementPackageName
                 }
 
-            manifest["package"] = newPackageName
+            root["package"] = newPackageName
 
             if (updatePermissions == true || updateOtherPermissions == true) {
                 val receiverNotExported = "DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 
                 setOf("permission", "uses-permission")
                     .asSequence()
-                    .map(::getElementsByTagName)
-                    .flatMap(NodeList::asElementSequence)
+                    .flatMap(root::children)
                     .filter { element ->
                         val nameAttrValue = element[ANDROID_NAME_ATTR]
                         val isReceiverPermission = updatePermissions == true &&
@@ -100,9 +95,7 @@ val changePackageNamePatch = resourcePatch(
             if (updateProviders == true) {
                 val authoritiesAttr = "android:authorities"
 
-                manifest
-                    .getElementsByTagName("provider")
-                    .asElementSequence()
+                root.elements("provider")
                     .filter { it[authoritiesAttr].startsWith(packageName) }
                     .forEach { provider ->
                         provider[authoritiesAttr] =

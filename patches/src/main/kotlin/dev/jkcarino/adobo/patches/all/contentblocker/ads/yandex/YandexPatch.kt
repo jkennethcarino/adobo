@@ -1,8 +1,9 @@
 package dev.jkcarino.adobo.patches.all.contentblocker.ads.yandex
 
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.booleanOption
+import app.morphe.patcher.patch.classDefForEach
+import app.morphe.patcher.patch.mutableClassDefBy
 import app.morphe.util.findMutableMethodOf
 import com.android.tools.smali.dexlib2.AccessFlags
 import dev.jkcarino.adobo.util.defaultReturnEarly
@@ -16,7 +17,7 @@ internal val disableYandexOption = booleanOption(
         "Feed ad formats."
 )
 
-internal fun BytecodePatchContext.applyYandexPatch() = buildList {
+internal fun applyYandexPatch() = buildList {
     val adMethods = setOf(
         "loadAd",
         "loadAds",

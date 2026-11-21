@@ -21,7 +21,7 @@ pluginManagement {
 }
 
 plugins {
-    id("app.morphe.patches") version "2.0.0"
+    id("app.morphe.patches") version "2.1.1"
 }
 
 settings {
