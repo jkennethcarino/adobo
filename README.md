@@ -150,7 +150,7 @@ or [Morphe Desktop](https://github.com/MorpheApp/morphe-desktop).
 
 ### Morphe Manager
 
-#### Option A: One-click import (requires v1.11.0 or later)
+#### Option A: One-click import
 
 Tap [this link](https://morphe.software/add-source?github=jkennethcarino/adobo) to import Adobong
 Morphe patches directly into Morphe Manager in just a click!
@@ -158,25 +158,44 @@ Morphe patches directly into Morphe Manager in just a click!
 #### Option B: Manual import
 
 1. Open the **Morphe Manager** app.
-2. On the main screen, tap the _folder_ icon in the bottom-left corner.
-3. Tap the "**+**" icon next to **Patch Sources**.
-4. On the **Add patch source** screen, select the **Remote** tab (selected by default).
-5. Set the patch source URL to the following, then tap **Add**:
+2. Switch to the **Sources** tab, then tap the **+** icon in the top-right corner.
+3. On the **Add patch source** bottom sheet, copy and paste the following to the _Source URL_ text
+   field:
+    ```
+    https://github.com/jkennethcarino/adobo
+    ```
+4. Optional: Toggle on _Pre-release patches_ for early access to new features.
+5. Lastly, tap **Add** to import this patch source.
 
-```
-https://github.com/jkennethcarino/adobo
-```
+> [!NOTE]
+> **For advanced users:** Enable **Expert mode** to choose which patches to apply and configure their
+options, instead of using the default selections.
 
 <details>
-  <summary><h3>Universal ReVanced Manager</h3></summary>
+  <summary><h3>Universal Patch Manager</h3></summary>
   <ol>
-    <li>Open the <strong><a href="https://github.com/Jman-Github/Universal-ReVanced-Manager">URV Manager</a></strong> app.</li>
+    <li>Open the <strong><a href="https://github.com/Jman-Github/Universal-Patch-Manager">UP Manager</a></strong> app.</li>
     <li>Switch to the <strong>Patch Bundles</strong> tab.</li>
     <li>Tap the <em>globe</em> icon in the bottom-right corner.</li>
-    <li>On the <strong>Discover patch bundles</strong> screen, search for "Adobo" in the <strong>Search by bundle name</strong> text field.</li>
+    <li>On the <strong>Discovery</strong> screen, search for <code>Adobo</code> in the <strong>Search bundles</strong> text field.</li>
     <li>In the search results, tap the <strong>Import</strong> button for the <code>jkennethcarino/adobo</code> patch bundle.</li>
   </ol>
 </details>
+
+## Verifying the Patch Bundle
+
+The Adobo patch bundle on GitHub is signed with
+a [Morphe signing key](https://github.com/MorpheApp/morphe-documentation/blob/533356050d990de5d681888ee79d376b0b6b02b1/docs/morphe-development/2_signing.md)
+that has the following fingerprint:
+
+```
+9fc4 b658 48b7 093a
+```
+
+To check it, open the **Morphe Manager** app, switch to the **Patches** tab,
+then expand the **Adobo** patch source. Verify that the **Signed by** value shown there matches the
+fingerprint above (tapping on it copies
+the [public key](https://github.com/jkennethcarino/adobo/blob/6ab6865fe7a3fc9306afa19e3cb42718442ffc38/morphe-signing.pub)).
 
 ## Building
 
@@ -190,12 +209,12 @@ maintain your own version.
 
 I do welcome feature requests and bug reports. I won't implement patches that bypass payments or
 premium features; the only exception is removing ads, annoyances, and analytics. Since I work on
-this in my spare time, I can't commit to implementing patches or fixes quickly. Open an
+this in my free time, I can't commit to implementing patches or fixes quickly. Open an
 [issue](https://github.com/jkennethcarino/adobo/issues) here to report a bug or suggest a feature.
 
 ## Disclaimer
 
-> [!WARNING]  
+> [!WARNING]
 > These patches are provided as-is for personal use.
 >
 > Use them at your own risk. I'm not responsible for any potential issues, including violations of
