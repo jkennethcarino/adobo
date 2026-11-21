@@ -9,6 +9,7 @@ import com.android.tools.smali.dexlib2.iface.reference.TypeReference
 import dev.jkcarino.adobo.patches.reddit.misc.firebase.spoofCertificateHashPatch
 import dev.jkcarino.adobo.patches.reddit.shared.COMPATIBILITY_REDDIT
 import dev.jkcarino.adobo.patches.reddit.shared.util.overrideFieldValue
+import dev.jkcarino.adobo.patches.shared.UnitFingerprint
 
 @Suppress("unused")
 val hideCommunityHighlightsPatch = patch(
@@ -30,16 +31,12 @@ val hideCommunityHighlightsPatch = patch(
                     instruction.opcode == Opcode.CHECK_CAST
                         && instruction.getReference<TypeReference>()?.type == uiStateInterface
                 }
-
             val unit = UnitFingerprint.instructionMatches.last().fieldReference
-            val unitDefiningClass = unit.definingClass
-            val unitFieldName = unit.name
-            val unitFieldType = unit.type
 
             addInstructions(
                 index = communityHighlightsStateIndex,
                 smaliInstructions = """
-                    sget-object v1, $unitDefiningClass->$unitFieldName:$unitFieldType
+                    sget-object v1, ${unit.definingClass}->${unit.name}:${unit.type}
                     return-object v1
                 """
             )
