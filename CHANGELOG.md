@@ -1,3 +1,10 @@
+## [2.0.0-dev.8](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.7...v2.0.0-dev.8) (2026-11-21)
+
+### Updated App Support
+
+* **Gboard:** Add support for the latest version ([8d2c26b](https://github.com/jkennethcarino/adobo/commit/8d2c26b45aae481d7e091d39b817b634d9ae1f2b))
+* **Reddit:** Add support for `2026.47.0` ([1a18569](https://github.com/jkennethcarino/adobo/commit/1a18569bee714ccf24ddcb5d3fe053e4225716cc))
+
 ## [2.0.0-dev.7](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.6...v2.0.0-dev.7) (2026-11-21)
 
 ### Features
