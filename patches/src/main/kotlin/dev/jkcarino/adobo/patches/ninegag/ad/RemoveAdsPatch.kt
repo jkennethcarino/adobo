@@ -7,6 +7,7 @@ import dev.jkcarino.adobo.patches.all.contentblocker.hosts.HostsBlocker
 import dev.jkcarino.adobo.patches.all.contentblocker.hosts.HostsBlockerConfig
 import dev.jkcarino.adobo.patches.all.contentblocker.hosts.baseHostsBlockerPatch
 import dev.jkcarino.adobo.patches.ninegag.shared.COMPATIBILITY_NINEGAG
+import dev.jkcarino.adobo.patches.shared.UnitFingerprint
 
 @Suppress("unused")
 val removeAdsPatch = patch(
