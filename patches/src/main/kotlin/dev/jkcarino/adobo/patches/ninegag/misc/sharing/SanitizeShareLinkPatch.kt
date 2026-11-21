@@ -4,7 +4,8 @@ import app.morphe.patcher.StringComparisonType
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.removeInstruction
 import app.morphe.patcher.patch.patch
-import app.morphe.patches.all.misc.string.replaceStringPatch
+import app.morphe.patcher.patch.replaceStrings
+import app.morphe.patcher.string
 import dev.jkcarino.adobo.patches.ninegag.shared.COMPATIBILITY_NINEGAG
 
 @Suppress("unused")
@@ -15,15 +16,11 @@ val sanitizeShareLinkPatch = patch(
 ) {
     compatibleWith(COMPATIBILITY_NINEGAG)
 
-    dependsOn(
-        replaceStringPatch(
-            from = "?ref=android",
-            to = "",
-            comparison = StringComparisonType.CONTAINS
-        )
-    )
-
     execute {
+        replaceStrings(
+            string("?ref=android", StringComparisonType.CONTAINS) to ""
+        )
+
         AppendQueryParameterFingerprint.method.addInstructionsWithLabels(
             index = 0,
             smaliInstructions = """

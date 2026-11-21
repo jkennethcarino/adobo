@@ -2,8 +2,8 @@
 agp = "9.5.1"
 gson = "2.15.0"
 hidden-api-bypass = "6.1"
-morphe-patches-library = "2.2.0"
-morphe-patcher = "2.4.0"
+morphe-patches-library = "2.3.0"
+morphe-patcher = "2.5.0"
 smali = "4220ae75f7"
 
 [libraries]
