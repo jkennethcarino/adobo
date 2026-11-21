@@ -29,8 +29,7 @@ private val imeNoPersonalizedLearningFilters =
         ),
         opcode(Opcode.AND_INT_2ADDR, MatchAfterImmediately()),
         opcode(Opcode.IF_EQZ, MatchAfterImmediately()),
-        opcode(Opcode.CONST_4, MatchAfterImmediately()),
-        opcode(Opcode.RETURN, MatchAfterImmediately()),
+        opcode(Opcode.CONST_4, MatchAfterImmediately())
     )
 
 internal object IsIncognitoModeFingerprint : Fingerprint(
