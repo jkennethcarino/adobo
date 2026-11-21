@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/jkennethcarino/adobo/compare/v2.0.0...v2.0.1) (2026-11-21)
+
+### Bug Fixes
+
+* Include PATCHES.md with releases ([ad4f6fc](https://github.com/jkennethcarino/adobo/commit/ad4f6fcfc79db12d32c600c611f973d90416890e))
+
 ## [2.0.0](https://github.com/jkennethcarino/adobo/compare/v1.7.0...v2.0.0) (2026-11-21)
 
 ### ⚠ BREAKING CHANGES

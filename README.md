@@ -24,7 +24,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 ## Patches
 
 <!-- PATCHES_START -->
-> **[v2.0.0](https://github.com/jkennethcarino/adobo/releases/tag/v2.0.0)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`main`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**55 patches** across **4 apps**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
+> **[v2.0.1](https://github.com/jkennethcarino/adobo/releases/tag/v2.0.1)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`main`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**55 patches** across **4 apps**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
 
 | App | Package name | Supported versions | Patches |
 |---|---|---|---|
