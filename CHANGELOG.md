@@ -1,3 +1,13 @@
+## [2.0.0-dev.9](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.8...v2.0.0-dev.9) (2026-11-21)
+
+### Bug Fixes
+
+* **Reddit - Hide mod queue's auto-enforce banner:** Add support for `2026.47.0` ([0c0be53](https://github.com/jkennethcarino/adobo/commit/0c0be533522096de282d0560802b13e12fe10d2d))
+
+### Updated App Support
+
+* **9GAG:** Add support for `8.30.04` ([8194910](https://github.com/jkennethcarino/adobo/commit/81949103288a7bae62e8770d1449d29f3c5de87e))
+
 ## [2.0.0-dev.8](https://github.com/jkennethcarino/adobo/compare/v2.0.0-dev.7...v2.0.0-dev.8) (2026-11-21)
 
 ### Updated App Support

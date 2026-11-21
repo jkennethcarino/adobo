@@ -96,7 +96,7 @@ patching tool for modifying apps like YouTube and Reddit to block ads and add ne
 
 **Supported versions:**
 
-| 8.29.08 | 8.26.1 | 8.25.1 | 8.24.8 | 8.23.0 |
+| 8.30.04 | 8.29.08 | 8.26.1 | 8.25.1 | 8.24.8 |
 | :---: | :---: | :---: | :---: | :---: |
 
 | Patch Name | Description | Options |
